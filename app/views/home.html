@@ -29,7 +29,7 @@
                 <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
         <!-- Modal toggle -->
                 <button data-modal-target="authentication-modal" data-modal-toggle="authentication-modal" class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">
-                    Sign In / Sign Up 
+                    Sign In / Sign Up
                 </button>
                     <button data-collapse-toggle="navbar-sticky" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-sticky" aria-expanded="false">
                         <span class="sr-only">Open main menu</span>
@@ -166,7 +166,7 @@
         </div>
     </div> 
 
-    <div id="authentication-modal_user" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+    <div id="authentication-modal_user" tabindex="-1" aria-hidden="true" style="z-index: 1050;" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
         <div class="relative p-4 w-full max-w-md max-h-full">
             <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
                 <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
@@ -200,7 +200,7 @@
         </div>
     </div>
 
-    <div id="authentication-modal_host" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+    <div id="authentication-modal_host" style="z-index: 1050;" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
         <div class="relative p-4 w-full max-w-md max-h-full">
             <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
                 <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
@@ -234,7 +234,7 @@
         </div>
     </div>
 
-    <div id="authentication-modal_register" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+    <div id="authentication-modal_register" style="z-index: 1050;" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
         <div class="relative p-4 w-full max-w-md max-h-full">
             <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
                 <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
@@ -251,11 +251,15 @@
                 <div class="p-4 md:p-5">
                     <form class="space-y-4" action="#">
                         <div>
-                            <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Enter an email</label>
+                            <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Username</label>
+                            <input type="text" name="name" id="name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="username" required>
+                        </div>
+                        <div>
+                            <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email</label>
                             <input type="email" name="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="name@company.com" required>
                         </div>
                         <div>
-                            <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Enter a password</label>
+                            <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Password</label>
                             <input type="password" name="password" id="password" placeholder="••••••••" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required>
                         </div>
                         <label for="countries" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Account Type</label>
@@ -334,7 +338,7 @@
                         <p class="font-normal text-gray-700 dark:text-gray-400">A # km de distancia</p>
                         <p class="font-normal text-gray-700 dark:text-gray-400">De #tal_dia a #tal_dia #mes</p>
                         <p class="text-gray-700 dark:text-gray-400" style="display: flex; justify-content: space-between; align-items: center;" ><strong>$16,000.00 MXN</strong>
-                            <a href="#" style="margin-left: auto;" class="inline-flex items-center px-2 py-1 text-sm font-medium text-center text-white bg-yellow-300 rounded-lg hover:bg-yellow-500 focus:ring-4 focus:outline-none focus:ring-yellow-400">
+                            <a data-modal-toggle="authentication-modal" style="margin-left: auto;" class="inline-flex items-center px-2 py-1 text-sm font-medium text-center text-white bg-yellow-300 rounded-lg hover:bg-yellow-500 focus:ring-4 focus:outline-none focus:ring-yellow-400">
                                 Reservar
                                 <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
@@ -401,7 +405,7 @@
                         <p class="font-normal text-gray-700 dark:text-gray-400">A # km de distancia</p>
                         <p class="font-normal text-gray-700 dark:text-gray-400">De #tal_dia a #tal_dia #mes</p>
                         <p class="text-gray-700 dark:text-gray-400" style="display: flex; justify-content: space-between; align-items: center;" ><strong>$16,000.00 MXN</strong>
-                            <a href="#" style="margin-left: auto;" class="inline-flex items-center px-2 py-1 text-sm font-medium text-center text-white bg-yellow-300 rounded-lg hover:bg-yellow-500 focus:ring-4 focus:outline-none focus:ring-yellow-400">
+                            <a data-modal-toggle="authentication-modal" class="inline-flex items-center px-2 py-1 text-sm font-medium text-center text-white bg-yellow-300 rounded-lg hover:bg-yellow-500 focus:ring-4 focus:outline-none focus:ring-yellow-400">
                                 Reservar
                                 <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
@@ -468,7 +472,7 @@
                         <p class="font-normal text-gray-700 dark:text-gray-400">A # km de distancia</p>
                         <p class="font-normal text-gray-700 dark:text-gray-400">De #tal_dia a #tal_dia #mes</p>
                         <p class="text-gray-700 dark:text-gray-400" style="display: flex; justify-content: space-between; align-items: center;" ><strong>$16,000.00 MXN</strong>
-                            <a href="#" style="margin-left: auto;" class="inline-flex items-center px-2 py-1 text-sm font-medium text-center text-white bg-yellow-300 rounded-lg hover:bg-yellow-500 focus:ring-4 focus:outline-none focus:ring-yellow-400">
+                            <a data-modal-toggle="authentication-modal" class="inline-flex items-center px-2 py-1 text-sm font-medium text-center text-white bg-yellow-300 rounded-lg hover:bg-yellow-500 focus:ring-4 focus:outline-none focus:ring-yellow-400">
                                 Reservar
                                 <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
@@ -535,7 +539,7 @@
                         <p class="font-normal text-gray-700 dark:text-gray-400">A # km de distancia</p>
                         <p class="font-normal text-gray-700 dark:text-gray-400">De #tal_dia a #tal_dia #mes</p>
                         <p class="text-gray-700 dark:text-gray-400" style="display: flex; justify-content: space-between; align-items: center;" ><strong>$16,000.00 MXN</strong>
-                            <a href="#" style="margin-left: auto;" class="inline-flex items-center px-2 py-1 text-sm font-medium text-center text-white bg-yellow-300 rounded-lg hover:bg-yellow-500 focus:ring-4 focus:outline-none focus:ring-yellow-400">
+                            <a data-modal-toggle="authentication-modal" style="margin-left: auto;" class="inline-flex items-center px-2 py-1 text-sm font-medium text-center text-white bg-yellow-300 rounded-lg hover:bg-yellow-500 focus:ring-4 focus:outline-none focus:ring-yellow-400">
                                 Reservar
                                 <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
@@ -604,7 +608,7 @@
                         <p class="font-normal text-gray-700 dark:text-gray-400">A # km de distancia</p>
                         <p class="font-normal text-gray-700 dark:text-gray-400">De #tal_dia a #tal_dia #mes</p>
                         <p class="text-gray-700 dark:text-gray-400" style="display: flex; justify-content: space-between; align-items: center;" ><strong>$16,000.00 MXN</strong>
-                            <a href="#" style="margin-left: auto;" class="inline-flex items-center px-2 py-1 text-sm font-medium text-center text-white bg-yellow-300 rounded-lg hover:bg-yellow-500 focus:ring-4 focus:outline-none focus:ring-yellow-400">
+                            <a data-modal-toggle="authentication-modal" style="margin-left: auto;" class="inline-flex items-center px-2 py-1 text-sm font-medium text-center text-white bg-yellow-300 rounded-lg hover:bg-yellow-500 focus:ring-4 focus:outline-none focus:ring-yellow-400">
                                 Reservar
                                 <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
@@ -671,7 +675,7 @@
                         <p class="font-normal text-gray-700 dark:text-gray-400">A # km de distancia</p>
                         <p class="font-normal text-gray-700 dark:text-gray-400">De #tal_dia a #tal_dia #mes</p>
                         <p class="text-gray-700 dark:text-gray-400" style="display: flex; justify-content: space-between; align-items: center;" ><strong>$16,000.00 MXN</strong>
-                            <a href="#" style="margin-left: auto;" class="inline-flex items-center px-2 py-1 text-sm font-medium text-center text-white bg-yellow-300 rounded-lg hover:bg-yellow-500 focus:ring-4 focus:outline-none focus:ring-yellow-400">
+                            <a data-modal-toggle="authentication-modal" style="margin-left: auto;" class="inline-flex items-center px-2 py-1 text-sm font-medium text-center text-white bg-yellow-300 rounded-lg hover:bg-yellow-500 focus:ring-4 focus:outline-none focus:ring-yellow-400">
                                 Reservar
                                 <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
@@ -738,7 +742,7 @@
                         <p class="font-normal text-gray-700 dark:text-gray-400">A # km de distancia</p>
                         <p class="font-normal text-gray-700 dark:text-gray-400">De #tal_dia a #tal_dia #mes</p>
                         <p class="text-gray-700 dark:text-gray-400" style="display: flex; justify-content: space-between; align-items: center;" ><strong>$16,000.00 MXN</strong>
-                            <a href="#" style="margin-left: auto;" class="inline-flex items-center px-2 py-1 text-sm font-medium text-center text-white bg-yellow-300 rounded-lg hover:bg-yellow-500 focus:ring-4 focus:outline-none focus:ring-yellow-400">
+                            <a data-modal-toggle="authentication-modal" style="margin-left: auto;" class="inline-flex items-center px-2 py-1 text-sm font-medium text-center text-white bg-yellow-300 rounded-lg hover:bg-yellow-500 focus:ring-4 focus:outline-none focus:ring-yellow-400">
                                 Reservar
                                 <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
@@ -805,7 +809,7 @@
                         <p class="font-normal text-gray-700 dark:text-gray-400">A # km de distancia</p>
                         <p class="font-normal text-gray-700 dark:text-gray-400">De #tal_dia a #tal_dia #mes</p>
                         <p class="text-gray-700 dark:text-gray-400" style="display: flex; justify-content: space-between; align-items: center;" ><strong>$16,000.00 MXN</strong>
-                            <a href="#" style="margin-left: auto;" class="inline-flex items-center px-2 py-1 text-sm font-medium text-center text-white bg-yellow-300 rounded-lg hover:bg-yellow-500 focus:ring-4 focus:outline-none focus:ring-yellow-400">
+                            <a data-modal-toggle="authentication-modal" style="margin-left: auto;" class="inline-flex items-center px-2 py-1 text-sm font-medium text-center text-white bg-yellow-300 rounded-lg hover:bg-yellow-500 focus:ring-4 focus:outline-none focus:ring-yellow-400">
                                 Reservar
                                 <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
