@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EarthBnb Home</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.1.1/flowbite.min.css" rel="stylesheet" />
+    <style>
+        .carta_margin {
+            margin: 10px;
+            width: 290px;
+            height: 420px;
+        }
+        .para_nav {
+            z-index: 1000;
+            background-color: white;
+        }
+        .para_gallery {
+            margin-left: 90px;
+            margin-right: 90px;
+        }
+        .para_titulo {
+            margin-left: 120px;
+            margin-right: 120px;
+            font-size:xx-large;
+        }
+        .para_carta_grande {
+            min-width: 525px;
+            max-width: 525px;
+            min-height: 310px;
+            max-height: 310px;
+            margin-bottom: 10px;
+        }
+        .para_carta_pequeña {
+            min-width: 260px;
+            max-width: 260px;
+            min-height: 150px;
+            max-height: 150px;
+            margin-bottom: 10px;
+        }
+        .grid-container {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr); /* 3 columnas */
+          gap: 10px;  /* Espacio entre las celdas */
+        }
+    </style>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+</head>
+
+<body>
+    <header>
+        <nav style="z-index: 1200;" class="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600">
+            <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+                <a href="home_loggeado.html" class="flex items-center space-x-3 rtl:space-x-reverse">
+                    <img src="earthbnb.png" class="h-10" alt="EarthBnB™ Logo">
+                </a>
+                <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+        <!-- Modal toggle -->
+        <button id="dropdownUserAvatarButton" data-dropdown-toggle="dropdownAvatar" class="flex text-sm bg-gray-800 rounded-full md:me-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" type="button" style="background: none;">
+            <i class="fa-solid fa-globe fa-xl" style="color: #000000;"></i>
+        </button>
+            <!-- Dropdown menu -->
+            <div id="dropdownAvatar" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
+                <div class="px-4 py-3 text-sm text-gray-900 dark:text-white">
+                  <div>Miguel Torres</div>
+                  <div class="font-medium truncate">maigol@gmail.com</div>
+                </div>
+                <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownUserAvatarButton">
+                  <li>
+                    <a href="my_reservations.html" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">My Reservations</a>
+                  </li>
+                  <li>
+                    <a href="home_host.html" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Change to Host</a>
+                  </li>
+                </ul>
+                <div class="py-2">
+                  <a href="home.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign out</a>
+                </div>
+            </div>
+
+                <a class="nav-link active text-dark" role="button" data-bs-toggle="modal" data-bs-target="#modal_Login" href="#modal_Login" aria-current="page"></a>
+                    <button data-collapse-toggle="navbar-sticky" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-sticky" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+                        </svg>
+                    </button>
+                </div>
+                
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div id="inicio-body" style="margin-top: 75px; padding: 10px;">
+            <div class="grid grid-cols-2 gap-2">
+                <div class="col-span-1 flex flex-col items-center"> <!-- Use flex-col and items-center -->
+                    <div class="row-span-1" style="padding: 10px;">
+                        <div class="w-full max-w-md bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700" style="min-width: 400px;"> <!-- Ajusta el valor de max-width según tus necesidades -->
+                            <div class="flex flex-col items-center pb-10" style="padding: 10px;">
+                                <img class="w-24 h-24 mb-3 rounded-full shadow-lg" src="userpng.png" alt="Bonnie image"/>
+                                <h5 class="mb-1 text-xl font-medium text-gray-900 dark:text-white">Maigol</h5>
+                                <span class="text-sm text-gray-500 dark:text-gray-400">Usuario</span>
+                                <div class="items-center justify-center space-y-4 sm:flex sm:space-y-0 sm:space-x-4 rtl:space-x-reverse" style="padding: 10px;">
+                                    <div class="flex items-baseline text-gray-900 dark:text-white flex justify-center">
+                                        <span class="text-2xl font-extrabold tracking-tight">1</span>
+                                        <span class="ms-1 text-sm font-normal text-gray-500 dark:text-gray-400">Evaluaciones</span>
+                                    </div>
+                                    <div class="flex items-baseline text-gray-900 dark:text-white flex justify-center">
+                                        <span class="text-2xl font-extrabold tracking-tight">2</span>
+                                        <span class="ms-1 text-sm font-normal text-gray-500 dark:text-gray-400">Años en EarthBnB™</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="row-span-1" style="padding: 10px;">
+                        <div class="w-full max-w-md bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700" style="min-width: 400px;">
+                            <div class="flex flex-col items-center pb-10" style="padding: 8px;">
+                                <h5 class="mb-0 text-xl font-medium text-gray-900 dark:text-white">Lo que dicen los anfitriones sobre ti</h5>
+                                <div id="comment" class="mx-auto my-2 flex max-w-screen-sm rounded-xl border border-gray-100 p-4 text-left text-gray-600 shadow-lg sm:p-8">
+                                    <img class="mr-5 block h-8 w-8 max-w-full text-left align-middle sm:h-16 sm:w-16" src="https://www.uifaces.co/wp-content/themes/uifaces-theme/src/img/home-animation/avatar-3.svg" alt="Profile Picture" />
+                                    <div class="w-full text-left my-0">
+                                        <div class="mb-2 flex flex-col justify-between text-gray-600 sm:flex-row">
+                                            <h3 class="font-medium">Señor EarthBnB</h3>
+                                            <time class="text-xs" datetime="2022-11-13T20:00Z">July 18, 2023</time>
+                                        </div>
+                                        <p class="text-sm">Muy buen huésped, espero vuelva pronto!</p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    
+
+                </div>
+                <div class="col-span-1">
+                    <div class="items-center bg-white max-w-xl shadow overflow-hidden sm:rounded-lg">
+                        <div class="px-4 py-5 sm:px-6 flex justify-between items-center">
+                            <div>
+                                <h3 class="text-xl leading-6 font-medium text-gray-900">
+                                    Mi Perfil
+                                </h3>
+                                <p class="mt-1 max-w-2xl text-sm text-gray-500">
+                                    Detalles de Maigol
+                                </p>
+                            </div>
+                            <button id="editProfile" class="flex text-sm bg-gray-800 rounded-full md:me-0 focus:outline-none" type="button" style="background: none;">
+                                <i class="fa-solid fa-pencil fa-2xl" style="color: #000000;"></i>
+                            </button>
+                        </div>
+                        <div class="border-t border-gray-200">
+                            <dl>
+                                <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                                    <dt class="text-sm font-medium text-gray-500 flex items-center">
+                                        Nombre
+                                    </dt>
+                                    <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2 flex items-center">
+                                        <input type="text" disabled value="Miguel Torres" class="border-0 bg-transparent w-full" maxlength="28">
+                                    </dd>
+                                </div>
+                                <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                                    <dt class="text-sm font-medium text-gray-500 flex items-center">
+                                        Correo
+                                    </dt>
+                                    <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2 flex items-center">
+                                        <input type="text" disabled value="maigol@gmail.com" class="border-0 bg-transparent w-full" maxlength="35">
+                                    </dd>
+                                </div>
+                                <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                                    <dt class="text-sm font-medium text-gray-500 flex items-center">
+                                        Celular
+                                    </dt>
+                                    <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2 flex items-center">
+                                        <input type="text" disabled value="3333333333" class="border-0 bg-transparent w-full" maxlength="10">
+                                    </dd>
+                                </div>
+                                <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                                    <dt class="text-sm font-medium text-gray-500 flex items-center">
+                                        Vive en
+                                    </dt>
+                                    <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2 flex items-center">
+                                        <input type="text" disabled value="Guadalajara, Jalisco" class="border-0 bg-transparent w-full" maxlength="35">
+                                    </dd>
+                                </div>
+                                <div class="bg-gray-50 px-4 py-5 sm:px-6">
+                                    <dt class="text-sm font-medium text-gray-500">
+                                        Descripción
+                                    </dt>
+                                    <dd class="mt-1 text-sm text-gray-900">
+                                        <!-- Eliminamos col-span-2 y ajustamos el ancho a full -->
+                                        To get social media testimonials like these, keep your customers engaged with your social media accounts by posting regularly yourself
+                                    </dd>
+                                </div>
+                            </dl>
+                        </div>
+                    </div>                    
+                </div>
+            </div>    
+        </div> 
+    </main>
+    
+<footer class="bg-white rounded-lg shadow m-4 dark:bg-gray-800">
+    <div class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
+      <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 <a href="#" class="hover:underline">EarthBnB™</a>. All Rights Reserved.
+    </span>
+    <ul class="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0">
+        <li>
+            <a href="#" class="hover:underline me-4 md:me-6">About</a>
+        </li>
+        <li>
+            <a href="#" class="hover:underline me-4 md:me-6">Privacy Policy</a>
+        </li>
+        <li>
+            <a href="#" class="hover:underline me-4 md:me-6">Licensing</a>
+        </li>
+        <li>
+            <a href="#" class="hover:underline">Contact</a>
+        </li>
+    </ul>
+    </div>
+</footer>
+<script src="https://kit.fontawesome.com/8627f7a409.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.1.1/flowbite.min.js"></script>
+</body>
+
+</html>
