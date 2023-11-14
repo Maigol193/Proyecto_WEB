@@ -16,8 +16,8 @@
             background-color: white;
         }
         .para_gallery {
-            margin-left: 90px;
-            margin-right: 90px;
+            margin-left: 100px;
+            margin-right: 100px;
         }
         .para_titulo {
             margin-left: 120px;
@@ -42,6 +42,14 @@
           display: grid;
           grid-template-columns: repeat(3, 1fr); /* 3 columnas */
           gap: 10px;  /* Espacio entre las celdas */
+        }
+        .para_fecha {
+            border-bottom: 1px solid gray;
+            border-top: 1px solid gray;
+        }
+        .para_imagen {
+            margin-top: 45px;
+            margin-left: 35px;
         }
     </style>
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
@@ -99,9 +107,52 @@
 
     <main>
         <div id="inicio-body" style="margin-top: 75px; padding: 10px;">
+            <diV class="border border-gray-200 shadow para_gallery rounded-lg">
+                <div>
+                    <div style="border-bottom: 1px solid gray;">
+                        <p style="margin-left: 35px; margin-top: 5px; margin-bottom: 5px; font-size: large;"><b>15 de noviembre</b></p>
+                    </div>
+                    <div class="flex para_imagen justify-between">
+                        <div class="flex">
+                            <img class="rounded-lg" src="https://images.adsttc.com/media/images/5a58/a650/f197/cc1f/8600/0173/newsletter/S3_CDS--5.jpg?1515759173" style="height: 150px; width: 200px;">
+                            <div style="margin-left: 30px; color: gray;">
+                                <p style="color: green;"><b>En curso</b></p>
+                                <br>
+                                <p style="color: #000000;"><b>Alojamiento en la playa para una familia, en Puerto Vallarta</b></p>
+                                <p>3 noches</p>
+                                <p>1 huesped</p>
+                                <p>Total: $5,650 MXN</p>
+                            </div>
+                        </div>
+                        <div style="margin-right: 30px; margin-top: 15px;">
+                            <a  href="Pagina_reservando.html" class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Detalles&nbsp;</a><br>
+                            <button class="block text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Cancelar</button>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <div>
+                    <div class="para_fecha">
+                        <p>13 de noviembre</p>
+                    </div>
+                    <div>
+                        <p>Hola, prueba</p>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <div>
+                    <div class="para_fecha">
+                        <p>12 de noviembre</p>
+                    </div>
+                    <div>
+                        <p>Hola, prueba</p>
+                    </div>
+                </div>
+            </diV>
             
-                               
-        </div>        
+        </div>
     </main>
     
 <footer class="bg-white rounded-lg shadow m-4 dark:bg-gray-800">
