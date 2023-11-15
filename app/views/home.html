@@ -27,7 +27,7 @@
                 </a>
                 <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
         <!-- Modal toggle -->
-                <button data-modal-target="authentication-modal" data-modal-toggle="authentication-modal" class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">
+                <button style="background-color: rgb(21, 76, 178); color: rgb(241 245 249);" data-modal-target="authentication-modal" data-modal-toggle="authentication-modal" class="block focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">
                     Sign In / Sign Up
                 </button>
                     <button data-collapse-toggle="navbar-sticky" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-sticky" aria-expanded="false">
@@ -136,7 +136,7 @@
 
     <div id="authentication-modal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
         <div class="relative p-4 w-full max-w-md max-h-full">
-            <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+            <div class="relative rounded-lg shadow dark:bg-gray-700" style="background-color: rgb(241 245 249);">
                 <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
                     <h3 class="text-xl font-semibold text-gray-900 dark:text-white flex justify-center w-full">
                         Bienvenido a EarthBnB™
@@ -150,14 +150,14 @@
                 </div>
                 <div class="p-4 md:p-5 flex justify-center">
                     <form class="space-y-4" action="#">
-                        <button data-modal-target="authentication-modal_user" data-modal-toggle="authentication-modal_user" class="mx-auto block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">
+                        <button style="background-color: rgb(21, 76, 178); color: rgb(241 245 249);" data-modal-target="authentication-modal_user" data-modal-toggle="authentication-modal_user" class="mx-auto block text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">
                             Sign In as User
                         </button>
-                        <button data-modal-target="authentication-modal_host" data-modal-toggle="authentication-modal_host" class="mx-auto block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">
+                        <button style="background-color: rgb(21, 76, 178); color: rgb(241 245 249);" data-modal-target="authentication-modal_host" data-modal-toggle="authentication-modal_host" class="mx-auto block text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">
                             Sign In as Host
                         </button>
                         <div class="text-sm font-medium text-gray-500 dark:text-gray-300">
-                            Not registered? <a data-modal-target="authentication-modal_register" data-modal-toggle="authentication-modal_register" class="text-blue-700 hover:underline dark:text-blue-500">Create an account</a>
+                            Not registered? <a style="color: rgb(21, 76, 178);" data-modal-target="authentication-modal_register" data-modal-toggle="authentication-modal_register" class="hover:underline">Create an account</a>
                         </div>
                     </form>
                 </div>
@@ -167,7 +167,7 @@
 
     <div id="authentication-modal_user" tabindex="-1" aria-hidden="true" style="z-index: 1050;" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
         <div class="relative p-4 w-full max-w-md max-h-full">
-            <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+            <div class="relative rounded-lg shadow dark:bg-gray-700" style="background-color: rgb(241 245 249);">
                 <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
                     <h3 class="text-xl font-semibold text-gray-900 dark:text-white flex justify-center w-full">
                         Signing In as User
@@ -189,9 +189,9 @@
                             <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Enter your password</label>
                             <input type="password" name="password" id="password" placeholder="••••••••" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required>
                         </div>
-                        <button onclick="window.location.href='home_loggeado.html'" class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Login to your account</button>
-                        <div class="flex justify-center text-sm font-medium text-gray-500 dark:text-gray-300">
-                            Not registered? <a data-modal-hide="authentication-modal_user" data-modal-target="authentication-modal_register" data-modal-toggle="authentication-modal_register" class="text-blue-700 hover:underline dark:text-blue-500">Create an account</a>
+                        <button onclick="window.location.href='home_loggeado.html'" style="background-color: rgb(21, 76, 178); color: rgb(241 245 249);" class="w-full focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Login to your account</button>
+                        <div class="text-sm flex justify-center font-medium text-gray-500 dark:text-gray-300">
+                            Not registered? <a style="color: rgb(21, 76, 178);" data-modal-target="authentication-modal_register" data-modal-toggle="authentication-modal_register" class="hover:underline">Create an account</a>
                         </div>
                     </form>
                 </div>
@@ -201,7 +201,7 @@
 
     <div id="authentication-modal_host" style="z-index: 1050;" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
         <div class="relative p-4 w-full max-w-md max-h-full">
-            <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+            <div class="relative rounded-lg shadow dark:bg-gray-700" style="background-color: rgb(241 245 249);">
                 <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
                     <h3 class="text-xl font-semibold text-gray-900 dark:text-white flex justify-center w-full">
                         Signing In as Host
@@ -223,9 +223,9 @@
                             <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Enter your password</label>
                             <input type="password" name="password" id="password" placeholder="••••••••" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required>
                         </div>
-                        <button onclick="window.location.href='home_host.html'" class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Login to your account</button>
-                        <div class="flex justify-center text-sm font-medium text-gray-500 dark:text-gray-300">
-                            Not registered? <a data-modal-hide="authentication-modal_host" data-modal-target="authentication-modal_register" data-modal-toggle="authentication-modal_register" class="text-blue-700 hover:underline dark:text-blue-500">Create account</a>
+                        <button onclick="window.location.href='home_host.html'" style="background-color: rgb(21, 76, 178); color: rgb(241 245 249);" class="w-full focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Login to your account</button>
+                        <div class="text-sm flex justify-center font-medium text-gray-500 dark:text-gray-300">
+                            Not registered? <a style="color: rgb(21, 76, 178);" data-modal-target="authentication-modal_register" data-modal-toggle="authentication-modal_register" class="hover:underline">Create an account</a>
                         </div>
                     </form>
                 </div>
@@ -235,7 +235,7 @@
 
     <div id="authentication-modal_register" style="z-index: 1050;" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
         <div class="relative p-4 w-full max-w-md max-h-full">
-            <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+            <div class="relative rounded-lg shadow dark:bg-gray-700" style="background-color: rgb(241 245 249);">
                 <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
                     <h3 class="text-xl font-semibold text-gray-900 dark:text-white flex justify-center w-full">
                         Registrate a EarthBnB™
@@ -266,7 +266,7 @@
                             <option selected value="USER">User</option>
                             <option value="HOST">Host</option>
                         </select>
-                        <button type="submit" class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Create account</button>
+                        <button type="submit" style="background-color: rgb(21, 76, 178); color: rgb(241 245 249);" class="w-full hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Create account</button>
                     </form>
                 </div>
             </div>
@@ -275,7 +275,7 @@
     </header>
 
 
-    <main style="background-color: white">
+    <main style="background-color: rgb(241 245 249);">
         <div id="inicio-body" style="margin-top: 110px; padding: 10px;">
             <div class="row inline-flex">
                 <div class="carta_margin" style="background-color: rgb(241 245 249)">
@@ -337,172 +337,38 @@
                         <p class="font-normal text-gray-700 dark:text-gray-400">A # km de distancia</p>
                         <p class="font-normal text-gray-700 dark:text-gray-400">De #tal_dia a #tal_dia #mes</p>
                         <p class="text-gray-700 dark:text-gray-400" style="display: flex; justify-content: space-between; align-items: center;" ><strong>$16,000.00 MXN</strong>
-                            <a data-modal-toggle="authentication-modal" style="margin-left: auto; margin-right: 5px; background-color: rgb(239 68 68); color: black;" class="inline-flex items-center px-2 py-1 text-sm font-medium text-center text-white rounded-lg hover:bg-yellow-500 focus:ring-4 focus:outline-none focus:ring-yellow-400">
+                            <a data-modal-toggle="authentication-modal" style="margin-left: auto; margin-right: 5px; background-color: rgb(0, 0, 0); color: rgb(255, 255, 255);" class="inline-flex items-center px-2 py-1 text-sm font-medium text-center text-white rounded-lg hover:bg-yellow-500 focus:ring-4 focus:outline-none focus:ring-yellow-400">
                                 Reservar
                                 <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                                    <path style="color: black;" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                                    <path style="color: rgb(255, 255, 255);" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
                                 </svg>
                             </a>
                         </p>
                     </div>
                 </div>
-                <div class="carta_margin bg-white">
-                    <div id="indicators-carousel" class="relative w-full" data-carousel="static">
-                        <!-- Carousel wrapper -->
-                        <div class="relative h-80 overflow-hidden rounded-lg">
-                             <!-- Item 1 -->
-                            <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
-                                <img src="https://images.adsttc.com/media/images/5a58/a650/f197/cc1f/8600/0173/newsletter/S3_CDS--5.jpg?1515759173" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" style="height: 300px;" alt="...">
-                            </div>
-                            <!-- Item 2 -->
-                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                                <img src="https://images.adsttc.com/media/images/5a58/a650/f197/cc1f/8600/0173/newsletter/S3_CDS--5.jpg?1515759173" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" style="height: 300px;" alt="...">
-                            </div>
-                            <!-- Item 3 -->
-                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                                <img src="/docs/images/carousel/carousel-3.svg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" style="height: 300px;" alt="...">
-                            </div>
-                            <!-- Item 4 -->
-                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                                <img src="/docs/images/carousel/carousel-4.svg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" style="height: 300px;" alt="...">
-                            </div>
-                            <!-- Item 5 -->
-                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                                <img src="/docs/images/carousel/carousel-5.svg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" style="height: 300px;" alt="...">
-                            </div>
-                        </div>
-                        <!-- Slider indicators -->
-                        <div class="absolute z-30 flex -translate-x-1/2 space-x-3 rtl:space-x-reverse bottom-5 left-1/2">
-                            <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
-                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
-                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
-                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4" data-carousel-slide-to="3"></button>
-                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 5" data-carousel-slide-to="4"></button>
-                        </div>
-                        <!-- Slider controls -->
-                        <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
-                            <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                                <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
-                                </svg>
-                                <span class="sr-only">Previous</span>
-                            </span>
-                        </button>
-                        <button type="button" class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
-                            <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                                <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
-                                </svg>
-                                <span class="sr-only">Next</span>
-                            </span>
-                        </button>
-                    </div>
-                    <div>
-                        <a href="#">
-                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Ubicacion,Pais</h5>
-                        </a>
-                        <p class="font-normal text-gray-700 dark:text-gray-400">A # km de distancia</p>
-                        <p class="font-normal text-gray-700 dark:text-gray-400">De #tal_dia a #tal_dia #mes</p>
-                        <p class="text-gray-700 dark:text-gray-400" style="display: flex; justify-content: space-between; align-items: center;" ><strong>$16,000.00 MXN</strong>
-                            <a data-modal-toggle="authentication-modal" class="inline-flex items-center px-2 py-1 text-sm font-medium text-center text-white bg-yellow-300 rounded-lg hover:bg-yellow-500 focus:ring-4 focus:outline-none focus:ring-yellow-400">
-                                Reservar
-                                <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
-                                </svg>
-                            </a>
-                        </p>
-                    </div>
-                </div>
-                <div class="carta_margin bg-white">
-                    <div id="indicators-carousel" class="relative w-full" data-carousel="static">
-                        <!-- Carousel wrapper -->
-                        <div class="relative h-80 overflow-hidden rounded-lg">
-                             <!-- Item 1 -->
-                            <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
-                                <img src="https://images.adsttc.com/media/images/5a58/a650/f197/cc1f/8600/0173/newsletter/S3_CDS--5.jpg?1515759173" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" style="height: 300px;" alt="...">
-                            </div>
-                            <!-- Item 2 -->
-                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                                <img src="https://images.adsttc.com/media/images/5a58/a650/f197/cc1f/8600/0173/newsletter/S3_CDS--5.jpg?1515759173" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" style="height: 300px;" alt="...">
-                            </div>
-                            <!-- Item 3 -->
-                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                                <img src="/docs/images/carousel/carousel-3.svg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" style="height: 300px;" alt="...">
-                            </div>
-                            <!-- Item 4 -->
-                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                                <img src="/docs/images/carousel/carousel-4.svg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" style="height: 300px;" alt="...">
-                            </div>
-                            <!-- Item 5 -->
-                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                                <img src="/docs/images/carousel/carousel-5.svg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" style="height: 300px;" alt="...">
-                            </div>
-                        </div>
-                        <!-- Slider indicators -->
-                        <div class="absolute z-30 flex -translate-x-1/2 space-x-3 rtl:space-x-reverse bottom-5 left-1/2">
-                            <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
-                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
-                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
-                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4" data-carousel-slide-to="3"></button>
-                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 5" data-carousel-slide-to="4"></button>
-                        </div>
-                        <!-- Slider controls -->
-                        <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
-                            <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                                <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
-                                </svg>
-                                <span class="sr-only">Previous</span>
-                            </span>
-                        </button>
-                        <button type="button" class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
-                            <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                                <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
-                                </svg>
-                                <span class="sr-only">Next</span>
-                            </span>
-                        </button>
-                    </div>
-                    <div>
-                        <a href="#">
-                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Ubicacion,Pais</h5>
-                        </a>
-                        <p class="font-normal text-gray-700 dark:text-gray-400">A # km de distancia</p>
-                        <p class="font-normal text-gray-700 dark:text-gray-400">De #tal_dia a #tal_dia #mes</p>
-                        <p class="text-gray-700 dark:text-gray-400" style="display: flex; justify-content: space-between; align-items: center;" ><strong>$16,000.00 MXN</strong>
-                            <a data-modal-toggle="authentication-modal" class="inline-flex items-center px-2 py-1 text-sm font-medium text-center text-white bg-yellow-300 rounded-lg hover:bg-yellow-500 focus:ring-4 focus:outline-none focus:ring-yellow-400">
-                                Reservar
-                                <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
-                                </svg>
-                            </a>
-                        </p>
-                    </div>
-                </div>
-                <div class="carta_margin bg-white">
+                <div class="carta_margin" style="background-color: rgb(241 245 249)">
                     <div id="indicators-carousel" class="relative" data-carousel="static">
                         <!-- Carousel wrapper -->
-                        <div class="relative h-80 overflow-hidden rounded-lg">
+                        <div class="relative h-80 overflow-hidden rounded-t-lg" style="margin-top: 0px; height: 300px;">
                             <!-- Item 1 -->
                             <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
-                                <img src="https://images.adsttc.com/media/images/5a58/a650/f197/cc1f/8600/0173/newsletter/S3_CDS--5.jpg?1515759173" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" style="height: 300px;" alt="...">
+                                <img src="https://images.adsttc.com/media/images/5a58/a650/f197/cc1f/8600/0173/newsletter/S3_CDS--5.jpg?1515759173" class="absolute block w-full -translate-x-1/2 top-0 left-1/2" style="height: 300px;" alt="...">
                             </div>
                             <!-- Item 2 -->
                             <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                                <img src="https://images.adsttc.com/media/images/5a58/a650/f197/cc1f/8600/0173/newsletter/S3_CDS--5.jpg?1515759173" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" style="height: 300px;" alt="...">
+                                <img src="https://images.adsttc.com/media/images/5a58/a650/f197/cc1f/8600/0173/newsletter/S3_CDS--5.jpg?1515759173" class="absolute block w-full -translate-x-1/2 top-0 left-1/2" style="height: 300px;" alt="...">
                             </div>
                             <!-- Item 3 -->
                             <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                                <img src="/docs/images/carousel/carousel-3.svg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" style="height: 300px;" alt="...">
+                                <img src="/docs/images/carousel/carousel-3.svg" class="absolute block w-full -translate-x-1/2 top-0 left-1/2" style="height: 300px;" alt="...">
                             </div>
                             <!-- Item 4 -->
                             <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                                <img src="/docs/images/carousel/carousel-4.svg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" style="height: 300px;" alt="...">
+                                <img src="/docs/images/carousel/carousel-4.svg" class="absolute block w-full -translate-x-1/2 top-0 left-1/2" style="height: 300px;" alt="...">
                             </div>
                             <!-- Item 5 -->
                             <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                                <img src="/docs/images/carousel/carousel-5.svg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" style="height: 300px;" alt="...">
+                                <img src="/docs/images/carousel/carousel-5.svg" class="absolute block w-full -translate-x-1/2 top-0 left-1/2" style="height: 300px;" alt="...">
                             </div>
                         </div>
                         <!-- Slider indicators -->
@@ -530,7 +396,8 @@
                                 <span class="sr-only">Next</span>
                             </span>
                         </button>
-                    </div>      
+                    </div>
+
                     <div>
                         <a href="#">
                             <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Ubicacion,Pais</h5>
@@ -538,10 +405,146 @@
                         <p class="font-normal text-gray-700 dark:text-gray-400">A # km de distancia</p>
                         <p class="font-normal text-gray-700 dark:text-gray-400">De #tal_dia a #tal_dia #mes</p>
                         <p class="text-gray-700 dark:text-gray-400" style="display: flex; justify-content: space-between; align-items: center;" ><strong>$16,000.00 MXN</strong>
-                            <a data-modal-toggle="authentication-modal" style="margin-left: auto;" class="inline-flex items-center px-2 py-1 text-sm font-medium text-center text-white bg-yellow-300 rounded-lg hover:bg-yellow-500 focus:ring-4 focus:outline-none focus:ring-yellow-400">
+                            <a data-modal-toggle="authentication-modal" style="margin-left: auto; margin-right: 5px; background-color: rgb(0, 0, 0); color: rgb(255, 255, 255);" class="inline-flex items-center px-2 py-1 text-sm font-medium text-center text-white rounded-lg focus:ring-4 focus:outline-none focus:ring-black-400">
                                 Reservar
                                 <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                                    <path style="color: rgb(255, 255, 255);" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                                </svg>
+                            </a>
+                        </p>
+                    </div>
+                </div>
+                <div class="carta_margin" style="background-color: rgb(241 245 249)">
+                    <div id="indicators-carousel" class="relative" data-carousel="static">
+                        <!-- Carousel wrapper -->
+                        <div class="relative h-80 overflow-hidden rounded-t-lg" style="margin-top: 0px; height: 300px;">
+                            <!-- Item 1 -->
+                            <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
+                                <img src="https://images.adsttc.com/media/images/5a58/a650/f197/cc1f/8600/0173/newsletter/S3_CDS--5.jpg?1515759173" class="absolute block w-full -translate-x-1/2 top-0 left-1/2" style="height: 300px;" alt="...">
+                            </div>
+                            <!-- Item 2 -->
+                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                <img src="https://images.adsttc.com/media/images/5a58/a650/f197/cc1f/8600/0173/newsletter/S3_CDS--5.jpg?1515759173" class="absolute block w-full -translate-x-1/2 top-0 left-1/2" style="height: 300px;" alt="...">
+                            </div>
+                            <!-- Item 3 -->
+                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                <img src="/docs/images/carousel/carousel-3.svg" class="absolute block w-full -translate-x-1/2 top-0 left-1/2" style="height: 300px;" alt="...">
+                            </div>
+                            <!-- Item 4 -->
+                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                <img src="/docs/images/carousel/carousel-4.svg" class="absolute block w-full -translate-x-1/2 top-0 left-1/2" style="height: 300px;" alt="...">
+                            </div>
+                            <!-- Item 5 -->
+                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                <img src="/docs/images/carousel/carousel-5.svg" class="absolute block w-full -translate-x-1/2 top-0 left-1/2" style="height: 300px;" alt="...">
+                            </div>
+                        </div>
+                        <!-- Slider indicators -->
+                        <div class="absolute z-30 flex -translate-x-1/2 space-x-3 rtl:space-x-reverse bottom-5 left-1/2">
+                            <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
+                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
+                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
+                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4" data-carousel-slide-to="3"></button>
+                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 5" data-carousel-slide-to="4"></button>
+                        </div>
+                        <!-- Slider controls -->
+                        <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+                            <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                                <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
+                                </svg>
+                                <span class="sr-only">Previous</span>
+                            </span>
+                        </button>
+                        <button type="button" class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+                            <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                                <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+                                </svg>
+                                <span class="sr-only">Next</span>
+                            </span>
+                        </button>
+                    </div>
+
+                    <div>
+                        <a href="#">
+                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Ubicacion,Pais</h5>
+                        </a>
+                        <p class="font-normal text-gray-700 dark:text-gray-400">A # km de distancia</p>
+                        <p class="font-normal text-gray-700 dark:text-gray-400">De #tal_dia a #tal_dia #mes</p>
+                        <p class="text-gray-700 dark:text-gray-400" style="display: flex; justify-content: space-between; align-items: center;" ><strong>$16,000.00 MXN</strong>
+                            <a data-modal-toggle="authentication-modal" style="margin-left: auto; margin-right: 5px; background-color: rgb(0, 0, 0); color: rgb(255, 255, 255);" class="inline-flex items-center px-2 py-1 text-sm font-medium text-center text-white rounded-lg hover:bg-yellow-500 focus:ring-4 focus:outline-none focus:ring-yellow-400">
+                                Reservar
+                                <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                                    <path style="color: rgb(255, 255, 255);" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                                </svg>
+                            </a>
+                        </p>
+                    </div>
+                </div>
+                <div class="carta_margin" style="background-color: rgb(241 245 249)">
+                    <div id="indicators-carousel" class="relative" data-carousel="static">
+                        <!-- Carousel wrapper -->
+                        <div class="relative h-80 overflow-hidden rounded-t-lg" style="margin-top: 0px; height: 300px;">
+                            <!-- Item 1 -->
+                            <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
+                                <img src="https://images.adsttc.com/media/images/5a58/a650/f197/cc1f/8600/0173/newsletter/S3_CDS--5.jpg?1515759173" class="absolute block w-full -translate-x-1/2 top-0 left-1/2" style="height: 300px;" alt="...">
+                            </div>
+                            <!-- Item 2 -->
+                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                <img src="https://images.adsttc.com/media/images/5a58/a650/f197/cc1f/8600/0173/newsletter/S3_CDS--5.jpg?1515759173" class="absolute block w-full -translate-x-1/2 top-0 left-1/2" style="height: 300px;" alt="...">
+                            </div>
+                            <!-- Item 3 -->
+                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                <img src="/docs/images/carousel/carousel-3.svg" class="absolute block w-full -translate-x-1/2 top-0 left-1/2" style="height: 300px;" alt="...">
+                            </div>
+                            <!-- Item 4 -->
+                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                <img src="/docs/images/carousel/carousel-4.svg" class="absolute block w-full -translate-x-1/2 top-0 left-1/2" style="height: 300px;" alt="...">
+                            </div>
+                            <!-- Item 5 -->
+                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                <img src="/docs/images/carousel/carousel-5.svg" class="absolute block w-full -translate-x-1/2 top-0 left-1/2" style="height: 300px;" alt="...">
+                            </div>
+                        </div>
+                        <!-- Slider indicators -->
+                        <div class="absolute z-30 flex -translate-x-1/2 space-x-3 rtl:space-x-reverse bottom-5 left-1/2">
+                            <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
+                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
+                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
+                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4" data-carousel-slide-to="3"></button>
+                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 5" data-carousel-slide-to="4"></button>
+                        </div>
+                        <!-- Slider controls -->
+                        <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+                            <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                                <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
+                                </svg>
+                                <span class="sr-only">Previous</span>
+                            </span>
+                        </button>
+                        <button type="button" class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+                            <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                                <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+                                </svg>
+                                <span class="sr-only">Next</span>
+                            </span>
+                        </button>
+                    </div>
+
+                    <div>
+                        <a href="#">
+                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Ubicacion,Pais</h5>
+                        </a>
+                        <p class="font-normal text-gray-700 dark:text-gray-400">A # km de distancia</p>
+                        <p class="font-normal text-gray-700 dark:text-gray-400">De #tal_dia a #tal_dia #mes</p>
+                        <p class="text-gray-700 dark:text-gray-400" style="display: flex; justify-content: space-between; align-items: center;" ><strong>$16,000.00 MXN</strong>
+                            <a data-modal-toggle="authentication-modal" style="margin-left: auto; margin-right: 5px; background-color: rgb(0, 0, 0); color: rgb(255, 255, 255);" class="inline-flex items-center px-2 py-1 text-sm font-medium text-center text-white rounded-lg hover:bg-yellow-500 focus:ring-4 focus:outline-none focus:ring-yellow-400">
+                                Reservar
+                                <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                                    <path style="color: rgb(255, 255, 255);" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
                                 </svg>
                             </a>
                         </p>
@@ -549,29 +552,29 @@
                 </div>
             </div>
             <div class="row inline-flex">
-                <div class="carta_margin bg-white">
+                <div class="carta_margin" style="background-color: rgb(241 245 249)">
                     <div id="indicators-carousel" class="relative" data-carousel="static">
                         <!-- Carousel wrapper -->
-                        <div class="relative h-80 overflow-hidden rounded-lg">
+                        <div class="relative h-80 overflow-hidden rounded-t-lg" style="margin-top: 0px; height: 300px;">
                             <!-- Item 1 -->
                             <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
-                                <img src="https://images.adsttc.com/media/images/5a58/a650/f197/cc1f/8600/0173/newsletter/S3_CDS--5.jpg?1515759173" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" style="height: 300px;" alt="...">
+                                <img src="https://images.adsttc.com/media/images/5a58/a650/f197/cc1f/8600/0173/newsletter/S3_CDS--5.jpg?1515759173" class="absolute block w-full -translate-x-1/2 top-0 left-1/2" style="height: 300px;" alt="...">
                             </div>
                             <!-- Item 2 -->
                             <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                                <img src="https://images.adsttc.com/media/images/5a58/a650/f197/cc1f/8600/0173/newsletter/S3_CDS--5.jpg?1515759173" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" style="height: 300px;" alt="...">
+                                <img src="https://images.adsttc.com/media/images/5a58/a650/f197/cc1f/8600/0173/newsletter/S3_CDS--5.jpg?1515759173" class="absolute block w-full -translate-x-1/2 top-0 left-1/2" style="height: 300px;" alt="...">
                             </div>
                             <!-- Item 3 -->
                             <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                                <img src="/docs/images/carousel/carousel-3.svg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" style="height: 300px;" alt="...">
+                                <img src="/docs/images/carousel/carousel-3.svg" class="absolute block w-full -translate-x-1/2 top-0 left-1/2" style="height: 300px;" alt="...">
                             </div>
                             <!-- Item 4 -->
                             <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                                <img src="/docs/images/carousel/carousel-4.svg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" style="height: 300px;" alt="...">
+                                <img src="/docs/images/carousel/carousel-4.svg" class="absolute block w-full -translate-x-1/2 top-0 left-1/2" style="height: 300px;" alt="...">
                             </div>
                             <!-- Item 5 -->
                             <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                                <img src="/docs/images/carousel/carousel-5.svg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" style="height: 300px;" alt="...">
+                                <img src="/docs/images/carousel/carousel-5.svg" class="absolute block w-full -translate-x-1/2 top-0 left-1/2" style="height: 300px;" alt="...">
                             </div>
                         </div>
                         <!-- Slider indicators -->
@@ -600,6 +603,7 @@
                             </span>
                         </button>
                     </div>
+
                     <div>
                         <a href="#">
                             <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Ubicacion,Pais</h5>
@@ -607,38 +611,38 @@
                         <p class="font-normal text-gray-700 dark:text-gray-400">A # km de distancia</p>
                         <p class="font-normal text-gray-700 dark:text-gray-400">De #tal_dia a #tal_dia #mes</p>
                         <p class="text-gray-700 dark:text-gray-400" style="display: flex; justify-content: space-between; align-items: center;" ><strong>$16,000.00 MXN</strong>
-                            <a data-modal-toggle="authentication-modal" style="margin-left: auto;" class="inline-flex items-center px-2 py-1 text-sm font-medium text-center text-white bg-yellow-300 rounded-lg hover:bg-yellow-500 focus:ring-4 focus:outline-none focus:ring-yellow-400">
+                            <a data-modal-toggle="authentication-modal" style="margin-left: auto; margin-right: 5px; background-color: rgb(0, 0, 0); color: rgb(255, 255, 255);" class="inline-flex items-center px-2 py-1 text-sm font-medium text-center text-white rounded-lg hover:bg-yellow-500 focus:ring-4 focus:outline-none focus:ring-yellow-400">
                                 Reservar
                                 <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                                    <path style="color: rgb(255, 255, 255);" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
                                 </svg>
                             </a>
                         </p>
                     </div>
                 </div>
-                <div class="carta_margin bg-white">
+                <div class="carta_margin" style="background-color: rgb(241 245 249)">
                     <div id="indicators-carousel" class="relative" data-carousel="static">
                         <!-- Carousel wrapper -->
-                        <div class="relative h-80 overflow-hidden rounded-lg">
+                        <div class="relative h-80 overflow-hidden rounded-t-lg" style="margin-top: 0px; height: 300px;">
                             <!-- Item 1 -->
                             <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
-                                <img src="https://images.adsttc.com/media/images/5a58/a650/f197/cc1f/8600/0173/newsletter/S3_CDS--5.jpg?1515759173" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" style="height: 300px;" alt="...">
+                                <img src="https://images.adsttc.com/media/images/5a58/a650/f197/cc1f/8600/0173/newsletter/S3_CDS--5.jpg?1515759173" class="absolute block w-full -translate-x-1/2 top-0 left-1/2" style="height: 300px;" alt="...">
                             </div>
                             <!-- Item 2 -->
                             <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                                <img src="https://images.adsttc.com/media/images/5a58/a650/f197/cc1f/8600/0173/newsletter/S3_CDS--5.jpg?1515759173" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" style="height: 300px;" alt="...">
+                                <img src="https://images.adsttc.com/media/images/5a58/a650/f197/cc1f/8600/0173/newsletter/S3_CDS--5.jpg?1515759173" class="absolute block w-full -translate-x-1/2 top-0 left-1/2" style="height: 300px;" alt="...">
                             </div>
                             <!-- Item 3 -->
                             <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                                <img src="/docs/images/carousel/carousel-3.svg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" style="height: 300px;" alt="...">
+                                <img src="/docs/images/carousel/carousel-3.svg" class="absolute block w-full -translate-x-1/2 top-0 left-1/2" style="height: 300px;" alt="...">
                             </div>
                             <!-- Item 4 -->
                             <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                                <img src="/docs/images/carousel/carousel-4.svg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" style="height: 300px;" alt="...">
+                                <img src="/docs/images/carousel/carousel-4.svg" class="absolute block w-full -translate-x-1/2 top-0 left-1/2" style="height: 300px;" alt="...">
                             </div>
                             <!-- Item 5 -->
                             <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                                <img src="/docs/images/carousel/carousel-5.svg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" style="height: 300px;" alt="...">
+                                <img src="/docs/images/carousel/carousel-5.svg" class="absolute block w-full -translate-x-1/2 top-0 left-1/2" style="height: 300px;" alt="...">
                             </div>
                         </div>
                         <!-- Slider indicators -->
@@ -667,6 +671,7 @@
                             </span>
                         </button>
                     </div>
+
                     <div>
                         <a href="#">
                             <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Ubicacion,Pais</h5>
@@ -674,38 +679,38 @@
                         <p class="font-normal text-gray-700 dark:text-gray-400">A # km de distancia</p>
                         <p class="font-normal text-gray-700 dark:text-gray-400">De #tal_dia a #tal_dia #mes</p>
                         <p class="text-gray-700 dark:text-gray-400" style="display: flex; justify-content: space-between; align-items: center;" ><strong>$16,000.00 MXN</strong>
-                            <a data-modal-toggle="authentication-modal" style="margin-left: auto;" class="inline-flex items-center px-2 py-1 text-sm font-medium text-center text-white bg-yellow-300 rounded-lg hover:bg-yellow-500 focus:ring-4 focus:outline-none focus:ring-yellow-400">
+                            <a data-modal-toggle="authentication-modal" style="margin-left: auto; margin-right: 5px; background-color: rgb(0, 0, 0); color: rgb(255, 255, 255);" class="inline-flex items-center px-2 py-1 text-sm font-medium text-center text-white rounded-lg hover:bg-yellow-500 focus:ring-4 focus:outline-none focus:ring-yellow-400">
                                 Reservar
                                 <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                                    <path style="color: rgb(255, 255, 255);" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
                                 </svg>
                             </a>
                         </p>
                     </div>
                 </div>
-                <div class="carta_margin bg-white">
+                <div class="carta_margin" style="background-color: rgb(241 245 249)">
                     <div id="indicators-carousel" class="relative" data-carousel="static">
                         <!-- Carousel wrapper -->
-                        <div class="relative h-80 overflow-hidden rounded-lg">
+                        <div class="relative h-80 overflow-hidden rounded-t-lg" style="margin-top: 0px; height: 300px;">
                             <!-- Item 1 -->
                             <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
-                                <img src="https://images.adsttc.com/media/images/5a58/a650/f197/cc1f/8600/0173/newsletter/S3_CDS--5.jpg?1515759173" style="height: 300px;" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                                <img src="https://images.adsttc.com/media/images/5a58/a650/f197/cc1f/8600/0173/newsletter/S3_CDS--5.jpg?1515759173" class="absolute block w-full -translate-x-1/2 top-0 left-1/2" style="height: 300px;" alt="...">
                             </div>
                             <!-- Item 2 -->
                             <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                                <img src="https://images.adsttc.com/media/images/5a58/a650/f197/cc1f/8600/0173/newsletter/S3_CDS--5.jpg?1515759173" style="height: 300px;" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                                <img src="https://images.adsttc.com/media/images/5a58/a650/f197/cc1f/8600/0173/newsletter/S3_CDS--5.jpg?1515759173" class="absolute block w-full -translate-x-1/2 top-0 left-1/2" style="height: 300px;" alt="...">
                             </div>
                             <!-- Item 3 -->
                             <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                                <img src="/docs/images/carousel/carousel-3.svg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" style="height: 300px;" alt="...">
+                                <img src="/docs/images/carousel/carousel-3.svg" class="absolute block w-full -translate-x-1/2 top-0 left-1/2" style="height: 300px;" alt="...">
                             </div>
                             <!-- Item 4 -->
                             <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                                <img src="/docs/images/carousel/carousel-4.svg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" style="height: 300px;" alt="...">
+                                <img src="/docs/images/carousel/carousel-4.svg" class="absolute block w-full -translate-x-1/2 top-0 left-1/2" style="height: 300px;" alt="...">
                             </div>
                             <!-- Item 5 -->
                             <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                                <img src="/docs/images/carousel/carousel-5.svg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" style="height: 300px;" alt="...">
+                                <img src="/docs/images/carousel/carousel-5.svg" class="absolute block w-full -translate-x-1/2 top-0 left-1/2" style="height: 300px;" alt="...">
                             </div>
                         </div>
                         <!-- Slider indicators -->
@@ -734,6 +739,7 @@
                             </span>
                         </button>
                     </div>
+
                     <div>
                         <a href="#">
                             <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Ubicacion,Pais</h5>
@@ -741,38 +747,38 @@
                         <p class="font-normal text-gray-700 dark:text-gray-400">A # km de distancia</p>
                         <p class="font-normal text-gray-700 dark:text-gray-400">De #tal_dia a #tal_dia #mes</p>
                         <p class="text-gray-700 dark:text-gray-400" style="display: flex; justify-content: space-between; align-items: center;" ><strong>$16,000.00 MXN</strong>
-                            <a data-modal-toggle="authentication-modal" style="margin-left: auto;" class="inline-flex items-center px-2 py-1 text-sm font-medium text-center text-white bg-yellow-300 rounded-lg hover:bg-yellow-500 focus:ring-4 focus:outline-none focus:ring-yellow-400">
+                            <a data-modal-toggle="authentication-modal" style="margin-left: auto; margin-right: 5px; background-color: rgb(0, 0, 0); color: rgb(255, 255, 255);" class="inline-flex items-center px-2 py-1 text-sm font-medium text-center text-white rounded-lg hover:bg-yellow-500 focus:ring-4 focus:outline-none focus:ring-yellow-400">
                                 Reservar
                                 <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                                    <path style="color: rgb(255, 255, 255);" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
                                 </svg>
                             </a>
                         </p>
                     </div>
                 </div>
-                <div class="carta_margin bg-white">
+                <div class="carta_margin" style="background-color: rgb(241 245 249)">
                     <div id="indicators-carousel" class="relative" data-carousel="static">
                         <!-- Carousel wrapper -->
-                        <div class="relative h-80 overflow-hidden rounded-lg">
+                        <div class="relative h-80 overflow-hidden rounded-t-lg" style="margin-top: 0px; height: 300px;">
                             <!-- Item 1 -->
                             <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
-                                <img src="https://images.adsttc.com/media/images/5a58/a650/f197/cc1f/8600/0173/newsletter/S3_CDS--5.jpg?1515759173" style="height: 300px;" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                                <img src="https://images.adsttc.com/media/images/5a58/a650/f197/cc1f/8600/0173/newsletter/S3_CDS--5.jpg?1515759173" class="absolute block w-full -translate-x-1/2 top-0 left-1/2" style="height: 300px;" alt="...">
                             </div>
                             <!-- Item 2 -->
                             <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                                <img src="https://images.adsttc.com/media/images/5a58/a650/f197/cc1f/8600/0173/newsletter/S3_CDS--5.jpg?1515759173" style="height: 300px;" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                                <img src="https://images.adsttc.com/media/images/5a58/a650/f197/cc1f/8600/0173/newsletter/S3_CDS--5.jpg?1515759173" class="absolute block w-full -translate-x-1/2 top-0 left-1/2" style="height: 300px;" alt="...">
                             </div>
                             <!-- Item 3 -->
                             <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                                <img src="/docs/images/carousel/carousel-3.svg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" style="height: 300px;" alt="...">
+                                <img src="/docs/images/carousel/carousel-3.svg" class="absolute block w-full -translate-x-1/2 top-0 left-1/2" style="height: 300px;" alt="...">
                             </div>
                             <!-- Item 4 -->
                             <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                                <img src="/docs/images/carousel/carousel-4.svg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" style="height: 300px;" alt="...">
+                                <img src="/docs/images/carousel/carousel-4.svg" class="absolute block w-full -translate-x-1/2 top-0 left-1/2" style="height: 300px;" alt="...">
                             </div>
                             <!-- Item 5 -->
                             <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                                <img src="/docs/images/carousel/carousel-5.svg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" style="height: 300px;" alt="...">
+                                <img src="/docs/images/carousel/carousel-5.svg" class="absolute block w-full -translate-x-1/2 top-0 left-1/2" style="height: 300px;" alt="...">
                             </div>
                         </div>
                         <!-- Slider indicators -->
@@ -801,6 +807,7 @@
                             </span>
                         </button>
                     </div>
+
                     <div>
                         <a href="#">
                             <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Ubicacion,Pais</h5>
@@ -808,17 +815,16 @@
                         <p class="font-normal text-gray-700 dark:text-gray-400">A # km de distancia</p>
                         <p class="font-normal text-gray-700 dark:text-gray-400">De #tal_dia a #tal_dia #mes</p>
                         <p class="text-gray-700 dark:text-gray-400" style="display: flex; justify-content: space-between; align-items: center;" ><strong>$16,000.00 MXN</strong>
-                            <a data-modal-toggle="authentication-modal" style="margin-left: auto;" class="inline-flex items-center px-2 py-1 text-sm font-medium text-center text-white bg-yellow-300 rounded-lg hover:bg-yellow-500 focus:ring-4 focus:outline-none focus:ring-yellow-400">
+                            <a data-modal-toggle="authentication-modal" style="margin-left: auto; margin-right: 5px; background-color: rgb(0, 0, 0); color: rgb(255, 255, 255);" class="inline-flex items-center px-2 py-1 text-sm font-medium text-center text-white rounded-lg hover:bg-yellow-500 focus:ring-4 focus:outline-none focus:ring-yellow-400">
                                 Reservar
                                 <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                                    <path style="color: rgb(255, 255, 255);" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
                                 </svg>
                             </a>
                         </p>
                     </div>
                 </div>
             </div>
-            <br>
             <br>
             <br>
             <div style="text-align: center;">
