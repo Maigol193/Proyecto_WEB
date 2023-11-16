@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,19 +12,23 @@
             width: 290px;
             height: 420px;
         }
+
         .para_nav {
             z-index: 1000;
             background-color: white;
         }
+
         .para_gallery {
             margin-left: 90px;
             margin-right: 90px;
         }
+
         .para_titulo {
             margin-left: 120px;
             margin-right: 120px;
-            font-size:xx-large;
+            font-size: xx-large;
         }
+
         .para_carta_grande {
             min-width: 525px;
             max-width: 525px;
@@ -31,6 +36,7 @@
             max-height: 310px;
             margin-bottom: 10px;
         }
+
         .para_carta_pequeña {
             min-width: 260px;
             max-width: 260px;
@@ -38,10 +44,13 @@
             max-height: 150px;
             margin-bottom: 10px;
         }
+
         .grid-container {
-          display: grid;
-          grid-template-columns: repeat(3, 1fr); /* 3 columnas */
-          gap: 10px;  /* Espacio entre las celdas */
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            /* 3 columnas */
+            gap: 10px;
+            /* Espacio entre las celdas */
         }
     </style>
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
@@ -49,45 +58,62 @@
 
 <body>
     <header>
-        <nav style="z-index: 1200;" class="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600">
+        <nav style="z-index: 1200;"
+            class="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600">
             <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
                 <a href="home_loggeado.html" class="flex items-center space-x-3 rtl:space-x-reverse">
                     <img src="earthbnb.png" class="h-10" alt="EarthBnB™ Logo">
                 </a>
                 <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-        <!-- Modal toggle -->
-        <button id="dropdownUserAvatarButton" data-dropdown-toggle="dropdownAvatar" class="flex text-sm bg-gray-800 rounded-full md:me-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" type="button" style="background: none;">
-            <i class="fa-solid fa-globe fa-xl" style="color: #000000;"></i>
-        </button>
-            <!-- Dropdown menu -->
-            <div id="dropdownAvatar" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
-                <div class="px-4 py-3 text-sm text-gray-900 dark:text-white">
-                  <div>Miguel Torres</div>
-                  <div class="font-medium truncate">maigol@gmail.com</div>
-                </div>
-                <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownUserAvatarButton">
-                  <li>
-                    <a href="my_reservations.html" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">My Reservations</a>
-                  </li>
-                  <li>
-                    <a href="perfil.html" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Account</a>
-                  </li>
-                  <li>
-                    <a href="home_host.html" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Change to Host</a>
-                  </li>
-                </ul>
-                <div class="py-2">
-                  <a href="home.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign out</a>
-                </div>
-            </div>
-                <a class="nav-link active text-dark" role="button" data-bs-toggle="modal" data-bs-target="#modal_Login" href="#modal_Login" aria-current="page"></a>
-                    <button data-collapse-toggle="navbar-sticky" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-sticky" aria-expanded="false">
+                    <!-- Modal toggle -->
+                    <button id="dropdownUserAvatarButton" data-dropdown-toggle="dropdownAvatar"
+                        class="flex text-sm bg-gray-800 rounded-full md:me-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
+                        type="button" style="background: none;">
+                        <i class="fa-solid fa-globe fa-xl" style="color: #000000;"></i>
+                    </button>
+                    <!-- Dropdown menu -->
+                    <div id="dropdownAvatar"
+                        class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
+                        <div class="px-4 py-3 text-sm text-gray-900 dark:text-white">
+                            <div>Miguel Torres</div>
+                            <div class="font-medium truncate">maigol@gmail.com</div>
+                        </div>
+                        <ul class="py-2 text-sm text-gray-700 dark:text-gray-200"
+                            aria-labelledby="dropdownUserAvatarButton">
+                            <li>
+                                <a href="my_reservations.html"
+                                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">My
+                                    Reservations</a>
+                            </li>
+                            <li>
+                                <a href="perfil.html"
+                                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Account</a>
+                            </li>
+                            <li>
+                                <a href="home_host.html"
+                                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Change
+                                    to Host</a>
+                            </li>
+                        </ul>
+                        <div class="py-2">
+                            <a href="home.html"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign
+                                out</a>
+                        </div>
+                    </div>
+                    <a class="nav-link active text-dark" role="button" data-bs-toggle="modal"
+                        data-bs-target="#modal_Login" href="#modal_Login" aria-current="page"></a>
+                    <button data-collapse-toggle="navbar-sticky" type="button"
+                        class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                        aria-controls="navbar-sticky" aria-expanded="false">
                         <span class="sr-only">Open main menu</span>
-                        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+                        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 17 14">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M1 1h15M1 7h15M1 13h15" />
                         </svg>
                     </button>
-            </div>
+                </div>
         </nav>
     </header>
 
@@ -98,185 +124,259 @@
             <br>
             <div class="grid grid-cols-4 gap-2 para_gallery">
                 <div class="col-span-2 row-span-2">
-                    <img class="rounded-l-lg para_carta_grande" src="https://images.adsttc.com/media/images/5a58/a650/f197/cc1f/8600/0173/newsletter/S3_CDS--5.jpg?1515759173" alt="">
+                    <img class="rounded-l-lg para_carta_grande"
+                        src="https://images.adsttc.com/media/images/5a58/a650/f197/cc1f/8600/0173/newsletter/S3_CDS--5.jpg?1515759173"
+                        alt="">
                 </div>
                 <div class="row-span-1">
                     <div class="col-span-1">
-                        <img class="rounded-sm para_carta_pequeña" src="https://images.adsttc.com/media/images/5a58/a650/f197/cc1f/8600/0173/newsletter/S3_CDS--5.jpg?1515759173" alt="">
+                        <img class="rounded-sm para_carta_pequeña"
+                            src="https://images.adsttc.com/media/images/5a58/a650/f197/cc1f/8600/0173/newsletter/S3_CDS--5.jpg?1515759173"
+                            alt="">
                     </div>
                     <div class="col-span-1">
-                        <img class="rounded-sm para_carta_pequeña" src="https://images.adsttc.com/media/images/5a58/a650/f197/cc1f/8600/0173/newsletter/S3_CDS--5.jpg?1515759173" alt="">
+                        <img class="rounded-sm para_carta_pequeña"
+                            src="https://images.adsttc.com/media/images/5a58/a650/f197/cc1f/8600/0173/newsletter/S3_CDS--5.jpg?1515759173"
+                            alt="">
                     </div>
                 </div>
                 <div class="row-span-1">
                     <div class="col-span-1">
-                        <img class="rounded-r-lg para_carta_pequeña" src="https://images.adsttc.com/media/images/5a58/a650/f197/cc1f/8600/0173/newsletter/S3_CDS--5.jpg?1515759173" alt="">
+                        <img class="rounded-r-lg para_carta_pequeña"
+                            src="https://images.adsttc.com/media/images/5a58/a650/f197/cc1f/8600/0173/newsletter/S3_CDS--5.jpg?1515759173"
+                            alt="">
                     </div>
                     <div class="col-span-1">
-                        <img class="rounded-r-lg para_carta_pequeña" src="https://images.adsttc.com/media/images/5a58/a650/f197/cc1f/8600/0173/newsletter/S3_CDS--5.jpg?1515759173" alt="">
+                        <img class="rounded-r-lg para_carta_pequeña"
+                            src="https://images.adsttc.com/media/images/5a58/a650/f197/cc1f/8600/0173/newsletter/S3_CDS--5.jpg?1515759173"
+                            alt="">
                     </div>
                 </div>
             </div>
-            <h3 class="md:order-1" style="margin-left: 100px;margin-right: 100px;font-size:x-large;"><b>Alojamiento en la playa para una familia, en Puerto Vallarta</b></h3>
+            <h3 class="md:order-1" style="margin-left: 100px;margin-right: 100px;font-size:x-large;"><b>Alojamiento en
+                    la playa para una familia, en Puerto Vallarta</b></h3>
             <br>
             <div class="grid grid-cols-3 gap-2 para_gallery">
-                <div class="w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
-                <h5 class="mb-4 text-xl font-medium text-gray-500 dark:text-gray-400 flex justify-center">Datos del Host</h5>
-                <img src="userpng.png" alt="Host Image" class="center" style="width:150px;height:150px;margin-left:auto;margin-right: auto;">
-                <ul role="list" class="space-y-5 my-7">
-                <li class="flex items-center">
-                <svg class="flex-shrink-0 w-4 h-4 text-blue-600 dark:text-blue-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
-                </svg>
-                <span class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3">Patricio</span>
-                </li>
-                <li class="flex">
-                <svg class="flex-shrink-0 w-4 h-4 text-blue-600 dark:text-blue-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
-                </svg>
-                <span class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3">2 años de experiencia</span>
-                </li>
-                <li class="flex">
-                <svg class="flex-shrink-0 w-4 h-4 text-blue-600 dark:text-blue-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
-                </svg>
-                <span class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3">100 Evaluaciones</span>
-                </li>
-                <li class="flex">
-                    <svg class="flex-shrink-0 w-4 h-4 text-blue-600 dark:text-blue-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
-                    </svg>
-                    <span class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3">4.85 de Calificación</span>
-                </li>
-                <li class="flex">
-                    <svg class="flex-shrink-0 w-4 h-4 text-blue-600 dark:text-blue-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
-                    </svg>
-                    <span class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3">Vive en: Guadalajara, Jalisco</span>
-                </li>
-                </ul>
-                <button type="button" data-modal-target="message_to_host" data-modal-toggle="message_to_host" class="text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-200 dark:focus:ring-blue-900 font-medium rounded-lg text-sm px-5 py-2.5 inline-flex justify-center w-full text-center">Contacta al Host</button>
-                </div> 
+                <div
+                    class="w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
+                    <h5 class="mb-4 text-xl font-medium text-gray-500 dark:text-gray-400 flex justify-center">Datos del
+                        Host</h5>
+                    <img src="userpng.png" alt="Host Image" class="center"
+                        style="width:150px;height:150px;margin-left:auto;margin-right: auto;">
+                    <ul role="list" class="space-y-5 my-7">
+                        <li class="flex items-center">
+                            <svg class="flex-shrink-0 w-4 h-4 text-blue-600 dark:text-blue-500" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                <path
+                                    d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                            </svg>
+                            <span
+                                class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3">Patricio</span>
+                        </li>
+                        <li class="flex">
+                            <svg class="flex-shrink-0 w-4 h-4 text-blue-600 dark:text-blue-500" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                <path
+                                    d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                            </svg>
+                            <span class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3">2
+                                años de experiencia</span>
+                        </li>
+                        <li class="flex">
+                            <svg class="flex-shrink-0 w-4 h-4 text-blue-600 dark:text-blue-500" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                <path
+                                    d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                            </svg>
+                            <span class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3">100
+                                Evaluaciones</span>
+                        </li>
+                        <li class="flex">
+                            <svg class="flex-shrink-0 w-4 h-4 text-blue-600 dark:text-blue-500" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                <path
+                                    d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                            </svg>
+                            <span class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3">4.85
+                                de Calificación</span>
+                        </li>
+                        <li class="flex">
+                            <svg class="flex-shrink-0 w-4 h-4 text-blue-600 dark:text-blue-500" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                <path
+                                    d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                            </svg>
+                            <span class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3">Vive
+                                en: Guadalajara, Jalisco</span>
+                        </li>
+                    </ul>
+                    <button type="button" data-modal-target="message_to_host" data-modal-toggle="message_to_host"
+                        class="text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-200 dark:focus:ring-blue-900 font-medium rounded-lg text-sm px-5 py-2.5 inline-flex justify-center w-full text-center">Contacta
+                        al Host</button>
+                </div>
 
-                <div class="w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
-                    <h5 class="mb-4 text-xl font-medium text-gray-500 dark:text-gray-400 flex justify-center">Detalles del Alojamiento</h5>
+                <div
+                    class="w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
+                    <h5 class="mb-4 text-xl font-medium text-gray-500 dark:text-gray-400 flex justify-center">Detalles
+                        del Alojamiento</h5>
                     <ul role="list" class="space-y-5 my-7">
                         <li class="flex">
-                            <svg class="flex-shrink-0 w-4 h-4 text-blue-600 dark:text-blue-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
+                            <svg class="flex-shrink-0 w-4 h-4 text-blue-600 dark:text-blue-500" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                <path
+                                    d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
                             </svg>
-                            <span class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3">4 huespedes</span>
+                            <span class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3">4
+                                huespedes</span>
                         </li>
                         <li class="flex">
-                            <svg class="flex-shrink-0 w-4 h-4 text-blue-600 dark:text-blue-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
+                            <svg class="flex-shrink-0 w-4 h-4 text-blue-600 dark:text-blue-500" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                <path
+                                    d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
                             </svg>
-                            <span class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3">2 habitaciones</span>
+                            <span class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3">2
+                                habitaciones</span>
                         </li>
                         <li class="flex items-center">
-                            <svg class="flex-shrink-0 w-4 h-4 text-blue-600 dark:text-blue-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
+                            <svg class="flex-shrink-0 w-4 h-4 text-blue-600 dark:text-blue-500" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                <path
+                                    d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
                             </svg>
-                            <span class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3">2 camas</span>
+                            <span class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3">2
+                                camas</span>
                         </li>
                         <li class="flex">
-                            <svg class="flex-shrink-0 w-4 h-4 text-blue-600 dark:text-blue-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
+                            <svg class="flex-shrink-0 w-4 h-4 text-blue-600 dark:text-blue-500" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                <path
+                                    d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
                             </svg>
-                            <span class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3">1 baño</span>
+                            <span class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3">1
+                                baño</span>
                         </li>
-                    <li class="flex items-center">
-                        <svg class="flex-shrink-0 w-4 h-4 text-blue-600 dark:text-blue-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
-                        </svg>
-                        <span class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3">Llegada por cuenta propia</span>
-                    </li>
-                    <li class="flex">
-                        <svg class="flex-shrink-0 w-4 h-4 text-blue-600 dark:text-blue-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
-                        </svg>
-                        <span class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3">Cerradura en la puerta de la habitación</span>
-                    </li>
-                    <li class="flex">
-                        <svg class="flex-shrink-0 w-4 h-4 text-blue-600 dark:text-blue-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
-                        </svg>
-                        <span class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3">Wifi</span>
-                    </li>
-                    <li class="flex">
-                        <svg class="flex-shrink-0 w-4 h-4 text-blue-600 dark:text-blue-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
-                        </svg>
-                        <span class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3">Estacionamiento gratuito en la calle</span>
-                    </li>
-                    <li class="flex">
-                        <svg class="flex-shrink-0 w-4 h-4 text-blue-600 dark:text-blue-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
-                        </svg>
-                        <span class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3">Cancelación gratuita antes del 28 de noviembre</span>
-                    </li>
+                        <li class="flex items-center">
+                            <svg class="flex-shrink-0 w-4 h-4 text-blue-600 dark:text-blue-500" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                <path
+                                    d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                            </svg>
+                            <span
+                                class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3">Llegada
+                                por cuenta propia</span>
+                        </li>
+                        <li class="flex">
+                            <svg class="flex-shrink-0 w-4 h-4 text-blue-600 dark:text-blue-500" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                <path
+                                    d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                            </svg>
+                            <span
+                                class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3">Cerradura
+                                en la puerta de la habitación</span>
+                        </li>
+                        <li class="flex">
+                            <svg class="flex-shrink-0 w-4 h-4 text-blue-600 dark:text-blue-500" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                <path
+                                    d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                            </svg>
+                            <span
+                                class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3">Wifi</span>
+                        </li>
+                        <li class="flex">
+                            <svg class="flex-shrink-0 w-4 h-4 text-blue-600 dark:text-blue-500" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                <path
+                                    d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                            </svg>
+                            <span
+                                class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3">Estacionamiento
+                                gratuito en la calle</span>
+                        </li>
+                        <li class="flex">
+                            <svg class="flex-shrink-0 w-4 h-4 text-blue-600 dark:text-blue-500" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                <path
+                                    d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                            </svg>
+                            <span
+                                class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3">Cancelación
+                                gratuita antes del 28 de noviembre</span>
+                        </li>
                     </ul>
-                    </div>    
-                    <div class="w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
-                        <div class="flex items-baseline text-gray-900 dark:text-white flex justify-center">
-                            <span class="text-3xl font-semibold">$</span>
-                            <span class="text-4xl font-extrabold tracking-tight">1300</span>
-                            <span class="ms-1 text-xl font-normal text-gray-500 dark:text-gray-400">/noche</span>
-                        </div>
-                        <ul role="list" class="space-y-5 my-7">
-                            <li class="flex items-center justify-between">
-                                <label>Llegada</label>
-                                <input type="date" value="2023-11-12"> 
-                            </li>
-                            <li class="flex items-center justify-between">
-                                <label>Salida</label>
-                                <input type="date" value="2023-11-15"> 
-                            </li>
-                            <li class="flex items-center justify-between">
-                                <label>Huéspedes</label>
-                                <input type="number" value="1" min="1" class="w-16 text-center"> 
-                            </li>
-                            <li class="flex items-center justify-between">
-                                <p><u>$1,300 MXN x 3 noches</u></p>
-                                <p>$3,900 MXN</p>
-                            </li>
-                            <li class="flex items-center justify-between">
-                                <p><u>Tarifa de limpieza</u></p>
-                                <p>$150 MXN</p>
-                            </li>
-                            <li class="flex items-center justify-between">
-                                <p><u>Tarifa por servicio</u></p>
-                                <p>$1,600 MXN</p>
-                            </li>
-                            <li class="flex items-center justify-between">
-                                <p><b>Total</b></p>
-                                <p><b>$5,650 MXN</b></p>
-                            </li>
-                        </ul>
-                        <button type="button" data-modal-target="reservation_confirmed" data-modal-toggle="reservation_confirmed" class="text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-200 dark:focus:ring-blue-900 font-medium rounded-lg text-sm px-5 py-2.5 inline-flex justify-center w-full text-center">Reservar</button>
-                    </div>                    
+                </div>
+                <div
+                    class="w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
+                    <div class="flex items-baseline text-gray-900 dark:text-white flex justify-center">
+                        <span class="text-3xl font-semibold">$</span>
+                        <span class="text-4xl font-extrabold tracking-tight">1300</span>
+                        <span class="ms-1 text-xl font-normal text-gray-500 dark:text-gray-400">/noche</span>
+                    </div>
+                    <ul role="list" class="space-y-5 my-7">
+                        <li class="flex items-center justify-between">
+                            <label>Llegada</label>
+                            <input type="date" value="2023-11-12">
+                        </li>
+                        <li class="flex items-center justify-between">
+                            <label>Salida</label>
+                            <input type="date" value="2023-11-15">
+                        </li>
+                        <li class="flex items-center justify-between">
+                            <label>Huéspedes</label>
+                            <input type="number" value="1" min="1" class="w-16 text-center">
+                        </li>
+                        <li class="flex items-center justify-between">
+                            <p><u>$1,300 MXN x 3 noches</u></p>
+                            <p>$3,900 MXN</p>
+                        </li>
+                        <li class="flex items-center justify-between">
+                            <p><u>Tarifa de limpieza</u></p>
+                            <p>$150 MXN</p>
+                        </li>
+                        <li class="flex items-center justify-between">
+                            <p><u>Tarifa por servicio</u></p>
+                            <p>$1,600 MXN</p>
+                        </li>
+                        <li class="flex items-center justify-between">
+                            <p><b>Total</b></p>
+                            <p><b>$5,650 MXN</b></p>
+                        </li>
+                    </ul>
+                    <button type="button" data-modal-target="reservation_confirmed"
+                        data-modal-toggle="reservation_confirmed"
+                        class="text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-200 dark:focus:ring-blue-900 font-medium rounded-lg text-sm px-5 py-2.5 inline-flex justify-center w-full text-center">Reservar</button>
+                </div>
             </div>
         </div>
-        <div id="message_to_host" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+        <div id="message_to_host" tabindex="-1" aria-hidden="true"
+            class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
             <div class="relative p-4 w-full max-w-md max-h-full">
                 <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
                     <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
                         <h4 class="text-xl font-semibold text-gray-900 dark:text-white flex justify-center w-full">
                             Escribe tu mensaje
-                        </h4>                  
+                        </h4>
                     </div>
                     <div class="p-4 md:p-5">
                         <form class="space-y-4" action="#">
-                            <textarea id="message" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Escribe tu duda aquí..." aria-valuetext=""></textarea>
-                            <button type="reset" data-modal-hide="message_to_host" class="mx-auto block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">
+                            <textarea id="message" rows="4"
+                                class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                placeholder="Escribe tu duda aquí..." aria-valuetext=""></textarea>
+                            <button type="reset" data-modal-hide="message_to_host"
+                                class="mx-auto block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                                type="button">
                                 Enviar
                             </button>
                         </form>
                     </div>
                 </div>
             </div>
-        </div> 
-        <div id="reservation_confirmed" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full" onfocusout="window.location.href='home_loggeado.html'">
+        </div>
+        <div id="reservation_confirmed" tabindex="-1" aria-hidden="true"
+            class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full"
+            onfocusout="window.location.href='home_loggeado.html'">
             <div class="relative p-4 w-full max-w-md max-h-full">
                 <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
                     <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
@@ -286,40 +386,46 @@
                     </div>
                     <div class="p-4 md:p-5">
                         <form class="space-y-4" action="#">
-                            <img src="check.png" alt="Check" class="center" style="width:125px;height:125px;margin-left:auto;margin-right: auto;">
+                            <img src="check.png" alt="Check" class="center"
+                                style="width:125px;height:125px;margin-left:auto;margin-right: auto;">
                             <h5>Usted será redireccionado al inicio, gracias por usar nuestra plataforma!</h5>
-                            <button onclick="window.location.href='home_loggeado.html'" type="reset" data-modal-hide="reservation_confirmed" class="mx-auto block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">
+                            <button onclick="window.location.href='home_loggeado.html'" type="reset"
+                                data-modal-hide="reservation_confirmed"
+                                class="mx-auto block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                                type="button">
                                 Aceptar
                             </button>
                         </form>
                     </div>
                 </div>
             </div>
-        </div>        
+        </div>
     </main>
-    
-<footer class="bg-white rounded-lg shadow m-4 dark:bg-gray-800">
-    <div class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
-      <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 <a href="#" class="hover:underline">EarthBnB™</a>. All Rights Reserved.
-    </span>
-    <ul class="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0">
-        <li>
-            <a href="#" class="hover:underline me-4 md:me-6">About</a>
-        </li>
-        <li>
-            <a href="#" class="hover:underline me-4 md:me-6">Privacy Policy</a>
-        </li>
-        <li>
-            <a href="#" class="hover:underline me-4 md:me-6">Licensing</a>
-        </li>
-        <li>
-            <a href="#" class="hover:underline">Contact</a>
-        </li>
-    </ul>
-    </div>
-</footer>
-<script src="https://kit.fontawesome.com/8627f7a409.js" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.1.1/flowbite.min.js"></script>
+
+    <footer class="rounded-lg shadow m-4 dark:bg-gray-800" style="background-color: rgb(241 245 249);">
+        <div class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
+            <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 <a href="#"
+                    class="hover:underline">EarthBnB™</a>. All Rights Reserved.
+            </span>
+            <ul class="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0">
+                <li>
+                    <a href="https://www.airbnb.mx/about/company-details" class="hover:underline me-4 md:me-6">About</a>
+                </li>
+                <li>
+                    <a href="https://www.airbnb.mx/help/article/2855" class="hover:underline me-4 md:me-6">Privacy
+                        Policy</a>
+                </li>
+                <li>
+                    <a href="https://www.airbnb.mx/help/article/2855" class="hover:underline me-4 md:me-6">Licensing</a>
+                </li>
+                <li>
+                    <a href="https://www.airbnb.mx/help/?audience=guest" class="hover:underline">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+    <script src="https://kit.fontawesome.com/8627f7a409.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.1.1/flowbite.min.js"></script>
 </body>
 
 </html>

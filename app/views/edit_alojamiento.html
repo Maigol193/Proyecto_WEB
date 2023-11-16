@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,19 +12,23 @@
             width: 290px;
             height: 420px;
         }
+
         .para_nav {
             z-index: 1000;
             background-color: white;
         }
+
         .para_gallery {
             margin-left: 90px;
             margin-right: 90px;
         }
+
         .para_titulo {
             margin-left: 120px;
             margin-right: 120px;
-            font-size:xx-large;
+            font-size: xx-large;
         }
+
         .para_carta_grande {
             min-width: 525px;
             max-width: 525px;
@@ -31,6 +36,7 @@
             max-height: 310px;
             margin-bottom: 10px;
         }
+
         .para_carta_pequeña {
             min-width: 260px;
             max-width: 260px;
@@ -38,11 +44,15 @@
             max-height: 150px;
             margin-bottom: 10px;
         }
+
         .grid-container {
-          display: grid;
-          grid-template-columns: repeat(3, 1fr); /* 3 columnas */
-          gap: 10px;  /* Espacio entre las celdas */
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            /* 3 columnas */
+            gap: 10px;
+            /* Espacio entre las celdas */
         }
+
         .input:invalid {
             border: 1px solid red;
         }
@@ -52,37 +62,51 @@
 
 <body>
     <header>
-        <nav style="z-index: 1200;" class="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600">
+        <nav style="z-index: 1200;"
+            class="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600">
             <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
                 <a href="home_host.html" class="flex items-center space-x-3 rtl:space-x-reverse">
                     <img src="earthbnb.png" class="h-10" alt="Flowbite Logo">
                 </a>
                 <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-        <!-- Modal toggle -->
-        <button id="dropdownUserAvatarButton" data-dropdown-toggle="dropdownAvatar" class="flex text-sm bg-gray-800 rounded-full md:me-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" type="button" style="background: none;">
-            <i class="fa-solid fa-globe fa-xl" style="color: #000000;"></i>
-        </button>
-            <!-- Dropdown menu -->
-            <div id="dropdownAvatar" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
-                <div class="px-4 py-3 text-sm text-gray-900 dark:text-white">
-                  <div>Miguel Torres</div>
-                  <div class="font-medium truncate">maigol@gmail.com</div>
-                </div>
-                <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownUserAvatarButton">
-                  <li>
-                    <a href="home_loggeado.html" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Change to User</a>
-                  </li>
-                </ul>
-                <div class="py-2">
-                  <a href="home.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign out</a>
-                </div>
-            </div>
+                    <!-- Modal toggle -->
+                    <button id="dropdownUserAvatarButton" data-dropdown-toggle="dropdownAvatar"
+                        class="flex text-sm bg-gray-800 rounded-full md:me-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
+                        type="button" style="background: none;">
+                        <i class="fa-solid fa-globe fa-xl" style="color: #000000;"></i>
+                    </button>
+                    <!-- Dropdown menu -->
+                    <div id="dropdownAvatar"
+                        class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
+                        <div class="px-4 py-3 text-sm text-gray-900 dark:text-white">
+                            <div>Miguel Torres</div>
+                            <div class="font-medium truncate">maigol@gmail.com</div>
+                        </div>
+                        <ul class="py-2 text-sm text-gray-700 dark:text-gray-200"
+                            aria-labelledby="dropdownUserAvatarButton">
+                            <li>
+                                <a href="home_loggeado.html"
+                                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Change
+                                    to User</a>
+                            </li>
+                        </ul>
+                        <div class="py-2">
+                            <a href="home.html"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign
+                                out</a>
+                        </div>
+                    </div>
 
-                <a class="nav-link active text-dark" role="button" data-bs-toggle="modal" data-bs-target="#modal_Login" href="#modal_Login" aria-current="page"></a>
-                    <button data-collapse-toggle="navbar-sticky" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-sticky" aria-expanded="false">
+                    <a class="nav-link active text-dark" role="button" data-bs-toggle="modal"
+                        data-bs-target="#modal_Login" href="#modal_Login" aria-current="page"></a>
+                    <button data-collapse-toggle="navbar-sticky" type="button"
+                        class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                        aria-controls="navbar-sticky" aria-expanded="false">
                         <span class="sr-only">Open main menu</span>
-                        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+                        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 17 14">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M1 1h15M1 7h15M1 13h15" />
                         </svg>
                     </button>
                 </div>
@@ -94,218 +118,342 @@
         <div id="inicio-body" style="margin-top: 75px; padding: 10px;">
             <div>
                 <form>
-                    <div style="margin-top: 20px; margin-left: 70px; margin-right: 70px; padding: 30px;" class="border rounded-lg border-gray-300">
+                    <div style="margin-top: 20px; margin-left: 70px; margin-right: 70px; padding: 30px;"
+                        class="border rounded-lg border-gray-300">
                         <h10 style="font-size: larger;"><b>Detalles sobre el alojamiento</b></h10>
-                    <div style="margin-top: 30px;" class="grid gap-6 mb-6 md:grid-cols-2">
-                        <div>
-                            <label for="first_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Titulo</label>
-                            <input type="text" id="first_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value="Casa de Playa" required>
-                        </div>
-                        <div>
-                            <label for="last_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Imagen 1</label>
-                            <input type="text" id="last_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value="https://images.adsttc.com/media/images/5a58/a650/f197/cc1f/8600/0173/newsletter/S3_CDS--5.jpg?1515759173" required>
-                        </div>
-                        <div>
-                            <label for="company" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Ubicacion</label>
-                            <input type="text" id="company" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value="Ubicacion" required>
-                        </div>  
-                        <div>
-                            <label for="phone" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Imagen 2</label>
-                            <input type="text" id="phone" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value="https://images.adsttc.com/media/images/5a58/a650/f197/cc1f/8600/0173/newsletter/S3_CDS--5.jpg?1515759173" required>
-                        </div>
-                        <div>
-                            <label for="website" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Baños</label>
-                            <input type="number" min="0" id="website" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value="1" required>
-                        </div>
-                        <div>
-                            <label for="visitors" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Imagen 3</label>
-                            <input type="text" id="visitors" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value="https://images.adsttc.com/media/images/5a58/a650/f197/cc1f/8600/0173/newsletter/S3_CDS--5.jpg?1515759173" required>
-                        </div>
-                        <div>
-                            <label for="website" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Habitaciones</label>
-                            <input type="number" min="0" id="website" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value="1" required>
-                        </div>
-                        <div>
-                            <label for="visitors" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Imagen 4</label>
-                            <input type="text" id="visitors" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value="https://images.adsttc.com/media/images/5a58/a650/f197/cc1f/8600/0173/newsletter/S3_CDS--5.jpg?1515759173" required>
-                        </div>
-                        <div>
-                            <label for="website" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Huespedes</label>
-                            <input type="number" min="0" id="website" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value="4" required>
-                        </div>
-                        <div>
-                            <label for="visitors" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Imagen 5</label>
-                            <input type="text" id="visitors" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value="https://images.adsttc.com/media/images/5a58/a650/f197/cc1f/8600/0173/newsletter/S3_CDS--5.jpg?1515759173" required>
-                        </div>
-                        <div>
-                            <label for="website" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Camas</label>
-                            <input type="number" min="0" id="website" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value="2" required>
-                        </div>
-                        <div>
-                            <label for="visitors" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Precio por noche</label>
-                            <input type="text" id="visitors" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value="$1000 MXN" required>
-                        </div>    
-                        <div>
-                            <p class="font-semibold text-gray-900">Categorias</p>
-                            <p style="font-size: medium;">¿Que tipo de alojamiento es?</p>
-                            <br>
-                            <ul class="w-48 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white">
-                                <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
-                                    <div class="flex items-center ps-3">
-                                        <input id="vue-checkbox" type="checkbox" checked value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
-                                        <label for="vue-checkbox" class="w-full py-3 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Playa</label>
-                                    </div>
-                                </li>
-                                <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
-                                    <div class="flex items-center ps-3">
-                                        <input id="react-checkbox" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
-                                        <label for="react-checkbox" class="w-full py-3 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Ciudad</label>
-                                    </div>
-                                </li>
-                                <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
-                                    <div class="flex items-center ps-3">
-                                        <input id="react-checkbox" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
-                                        <label for="react-checkbox" class="w-full py-3 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Lago</label>
-                                    </div>
-                                </li>
-                                <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
-                                    <div class="flex items-center ps-3">
-                                        <input id="react-checkbox" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
-                                        <label for="react-checkbox" class="w-full py-3 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Tropical</label>
-                                    </div>
-                                </li>
-                                <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
-                                    <div class="flex items-center ps-3">
-                                        <input id="react-checkbox" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
-                                        <label for="react-checkbox" class="w-full py-3 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Casa de campo</label>
-                                    </div>
-                                </li>
-                                <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
-                                    <div class="flex items-center ps-3">
-                                        <input id="react-checkbox" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
-                                        <label for="react-checkbox" class="w-full py-3 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Camping</label>
-                                    </div>
-                                </li>
-                                <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
-                                    <div class="flex items-center ps-3">
-                                        <input id="react-checkbox" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
-                                        <label for="react-checkbox" class="w-full py-3 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Barcos</label>
-                                    </div>
-                                </li>
-                                <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
-                                    <div class="flex items-center ps-3">
-                                        <input id="react-checkbox" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
-                                        <label for="react-checkbox" class="w-full py-3 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Deluxe</label>
-                                    </div>
-                                </li>
-                                <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
-                                    <div class="flex items-center ps-3">
-                                        <input id="react-checkbox" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
-                                        <label for="react-checkbox" class="w-full py-3 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Rancho</label>
-                                    </div>
-                                </li>
-                                <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
-                                    <div class="flex items-center ps-3">
-                                        <input id="angular-checkbox" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
-                                        <label for="angular-checkbox" class="w-full py-3 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Alberca</label>
-                                    </div>
-                                </li>
-                                <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
-                                    <div class="flex items-center ps-3">
-                                        <input id="laravel-checkbox" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
-                                        <label for="laravel-checkbox" class="w-full py-3 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Montaña</label>
-                                    </div>
-                                </li>
-                                <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
-                                    <div class="flex items-center ps-3">
-                                        <input id="react-checkbox" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
-                                        <label for="react-checkbox" class="w-full py-3 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Populares</label>
-                                    </div>
-                                </li>
-                            </ul>
+                        <div style="margin-top: 30px;" class="grid gap-6 mb-6 md:grid-cols-2">
+                            <div>
+                                <label for="first_name"
+                                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Titulo</label>
+                                <input type="text" id="first_name"
+                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                    value="Casa de Playa" required>
                             </div>
                             <div>
-                                <p style="margin-bottom: 5px;" class="font-semibold text-gray-900">Seleccione el estado de su alojamiento</p>
-                                <label for="search-dropdown" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Your Email</label>
-                                <button id="dropdown-button" data-dropdown-toggle="dropdown" class="flex-shrink-0 z-10 inline-flex items-center py-2.5 px-5 text-sm font-medium text-center text-gray-900 bg-gray-100 border border-gray-300 rounded-lg hover:bg-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100" type="button">Jalisco<svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
-                                </svg></button>
-                                <div id="dropdown" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
-                                    <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdown-button">
-                                    <li>
-                                        <button type="button" class="inline-flex w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Jalisco</button>
+                                <label for="last_name"
+                                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Imagen
+                                    1</label>
+                                <input type="text" id="last_name"
+                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                    value="https://images.adsttc.com/media/images/5a58/a650/f197/cc1f/8600/0173/newsletter/S3_CDS--5.jpg?1515759173"
+                                    required>
+                            </div>
+                            <div>
+                                <label for="company"
+                                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Ubicacion</label>
+                                <input type="text" id="company"
+                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                    value="Ubicacion" required>
+                            </div>
+                            <div>
+                                <label for="phone"
+                                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Imagen
+                                    2</label>
+                                <input type="text" id="phone"
+                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                    value="https://images.adsttc.com/media/images/5a58/a650/f197/cc1f/8600/0173/newsletter/S3_CDS--5.jpg?1515759173"
+                                    required>
+                            </div>
+                            <div>
+                                <label for="website"
+                                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Baños</label>
+                                <input type="number" min="0" id="website"
+                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                    value="1" required>
+                            </div>
+                            <div>
+                                <label for="visitors"
+                                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Imagen
+                                    3</label>
+                                <input type="text" id="visitors"
+                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                    value="https://images.adsttc.com/media/images/5a58/a650/f197/cc1f/8600/0173/newsletter/S3_CDS--5.jpg?1515759173"
+                                    required>
+                            </div>
+                            <div>
+                                <label for="website"
+                                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Habitaciones</label>
+                                <input type="number" min="0" id="website"
+                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                    value="1" required>
+                            </div>
+                            <div>
+                                <label for="visitors"
+                                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Imagen
+                                    4</label>
+                                <input type="text" id="visitors"
+                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                    value="https://images.adsttc.com/media/images/5a58/a650/f197/cc1f/8600/0173/newsletter/S3_CDS--5.jpg?1515759173"
+                                    required>
+                            </div>
+                            <div>
+                                <label for="website"
+                                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Huespedes</label>
+                                <input type="number" min="0" id="website"
+                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                    value="4" required>
+                            </div>
+                            <div>
+                                <label for="visitors"
+                                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Imagen
+                                    5</label>
+                                <input type="text" id="visitors"
+                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                    value="https://images.adsttc.com/media/images/5a58/a650/f197/cc1f/8600/0173/newsletter/S3_CDS--5.jpg?1515759173"
+                                    required>
+                            </div>
+                            <div>
+                                <label for="website"
+                                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Camas</label>
+                                <input type="number" min="0" id="website"
+                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                    value="2" required>
+                            </div>
+                            <div>
+                                <label for="visitors"
+                                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Precio por
+                                    noche</label>
+                                <input type="text" id="visitors"
+                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                    value="$1000 MXN" required>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-gray-900">Categorias</p>
+                                <p style="font-size: medium;">¿Que tipo de alojamiento es?</p>
+                                <br>
+                                <ul
+                                    class="w-48 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+                                    <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+                                        <div class="flex items-center ps-3">
+                                            <input id="vue-checkbox" type="checkbox" checked value=""
+                                                class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                            <label for="vue-checkbox"
+                                                class="w-full py-3 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Playa</label>
+                                        </div>
                                     </li>
-                                    <li>
-                                        <button type="button" class="inline-flex w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Nayarit</button>
+                                    <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+                                        <div class="flex items-center ps-3">
+                                            <input id="react-checkbox" type="checkbox" value=""
+                                                class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                            <label for="react-checkbox"
+                                                class="w-full py-3 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Ciudad</label>
+                                        </div>
                                     </li>
-                                    <li>
-                                        <button type="button" class="inline-flex w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">CDMX</button>
+                                    <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+                                        <div class="flex items-center ps-3">
+                                            <input id="react-checkbox" type="checkbox" value=""
+                                                class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                            <label for="react-checkbox"
+                                                class="w-full py-3 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Lago</label>
+                                        </div>
                                     </li>
-                                    <li>
-                                        <button type="button" class="inline-flex w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Aguascalientes</button>
+                                    <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+                                        <div class="flex items-center ps-3">
+                                            <input id="react-checkbox" type="checkbox" value=""
+                                                class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                            <label for="react-checkbox"
+                                                class="w-full py-3 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Tropical</label>
+                                        </div>
                                     </li>
-                                    <li>
-                                        <button type="button" class="inline-flex w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Puebla</button>
+                                    <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+                                        <div class="flex items-center ps-3">
+                                            <input id="react-checkbox" type="checkbox" value=""
+                                                class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                            <label for="react-checkbox"
+                                                class="w-full py-3 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Casa
+                                                de campo</label>
+                                        </div>
                                     </li>
-                                    <li>
-                                        <button type="button" class="inline-flex w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Oaxaca</button>
+                                    <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+                                        <div class="flex items-center ps-3">
+                                            <input id="react-checkbox" type="checkbox" value=""
+                                                class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                            <label for="react-checkbox"
+                                                class="w-full py-3 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Camping</label>
+                                        </div>
                                     </li>
-                                    <li>
-                                        <button type="button" class="inline-flex w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Colima</button>
+                                    <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+                                        <div class="flex items-center ps-3">
+                                            <input id="react-checkbox" type="checkbox" value=""
+                                                class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                            <label for="react-checkbox"
+                                                class="w-full py-3 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Barcos</label>
+                                        </div>
                                     </li>
+                                    <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+                                        <div class="flex items-center ps-3">
+                                            <input id="react-checkbox" type="checkbox" value=""
+                                                class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                            <label for="react-checkbox"
+                                                class="w-full py-3 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Deluxe</label>
+                                        </div>
+                                    </li>
+                                    <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+                                        <div class="flex items-center ps-3">
+                                            <input id="react-checkbox" type="checkbox" value=""
+                                                class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                            <label for="react-checkbox"
+                                                class="w-full py-3 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Rancho</label>
+                                        </div>
+                                    </li>
+                                    <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+                                        <div class="flex items-center ps-3">
+                                            <input id="angular-checkbox" type="checkbox" value=""
+                                                class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                            <label for="angular-checkbox"
+                                                class="w-full py-3 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Alberca</label>
+                                        </div>
+                                    </li>
+                                    <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+                                        <div class="flex items-center ps-3">
+                                            <input id="laravel-checkbox" type="checkbox" value=""
+                                                class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                            <label for="laravel-checkbox"
+                                                class="w-full py-3 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Montaña</label>
+                                        </div>
+                                    </li>
+                                    <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+                                        <div class="flex items-center ps-3">
+                                            <input id="react-checkbox" type="checkbox" value=""
+                                                class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                            <label for="react-checkbox"
+                                                class="w-full py-3 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Populares</label>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div>
+                                <p style="margin-bottom: 5px;" class="font-semibold text-gray-900">Seleccione el estado
+                                    de su alojamiento</p>
+                                <label for="search-dropdown"
+                                    class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Your
+                                    Email</label>
+                                <button id="dropdown-button" data-dropdown-toggle="dropdown"
+                                    class="flex-shrink-0 z-10 inline-flex items-center py-2.5 px-5 text-sm font-medium text-center text-gray-900 bg-gray-100 border border-gray-300 rounded-lg hover:bg-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100"
+                                    type="button">Jalisco<svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true"
+                                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2" d="m1 1 4 4 4-4" />
+                                    </svg></button>
+                                <div id="dropdown"
+                                    class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
+                                    <ul class="py-2 text-sm text-gray-700 dark:text-gray-200"
+                                        aria-labelledby="dropdown-button">
+                                        <li>
+                                            <button type="button"
+                                                class="inline-flex w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Jalisco</button>
+                                        </li>
+                                        <li>
+                                            <button type="button"
+                                                class="inline-flex w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Nayarit</button>
+                                        </li>
+                                        <li>
+                                            <button type="button"
+                                                class="inline-flex w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">CDMX</button>
+                                        </li>
+                                        <li>
+                                            <button type="button"
+                                                class="inline-flex w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Aguascalientes</button>
+                                        </li>
+                                        <li>
+                                            <button type="button"
+                                                class="inline-flex w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Puebla</button>
+                                        </li>
+                                        <li>
+                                            <button type="button"
+                                                class="inline-flex w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Oaxaca</button>
+                                        </li>
+                                        <li>
+                                            <button type="button"
+                                                class="inline-flex w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Colima</button>
+                                        </li>
                                     </ul>
-                                </div>  
+                                </div>
                                 <br>
                                 <br>
-                                <div class="w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
-                                    <h5 class="mb-4 text-xl font-medium text-gray-500 dark:text-gray-400 flex justify-center">Datos del Host</h5>
-                                    <img src="userpng.png" alt="Host Image" class="center" style="width:150px;height:150px;margin-left:auto;margin-right: auto;">
+                                <div
+                                    class="w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
+                                    <h5
+                                        class="mb-4 text-xl font-medium text-gray-500 dark:text-gray-400 flex justify-center">
+                                        Datos del Host</h5>
+                                    <img src="userpng.png" alt="Host Image" class="center"
+                                        style="width:150px;height:150px;margin-left:auto;margin-right: auto;">
                                     <ul role="list" class="space-y-5 my-7">
-                                    <li class="flex items-center">
-                                    <svg class="flex-shrink-0 w-4 h-4 text-blue-600 dark:text-blue-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                                    <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
-                                    </svg>
-                                    <span class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3">Patricio</span>
-                                    </li>
-                                    <li class="flex">
-                                    <svg class="flex-shrink-0 w-4 h-4 text-blue-600 dark:text-blue-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                                    <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
-                                    </svg>
-                                    <span class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3">2 años de experiencia</span>
-                                    </li>
-                                    <li class="flex">
-                                    <svg class="flex-shrink-0 w-4 h-4 text-blue-600 dark:text-blue-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                                    <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
-                                    </svg>
-                                    <span class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3">100 Evaluaciones</span>
-                                    </li>
-                                    <li class="flex">
-                                        <svg class="flex-shrink-0 w-4 h-4 text-blue-600 dark:text-blue-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                                        <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
-                                        </svg>
-                                        <span class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3">4.85 de Calificación</span>
-                                    </li>
-                                    <li class="flex">
-                                        <svg class="flex-shrink-0 w-4 h-4 text-blue-600 dark:text-blue-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                                        <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
-                                        </svg>
-                                        <span class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3">Vive en: Guadalajara, Jalisco</span>
-                                    </li>
+                                        <li class="flex items-center">
+                                            <svg class="flex-shrink-0 w-4 h-4 text-blue-600 dark:text-blue-500"
+                                                aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                                fill="currentColor" viewBox="0 0 20 20">
+                                                <path
+                                                    d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                                            </svg>
+                                            <span
+                                                class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3">Patricio</span>
+                                        </li>
+                                        <li class="flex">
+                                            <svg class="flex-shrink-0 w-4 h-4 text-blue-600 dark:text-blue-500"
+                                                aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                                fill="currentColor" viewBox="0 0 20 20">
+                                                <path
+                                                    d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                                            </svg>
+                                            <span
+                                                class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3">2
+                                                años de experiencia</span>
+                                        </li>
+                                        <li class="flex">
+                                            <svg class="flex-shrink-0 w-4 h-4 text-blue-600 dark:text-blue-500"
+                                                aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                                fill="currentColor" viewBox="0 0 20 20">
+                                                <path
+                                                    d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                                            </svg>
+                                            <span
+                                                class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3">100
+                                                Evaluaciones</span>
+                                        </li>
+                                        <li class="flex">
+                                            <svg class="flex-shrink-0 w-4 h-4 text-blue-600 dark:text-blue-500"
+                                                aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                                fill="currentColor" viewBox="0 0 20 20">
+                                                <path
+                                                    d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                                            </svg>
+                                            <span
+                                                class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3">4.85
+                                                de Calificación</span>
+                                        </li>
+                                        <li class="flex">
+                                            <svg class="flex-shrink-0 w-4 h-4 text-blue-600 dark:text-blue-500"
+                                                aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                                fill="currentColor" viewBox="0 0 20 20">
+                                                <path
+                                                    d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                                            </svg>
+                                            <span
+                                                class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3">Vive
+                                                en: Guadalajara, Jalisco</span>
+                                        </li>
                                     </ul>
-                                    </div> 
+                                </div>
                             </div>
                         </div>
                         <div class="mb-6">
-                            <label for="large-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Descripcion</label>
-                            <input type="text" id="large-input" class="block w-full p-4 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-md focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value="Alojamiento en la playa para una familia, en Puerto Vallarta" required>
+                            <label for="large-input"
+                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Descripcion</label>
+                            <input type="text" id="large-input"
+                                class="block w-full p-4 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-md focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                value="Alojamiento en la playa para una familia, en Puerto Vallarta" required>
                         </div>
-                        
-                        <button type="button" data-modal-target="edit_alojamiento" data-modal-toggle="edit_alojamiento" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Editar</button>        
+
+                        <button type="button" data-modal-target="edit_alojamiento" data-modal-toggle="edit_alojamiento"
+                            class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Editar</button>
                     </div>
                 </form>
-            </div>  
+            </div>
         </div>
-        <div id="edit_alojamiento" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full" onfocusout="window.location.href='home_host.html'">
+        <div id="edit_alojamiento" tabindex="-1" aria-hidden="true"
+            class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full"
+            onfocusout="window.location.href='home_host.html'">
             <div class="relative p-4 w-full max-w-md max-h-full">
                 <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
                     <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
@@ -315,9 +463,13 @@
                     </div>
                     <div class="p-4 md:p-5">
                         <form class="space-y-4" action="#">
-                            <img src="check.png" alt="Check" class="center" style="width:125px;height:125px;margin-left:auto;margin-right: auto;">
+                            <img src="check.png" alt="Check" class="center"
+                                style="width:125px;height:125px;margin-left:auto;margin-right: auto;">
                             <h5 style="margin-left: 70px;">Usted será redireccionado al inicio</h5>
-                            <button onclick="window.location.href='home_host.html'" type="reset" data-modal-hide="edit_alojamiento" class="mx-auto block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">
+                            <button onclick="window.location.href='home_host.html'" type="reset"
+                                data-modal-hide="edit_alojamiento"
+                                class="mx-auto block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                                type="button">
                                 Aceptar
                             </button>
                         </form>
@@ -326,29 +478,31 @@
             </div>
         </div>
     </main>
-    
-<footer class="bg-white rounded-lg shadow m-4 dark:bg-gray-800">
-    <div class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
-      <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 <a href="#" class="hover:underline">EarthBnB™</a>. All Rights Reserved.
-    </span>
-    <ul class="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0">
-        <li>
-            <a href="#" class="hover:underline me-4 md:me-6">About</a>
-        </li>
-        <li>
-            <a href="#" class="hover:underline me-4 md:me-6">Privacy Policy</a>
-        </li>
-        <li>
-            <a href="#" class="hover:underline me-4 md:me-6">Licensing</a>
-        </li>
-        <li>
-            <a href="#" class="hover:underline">Contact</a>
-        </li>
-    </ul>
-    </div>
-</footer>
-<script src="https://kit.fontawesome.com/8627f7a409.js" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.1.1/flowbite.min.js"></script>
+
+    <footer class="rounded-lg shadow m-4 dark:bg-gray-800" style="background-color: rgb(241 245 249);">
+        <div class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
+            <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 <a href="#"
+                    class="hover:underline">EarthBnB™</a>. All Rights Reserved.
+            </span>
+            <ul class="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0">
+                <li>
+                    <a href="https://www.airbnb.mx/about/company-details" class="hover:underline me-4 md:me-6">About</a>
+                </li>
+                <li>
+                    <a href="https://www.airbnb.mx/help/article/2855" class="hover:underline me-4 md:me-6">Privacy
+                        Policy</a>
+                </li>
+                <li>
+                    <a href="https://www.airbnb.mx/help/article/2855" class="hover:underline me-4 md:me-6">Licensing</a>
+                </li>
+                <li>
+                    <a href="https://www.airbnb.mx/help/?audience=guest" class="hover:underline">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+    <script src="https://kit.fontawesome.com/8627f7a409.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.1.1/flowbite.min.js"></script>
 </body>
 
 </html>
