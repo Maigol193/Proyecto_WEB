@@ -1,15 +1,17 @@
 const express = require('express');
 const cors = require('cors')
-const app = express();
-const port = 3000;
 const router = require('./app/controllers/router');
 
+const port = 3000;
+const app = express();
+
+app.use(cors({
+    methods: ['GET', 'POST', 'DELETE', 'UPDATE', 'PUT', 'PATCH']
+}));
+
 app.use(express.json());
-
-app.use(cors());
-
 app.use(router);
 
 app.listen(port, () =>{
-    console.log("Aplicacion de ejemplo corriendo en puerto "+ port)
+    console.log("EarthBnb corriendo en puerto "+ port)
 });

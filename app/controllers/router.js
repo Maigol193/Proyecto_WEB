@@ -1,7 +1,12 @@
 const express = require('express');
-const productRouter = require('../routes/products'); 
-const adminProductRouter = require('../routes/admin_products');
+
+const alojamientos = require('../routes/alojamientos'); 
+const reservacion = require('../routes/reservacion');
+const usuario = require('../routes/usuario');
+
 const router = express.Router();
+
+/*
 function validateAdmin(req, res, next) {
     const adminHeader = req.headers['x-auth'];
     if (adminHeader && adminHeader === 'admin') {
@@ -10,5 +15,10 @@ function validateAdmin(req, res, next) {
       res.status(403).json({ error: 'Acceso no autorizado' });
     }
   }
-router.use('/products',productRouter);
-router.use('/admin/products',validateAdmin,adminProductRouter);
+*/
+
+router.use('/reservacion',reservacion);
+router.use('/alojamientos',alojamientos);
+router.use('/usuario',usuario);
+
+module.exports = router;

@@ -96,7 +96,7 @@ class Usuario {
   }
   
  class Alojamiento {
-    constructor(uuid, host, titulo, descripcion, banos, camas, habitaciones, huespedes, categorias, imagenes, precioPorNoche, estado, reservaciones = []) {
+    constructor(uuid, host, titulo, descripcion, banos, camas, habitaciones, huespedes, categorias, imagenes = [], precioPorNoche, estado, reservaciones = []) {
       this._uuid = uuid;
       this._host = host;
       this._titulo = titulo;
@@ -313,7 +313,7 @@ class Reservacion {
     2,
     6,
     ["Familia", "Vistas"],
-    ["imagen1.jpg", "imagen2.jpg", "imagen3.jpg"],
+    ["imagen1.jpg", "imagen2.jpg", "imagen3.jpg", "imagen1.jpg", "imagen1.jpg"],
     100.0,
     "Disponible",
     []
