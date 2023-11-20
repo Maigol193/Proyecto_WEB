@@ -185,6 +185,7 @@ router.put('/add_alojamiento', (req,res) => {
     }
 });
 
+
 //PUT de reservaciones (para agregar)
 router.put('/add_reservacion', (req,res) => {
     let id = req.body.id,
@@ -206,4 +207,13 @@ router.put('/add_reservacion', (req,res) => {
     }
 });
 
+
+function add_alojamiento_to_User(id,ArrayAlojamientos){
+    Usuario.findByIdAndUpdate(id, ArrayAlojamientos, {new: true}).then((doc) => {
+        console.log("Alojamientos actualizado");
+        res.send(doc);
+    }).catch((err) => console.log(err));
+}
+
 module.exports = router;
+module.exports = add_alojamiento_to_User;

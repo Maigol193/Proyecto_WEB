@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const { default: mongoose } = require('mongoose');
+const add_alojamiento_to_User = require('./usuario');
 
 //Esquemas
 const alojamientoSchema = mongoose.Schema({
@@ -75,25 +76,22 @@ router.get('/get_filter') //GET por filtros
 router.post('/create',(req,res) => {
     let newAlojamiento = req.body;
     let id_host = req.body.host;
-    let alojamientos_actuales = req.body.alojamientos_actuales;
+    let alojamientos_actuales = {};
+    alojamientos_actuales.alojamientos = req.body.alojamientos_actuales;
     const aloj = Alojamiento(newAlojamiento);
     aloj.save().then(doc => {
         aloj_id = doc._id.toString();
-        alojamientos_actuales.push(aloj_id);
-        if(true){
-            Usuario.findByIdAndUpdate(id_host, alojamientos_actuales, {new: true}).then((updated) => {
-                res.status(200).send(updated);
-            }).catch((err) => {
-                console.error(err);
-                res.status(500).send('Error al actualizar el Usuario');
-            });
-        }
-    })
+        alojamientos_actuales.alojamientos.push(aloj_id);
+        console.log(alojamientos_actuales);
+        add_alojamiento_to_User(id_host,alojamientos_actuales);
+        res.status(200).send(doc);
+        })
     .catch(err => {
         console.error(err);
         res.status(500).send('Error al guardar el alojamiento');
     });
 }); //POST alojamientos
+
 
 router.put('/edit_alojamiento') //PUT de alojamiento
 
