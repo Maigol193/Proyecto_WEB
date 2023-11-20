@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const { default: mongoose } = require('mongoose');
 const add_alojamiento_to_User = require('./usuario');
+const delete_alojamiento_from_User = require('./usuario');
 
 //Esquemas
 const alojamientoSchema = mongoose.Schema({
@@ -140,8 +141,9 @@ router.put('/edit_alojamiento',(req,res)=>{
 
 router.delete('/delete_alojamiento',(req,res)=>{
     let id = req.body.id;
+    let host = req.body.host;
+    delete_alojamiento_from_User(host,id);
     Alojamiento.findByIdAndDelete(id).then((doc)=> {
-        console.log(doc);
         res.send(doc);
     }).catch((err)=>console.log(err));
 });
