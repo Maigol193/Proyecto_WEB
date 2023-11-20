@@ -41,7 +41,7 @@ const userSchema = mongoose.Schema({
 
 let Usuario = mongoose.model('usuarios',userSchema);
 
-router.get('/')
+router.get('/') //GET por email y correo
 
 router.post('/', (req,res) => {
     const newUser = req.body;
@@ -50,7 +50,13 @@ router.post('/', (req,res) => {
     user.save().then((doc) => console.log("Usuario creado: ") + doc);
 });
 
+router.put('/') //PUT general, del account
 
+router.delete('/') //DELETE de alojamientos
+
+router.delete('/') //DELETE de reservaciones
+
+//Agregar alojamientos
 router.put('/add_alojamiento', (req,res) => {
     
     let id = req.body.id,

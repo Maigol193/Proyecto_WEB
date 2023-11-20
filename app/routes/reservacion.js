@@ -35,6 +35,10 @@ const reservacionSchema = mongoose.Schema({
 
 let Reservacion = mongoose.model('reservaciones',reservacionSchema);
 
+router.get('/') //GET para reservaciones
 
+router.post('/') //POST de reservacion
+
+router.delete('/') //DELETE de reservacion
 
 module.exports = router;

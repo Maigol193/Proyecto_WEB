@@ -66,6 +66,14 @@ const alojamientoSchema = mongoose.Schema({
 
 let Alojamiento = mongoose.model('alojamientos',alojamientoSchema);
 
+router.get('/') //GET para todos
 
+router.get('/') //GET por filtros
+
+router.post('/') //POST alojamientos
+
+router.put('/') //PUT de alojamiento
+
+router.delete('/') //DELETE de alojamiento
 
 module.exports = router;
