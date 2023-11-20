@@ -61,7 +61,7 @@ router.get('/user', (req,res) => {
 router.post('/create', (req,res) => {
     const newUser = req.body;
     const user = Usuario(newUser);
-    user.save().then((doc) => console.log("Usuario creado: ") + doc);
+    user.save().then((doc) => res.send(doc));
 });
 
 //DELETE alojamiento siendo host
