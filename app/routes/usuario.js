@@ -63,8 +63,6 @@ router.put('/add_alojamiento', (req,res) => {
     console.log(newAlojamiento);
     console.log(alojamientos);
     
-        /*
-    
     alojamientos.push(newAlojamiento);
 
     object_to_update.alojamientos = alojamientos;
@@ -77,7 +75,6 @@ router.put('/add_alojamiento', (req,res) => {
             res.send(doc);
         }).catch((err) => console.log(err));
     }
-    */
 });
 
 module.exports = router;

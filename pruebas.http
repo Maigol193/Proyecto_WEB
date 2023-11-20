@@ -22,6 +22,6 @@ Content-Type: application/json
 
 {
     "id": "655ab5bd76d6c8f8ab3ff606",
-    "alojamiento": [12345, 67890],
+    "alojamientos": ["12345", "67890"],
     "newAlojamiento": "27498"
 }
