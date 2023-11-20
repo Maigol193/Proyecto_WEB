@@ -41,7 +41,7 @@ const userSchema = mongoose.Schema({
 
 let Usuario = mongoose.model('usuarios',userSchema);
 
-//GET usuario por email y correo
+//GET usuario por email y contraseña
 router.get('/user', (req,res) => {
     let email = req.body.email,
         password = req.body.password
@@ -59,11 +59,10 @@ router.get('/user', (req,res) => {
 router.post('/create', (req,res) => {
     const newUser = req.body;
     const user = Usuario(newUser);
-    //Guardamos el usuario en la BD (OJO, es asincrono)
     user.save().then((doc) => console.log("Usuario creado: ") + doc);
 });
 
-//DELETE alojamiento
+//DELETE alojamiento siendo host
 router.delete('/delete_alojamiento', (req,res) => {
     let id = req.body.id,
         toDelete = req.body.toDelete,
@@ -91,7 +90,7 @@ router.delete('/delete_alojamiento', (req,res) => {
     }
 });
 
-//DELETE reservación
+//DELETE reservación siendo usuario
 router.delete('/delete_reservacion', (req,res) => {
     let id = req.body.id,
         toDelete = req.body.toDelete,
@@ -163,7 +162,7 @@ router.put('/edit_account', (req,res) => {
     }
 });
 
-//PUT de alojamientos
+//PUT de alojamientos (para aregar)
 router.put('/add_alojamiento', (req,res) => {
     let id = req.body.id,
         newAlojamiento = req.body.newAlojamiento,
@@ -184,7 +183,7 @@ router.put('/add_alojamiento', (req,res) => {
     }
 });
 
-//PUT de reservaciones
+//PUT de reservaciones (para agregar)
 router.put('/add_reservacion', (req,res) => {
     let id = req.body.id,
         newReservacion = req.body.newReservacion,

@@ -35,10 +35,34 @@ const reservacionSchema = mongoose.Schema({
 
 let Reservacion = mongoose.model('reservaciones',reservacionSchema);
 
-router.get('/') //GET para reservaciones
+//GET reservacion por ID
+router.get('/reservation', (req,res) => {
+    let id = req.body.id;
+    
+    Reservacion.find({
+        id: id,
+    }).then(function (docs) {
+        res.send(docs);
+        console.log(docs);
+    }).catch((err) => console.log(err));
+});
 
-router.post('/') //POST de reservacion
+ //POST de reservacion
+router.post('/reserve', (req,res) => {
+    const newReservation = req.body;
+    const reservation = Reservacion(newReservation);
+    reservation.save().then((doc) => console.log("Reservación creada: ") + doc);
+});
 
-router.delete('/') //DELETE de reservacion
+ //DELETE de reservacion por ID
+router.delete('/delete', (req,res) => {
+    let id = req.body.id;
+
+    Reservacion.findByIdAndDelete(id).then(doc => {
+        console.log("Reservacion eliminada de la faz de la tierra");
+        console.log(doc);
+        res.send(doc);
+    }).catch((err) => console.log(err));
+});
 
 module.exports = router;
