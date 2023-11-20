@@ -41,6 +41,8 @@ const userSchema = mongoose.Schema({
 
 let Usuario = mongoose.model('usuarios',userSchema);
 
+//poner status 200 o 500
+
 //GET usuario por email y contraseña
 router.get('/user', (req,res) => {
     let email = req.body.email,

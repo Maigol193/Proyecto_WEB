@@ -4,6 +4,10 @@ const { default: mongoose } = require('mongoose');
 
 //Esquemas
 const reservacionSchema = mongoose.Schema({
+    status: {
+        type: Boolean, //true activo, false terminado o cancelado
+        required: true
+    },
     fechaEntrada: {
         type: Date,
         required: true
@@ -18,13 +22,11 @@ const reservacionSchema = mongoose.Schema({
         required: true
     },
     host: {
-        type: Number,
-        unique: true,
+        type: String,
         required: true
     },
     cliente: {
-        type: Number,
-        unique: true,
+        type: String,
         required: true
     },
     totalPrice: {
@@ -34,6 +36,8 @@ const reservacionSchema = mongoose.Schema({
 });
 
 let Reservacion = mongoose.model('reservaciones',reservacionSchema);
+
+//poner status 200 o 500
 
 //GET reservacion por ID
 router.get('/reservation', (req,res) => {

@@ -103,3 +103,38 @@ content-type: application/json
     "estado": "Jalisco",
     "reservaciones": ""
 }
+
+//GET reservación
+###
+GET http://localhost:3000/reservaciones/reservation HTTP/1.1
+Content-Type: application/json
+
+{
+    "id": "abcde"
+}
+
+//POST reservation
+###
+POST http://localhost:3000/reservaciones/reserve HTTP/1.1
+content-type: application/json
+
+{
+    "name": "Pepe",
+    "email": "pepe.perez@iteso.mx",
+    "password": "contraseña",
+    "cellphone": "3333333333",
+    "residencia": "M",
+    "alojamientos": ["12345"],
+    "isHost": true,
+    "description": "Si",
+    "reservations": []
+}
+
+//DELETE reservacion
+###
+DELETE http://localhost:3000/reservaciones/delete HTTP/1.1
+Content-Type: application/json
+
+{
+    "id": "klmnñ"
+}
