@@ -1,22 +1,71 @@
 const express = require('express');
 const router = express.Router();
 const { default: mongoose } = require('mongoose');
-let mongoConnection = "mongodb+srv://admin:admin@myapp.51n0kvh.mongodb.net/MyAppDB";
-let db = mongoose.connection;
 
-app.use(express.json());
-
-db.on('connecting',()=>{
-    console.log('Conectando...');
-    console.log(mongoose.connection.readyState);
+//Esquemas
+const alojamientoSchema = mongoose.Schema({
+    host: {
+        type: Number,
+        unique: true,
+        required: true
+    },
+    title: {
+        type: String,
+        required: true
+    },
+    description: {
+        type: String,
+        required: true
+    },
+    banos: {
+        type: Number,
+        min: 1,
+        required: true
+    },
+    beds: {
+        type: Number,
+        min: 1,
+        required: true
+    },
+    huespedes: {
+        type: Number,
+        min: 1,
+        required: true
+    },
+    rooms: {
+        type: Number,
+        min: 1,
+        required: true
+    },
+    categories: {
+        type: Array,
+        default: [],
+        required: true
+    },
+    images: {
+        type: Array,
+        default: [],
+        required: true
+    },
+    price: {
+        type: Number,
+        min: 1,
+        required: true
+    },
+    estado: {
+        type: String,
+        enum: ['Jalisco', 'Nuevo León', 'Baja California Sur'],
+        required: true
+    },
+    reservaciones: {
+        type: Number,
+        unique: true,
+        required: true
+    }
 });
-db.on('connected',()=>{
-    console.log('¡Conectado exitosamente!');
-    console.log(mongoose.connection.readyState);
-});
 
-app.use(cors({
-    methods: ['GET','POST','DELETE','UPDATE','PUT','PATCH']
-}));
+let Alojamiento = mongoose.model('alojamientos',alojamientoSchema);
+
+
 
 module.exports = router;

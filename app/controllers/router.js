@@ -1,6 +1,5 @@
 const express = require('express');
-
-const alojamientos = require('../routes/alojamientos'); 
+const alojamientos = require('../routes/alojamiento'); 
 const reservacion = require('../routes/reservacion');
 const usuario = require('../routes/usuario');
 
@@ -17,8 +16,8 @@ function validateAdmin(req, res, next) {
   }
 */
 
-router.use('/reservacion',reservacion);
+router.use('/reservaciones',reservacion);
 router.use('/alojamientos',alojamientos);
-router.use('/usuario',usuario);
+router.use('/usuarios',usuario);
 
 module.exports = router;
