@@ -57,8 +57,7 @@ const alojamientoSchema = mongoose.Schema({
         required: true
     },
     reservaciones: {
-        type: String,
-        required: true
+        type: String
     }
 });
 
@@ -74,22 +73,32 @@ router.get('/get_all',(req,res)=>{
 router.get('/get_filter') //GET por filtros
 
 router.post('/create',(req,res) => {
-    const newAlojamiento = req.body;
+    let newAlojamiento = req.body;
+    let id_host = req.body.host;
     const aloj = Alojamiento(newAlojamiento);
-    aloj.save().then((doc) => console.log("Alojamiento creado: ") + doc);
-    let xhr = new XMLHttpRequest();
-    xhr.open('PUT','http://localhost:3000/usuarios/add_alojamiento');
-    xhr.setRequestHeader('Content-Type', 'application/json');
-    let datos = 0;
-    xhr.send([JSON.stringify(datos)]);
-    xhr.onload = function (){
+    
+    aloj.save().then(doc => {
+        console.log("Alojamiento creado: "+ doc._id);
+        /*
+        let xhr = new XMLHttpRequest();
+        xhr.open('PUT','http://localhost:3000/usuarios/add_alojamiento');
+        xhr.setRequestHeader('Content-Type', 'application/json');
+        let datos = 0;
+        xhr.send([JSON.stringify(datos)]);
+        xhr.onload = function (){
         if (xhr.status != 200){
             console.log(xhr.status + ": " + xhr.statusText);
-        }
+            }
         else{
-            console.log("Funciono el add_alojamiento:");
-        }
-    }
+            console.log("Funciono el create");
+            }
+        };*/
+        res.status(200).send('Alojamiento guardado correctamente: '+doc);
+    })
+    .catch(err => {
+        console.error(err);
+        res.status(500).send('Error al guardar el alojamiento');
+    });
 }); //POST alojamientos
 
 router.put('/edit_alojamiento') //PUT de alojamiento
