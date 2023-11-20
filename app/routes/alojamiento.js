@@ -76,14 +76,10 @@ router.get('/get_filter') //GET por filtros
 router.post('/create',(req,res) => {
     let newAlojamiento = req.body;
     let id_host = req.body.host;
-    let alojamientos_actuales = {};
-    alojamientos_actuales.alojamientos = req.body.alojamientos_actuales;
     let aloj = Alojamiento(newAlojamiento);
     aloj.save().then(doc => {
         aloj_id = doc._id.toString();
-        alojamientos_actuales.alojamientos.push(aloj_id);
-        console.log(alojamientos_actuales);
-        add_alojamiento_to_User(id_host,alojamientos_actuales);
+        add_alojamiento_to_User(id_host,aloj_id);
         res.status(200).send(doc);
         })
     .catch(err => {
@@ -142,6 +138,12 @@ router.put('/edit_alojamiento',(req,res)=>{
 });
 
 
-router.delete('/delete_alojamiento') //DELETE de alojamiento
+router.delete('/delete_alojamiento',(req,res)=>{
+    let id = req.body.id;
+    Alojamiento.findByIdAndDelete(id).then((doc)=> {
+        console.log(doc);
+        res.send(doc);
+    }).catch((err)=>console.log(err));
+});
 
 module.exports = router;

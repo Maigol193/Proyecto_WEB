@@ -208,12 +208,18 @@ router.put('/add_reservacion', (req,res) => {
 });
 
 
-function add_alojamiento_to_User(id,ArrayAlojamientos){
-    console.log(ArrayAlojamientos);
-    Usuario.findByIdAndUpdate(id, ArrayAlojamientos, {new: true}).then((doc)=> {
+function add_alojamiento_to_User(id,newAlojamientos){
+    Usuario.findByIdAndUpdate(id, { $push: { alojamientos: newAlojamientos } }, {new: true}).then((doc)=> {
         console.log(doc);
-    }).catch((err)=>console.log(err));;
+    }).catch((err)=>console.log(err));
+}
+
+function delete_alojamiento_from_User(id,alojamiento_to_err){
+    Usuario.findByIdAndUpdate(id, { $pull: { alojamientos: alojamiento_to_err } } , {new: true}).then((doc)=> {
+        console.log(doc);
+    }).catch((err)=>console.log(err));
 }
 
 module.exports = router;
+module.exports = delete_alojamiento_from_User;
 module.exports = add_alojamiento_to_User;

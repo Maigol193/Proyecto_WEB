@@ -91,13 +91,13 @@ Content-Type: application/json
 
 {
     "id":"655bd3f131b772faa40f6837",
-    "title": "Casa de playa",
-    "description": "detalles",
+    "title": "playera",
+    "description": "detolles",
     "banos": 2,
     "beds": 1,
     "huespedes": 1,
     "rooms": 1,
-    "categories": ["playa","alberca"],
+    "categories": ["playa","alberca","novo"],
     "images": ["imagen1.png","imagen2.png"],
     "price": 1300,
     "estado": "Jalisco"
@@ -122,6 +122,15 @@ content-type: application/json
     "estado": "Jalisco",
     "reservaciones": "",
     "alojamientos_actuales": ["alojamiento#1","alojamiento#2"]
+}
+
+//Delete alojamiento
+###
+DELETE http://localhost:3000/alojamientos/delete_alojamiento HTTP/1.1
+Content-Type: application/json
+{
+    "id": "655bd3f131b772faa40f6837",
+    "host": "655ab5bd76d6c8f8ab3ff606"
 }
 
 //GET reservación
