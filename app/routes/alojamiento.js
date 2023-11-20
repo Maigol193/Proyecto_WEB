@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const { default: mongoose } = require('mongoose');
+const Usuario = require('./userSchema');
 
 //Esquemas
 const alojamientoSchema = mongoose.Schema({
@@ -75,25 +76,19 @@ router.get('/get_filter') //GET por filtros
 router.post('/create',(req,res) => {
     let newAlojamiento = req.body;
     let id_host = req.body.host;
+    let alojamientos_actuales = req.body.alojamientos_actuales;
     const aloj = Alojamiento(newAlojamiento);
-    
     aloj.save().then(doc => {
-        console.log("Alojamiento creado: "+ doc._id);
-        /*
-        let xhr = new XMLHttpRequest();
-        xhr.open('PUT','http://localhost:3000/usuarios/add_alojamiento');
-        xhr.setRequestHeader('Content-Type', 'application/json');
-        let datos = 0;
-        xhr.send([JSON.stringify(datos)]);
-        xhr.onload = function (){
-        if (xhr.status != 200){
-            console.log(xhr.status + ": " + xhr.statusText);
-            }
-        else{
-            console.log("Funciono el create");
-            }
-        };*/
-        res.status(200).send('Alojamiento guardado correctamente: '+doc);
+        object_to_update = {},
+        flag_updated = false;
+        alojamientos_actuales.push(doc._id.toString());
+        object_to_update.alojamientos = alojamientos_actuales;
+        flag_updated = true;
+        if(flag_updated){
+            Usuario.findByIdAndUpdate(id_host, object_to_update, {new: true}).then((doc2) => {
+                res.send(doc2);
+            }).catch((err2) => console.log(err2));
+        }
     })
     .catch(err => {
         console.error(err);

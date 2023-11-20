@@ -101,7 +101,8 @@ content-type: application/json
     "images": ["imagen1.png","imagen2.png"],
     "price": 1300,
     "estado": "Jalisco",
-    "reservaciones": ""
+    "reservaciones": "",
+    "alojamientos_actuales": ["alojamiento#1","alojamiento#2"]
 }
 
 //GET reservación

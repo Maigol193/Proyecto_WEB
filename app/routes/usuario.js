@@ -206,4 +206,5 @@ router.put('/add_reservacion', (req,res) => {
     }
 });
 
+module.exports = Usuario;
 module.exports = router;
