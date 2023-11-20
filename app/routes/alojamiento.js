@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const { default: mongoose } = require('mongoose');
-const Usuario = require('./userSchema');
+const Usuario = require('./usuario');
 
 //Esquemas
 const alojamientoSchema = mongoose.Schema({
@@ -73,28 +73,31 @@ router.get('/get_all',(req,res)=>{
 
 router.get('/get_filter') //GET por filtros
 
-router.post('/create',(req,res) => {
-    let newAlojamiento = req.body;
-    let id_host = req.body.host;
-    let alojamientos_actuales = req.body.alojamientos_actuales;
-    const aloj = Alojamiento(newAlojamiento);
-    aloj.save().then(doc => {
-        object_to_update = {},
-        flag_updated = false;
-        alojamientos_actuales.push(doc._id.toString());
-        object_to_update.alojamientos = alojamientos_actuales;
-        flag_updated = true;
-        if(flag_updated){
-            Usuario.findByIdAndUpdate(id_host, object_to_update, {new: true}).then((doc2) => {
-                res.send(doc2);
-            }).catch((err2) => console.log(err2));
-        }
-    })
-    .catch(err => {
+router.post('/create', async (req, res) => {
+    try {
+        let newAlojamiento = req.body;
+        let id_host = req.body.host;
+        const aloj = new Alojamiento(newAlojamiento);
+
+        let aloj_id = "";
+        const alojDoc = await aloj.save();
+        aloj_id = alojDoc._id.toString();
+
+        
+        Usuario.findByIdAndUpdate(id_host, { $push: { alojamientos: aloj_id } }, { new: true })
+            .then((doc) => {
+                res.status(200).send('Alojamiento guardado correctamente y Usuario actualizado: ' + alojDoc);
+            })
+            .catch((err) => {
+                console.error(err);
+                res.status(500).send('Error al actualizar el Usuario');
+            });
+    } catch (err) {
         console.error(err);
         res.status(500).send('Error al guardar el alojamiento');
-    });
-}); //POST alojamientos
+    }
+});
+
 
 router.put('/edit_alojamiento') //PUT de alojamiento
 
