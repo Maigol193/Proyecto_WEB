@@ -82,9 +82,28 @@ Content-Type: application/json
 
 //GET alojamientos
 ###
+GET http://localhost:3000/alojamientos/get_all HTTP/1.1
+
+//PUT alojamientos
+###
+PUT http://localhost:3000/alojamientos/edit_alojamiento HTTP/1.1
+Content-Type: application/json
+
+{
+    "id":"655bd3f131b772faa40f6837",
+    "title": "Casa de playa",
+    "description": "detalles",
+    "banos": 2,
+    "beds": 1,
+    "huespedes": 1,
+    "rooms": 1,
+    "categories": ["playa","alberca"],
+    "images": ["imagen1.png","imagen2.png"],
+    "price": 1300,
+    "estado": "Jalisco"
+}
 
 //POST alojamientos
-###
 ###
 POST http://localhost:3000/alojamientos/create HTTP/1.1
 content-type: application/json

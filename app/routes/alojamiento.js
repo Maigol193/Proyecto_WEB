@@ -93,7 +93,54 @@ router.post('/create',(req,res) => {
 }); //POST alojamientos
 
 
-router.put('/edit_alojamiento') //PUT de alojamiento
+router.put('/edit_alojamiecznto',(req,res)=>{
+    let UserName = req.query.name;
+   User.find({
+    Nombre: {$regex: UserName},
+    Sexo:"H"
+    }).then(function (docs) {
+        res.send(docs);
+        console.log(docs)
+    }).catch((err)=> console.log(err)); 
+});
+
+router.put('/edit_alojamiento',(req,res)=>{
+    let title = req.body.title,
+        description = req.body.description,
+        banos = req.body.banos,
+        beds = req.body.beds,
+        huespedes = req.body.huespedes,
+        rooms = req.body.rooms,
+        categories = req.body.categories,
+        images = req.body.images,
+        price = req.body.price,
+        estado = req.body.estado
+    
+    let object_to_update = {};
+    let flag_updated = false;
+
+    if(title != undefined){
+        object_to_update.title=title;
+        object_to_update.description=description;
+        object_to_update.banos=banos;
+        object_to_update.beds=beds;
+        object_to_update.huespedes=huespedes;
+        object_to_update.rooms=rooms;
+        object_to_update.categories=categories;
+        object_to_update.images=images;
+        object_to_update.price=price;
+        object_to_update.estado=estado;
+        flag_updated= true;
+    }
+    
+    if(flag_updated){
+        Alojamiento.findByIdAndUpdate(req.body.id,object_to_update,{new:true}).then((doc)=> {
+            console.log(doc);
+            res.send(doc);
+        }).catch((err)=>console.log(err));
+    }
+});
+
 
 router.delete('/delete_alojamiento') //DELETE de alojamiento
 
