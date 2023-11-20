@@ -78,7 +78,7 @@ router.post('/create',(req,res) => {
     let id_host = req.body.host;
     let alojamientos_actuales = {};
     alojamientos_actuales.alojamientos = req.body.alojamientos_actuales;
-    const aloj = Alojamiento(newAlojamiento);
+    let aloj = Alojamiento(newAlojamiento);
     aloj.save().then(doc => {
         aloj_id = doc._id.toString();
         alojamientos_actuales.alojamientos.push(aloj_id);

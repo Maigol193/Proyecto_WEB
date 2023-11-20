@@ -209,10 +209,10 @@ router.put('/add_reservacion', (req,res) => {
 
 
 function add_alojamiento_to_User(id,ArrayAlojamientos){
-    Usuario.findByIdAndUpdate(id, ArrayAlojamientos, {new: true}).then((doc) => {
-        console.log("Alojamientos actualizado");
-        res.send(doc);
-    }).catch((err) => console.log(err));
+    console.log(ArrayAlojamientos);
+    Usuario.findByIdAndUpdate(id, ArrayAlojamientos, {new: true}).then((doc)=> {
+        console.log(doc);
+    }).catch((err)=>console.log(err));;
 }
 
 module.exports = router;
