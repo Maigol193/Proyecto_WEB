@@ -139,7 +139,7 @@ GET http://localhost:3000/reservaciones/reservation HTTP/1.1
 Content-Type: application/json
 
 {
-    "id": "abcde"
+    "id": "655bf7fa19ed6fe266c5cd32"
 }
 
 //POST reservation
@@ -148,15 +148,13 @@ POST http://localhost:3000/reservaciones/reserve HTTP/1.1
 content-type: application/json
 
 {
-    "name": "Pepe",
-    "email": "pepe.perez@iteso.mx",
-    "password": "contraseña",
-    "cellphone": "3333333333",
-    "residencia": "M",
-    "alojamientos": ["12345"],
-    "isHost": true,
-    "description": "Si",
-    "reservations": []
+    "status": true,
+    "fechaEntrada": "2023-12-05",
+    "fechaSalida": "2023-12-08",
+    "alojamiento": "655bcce9e33c30f14239e2a2",
+    "host": "655ab5bd76d6c8f8ab3ff606",
+    "cliente": "655b916150148095fd5cd51b",
+    "totalPrice": 3000
 }
 
 //DELETE reservacion
@@ -165,5 +163,5 @@ DELETE http://localhost:3000/reservaciones/delete HTTP/1.1
 Content-Type: application/json
 
 {
-    "id": "klmnñ"
+    "id": "655bcce9e33c30f14239e2a2"
 }

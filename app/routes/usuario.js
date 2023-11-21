@@ -52,8 +52,12 @@ router.get('/user', (req,res) => {
         email: email,
         password: password
     }).then(function (docs) {
-        res.send(docs);
-        console.log(docs);
+        if (docs.length > 0) {
+            res.send(docs);
+            console.log(docs);
+        } else {
+            res.status(404).send({ error: 'No se encontró el usuario' });
+        }
     }).catch((err) => console.log(err));
 });
 
@@ -160,7 +164,7 @@ router.put('/edit_account', (req,res) => {
         }).catch((err) => console.log(err));
     }
     else{
-        res.send("No se ha actualizado na'")
+        res.status(404).send("No se ha actualizado na'")
     }
 });
 
@@ -214,6 +218,12 @@ function add_alojamiento_to_User(id,newAlojamientos){
     }).catch((err)=>console.log(err));
 }
 
+function add_reservacion_to_User(id,newReservacion){
+    Usuario.findByIdAndUpdate(id, { $push: { reservations: newReservacion } }, {new: true}).then((doc)=> {
+        console.log(doc);
+    }).catch((err)=>console.log(err));
+}
+
 function delete_alojamiento_from_User(id,alojamiento_to_err){
     console.log("hola");
     Usuario.findByIdAndUpdate(id, { $pull: { alojamientos: alojamiento_to_err} }, {new: true}).then((doc)=> {
@@ -221,6 +231,16 @@ function delete_alojamiento_from_User(id,alojamiento_to_err){
     }).catch((err)=>console.log(err));
 }
 
+function delete_reservacion_from_User(idUsuario, idReservacion) {
+    Usuario.findByIdAndUpdate(idUsuario, { $pull: { reservations: idReservacion } }, { new: true })
+        .then((doc) => {
+            console.log(doc);
+        })
+        .catch((err) => console.log(err));
+}
+
 module.exports = router;
 module.exports = delete_alojamiento_from_User;
 module.exports = add_alojamiento_to_User;
+module.exports = delete_reservacion_from_User;
+module.exports = add_reservacion_to_User;
