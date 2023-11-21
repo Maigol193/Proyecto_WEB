@@ -44,9 +44,6 @@ router.get('/get_filtered', (req, res) => {
         });
 });
 
-
-router.get('/get_filter') //GET por filtros
-
 router.post('/create',(req,res) => {
     let newAlojamiento = req.body;
     let id_host = req.body.host;
