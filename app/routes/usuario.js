@@ -26,7 +26,7 @@ router.get('/user', (req,res) => {
 //POST usuario
 router.post('/create', (req,res) => {
     const newUser = req.body;
-    const user = Usuario(newUser);
+    const user = esquemas.Usuario(newUser);
     user.save().then((doc) => res.send(doc));
 });
 
@@ -48,7 +48,7 @@ router.delete('/delete_alojamiento', (req,res) => {
     }
 
     if(flag_updated){
-        Usuario.findByIdAndUpdate(id, object_to_update, {new: true}).then((doc) => {
+        esquemas.Usuario.findByIdAndUpdate(id, object_to_update, {new: true}).then((doc) => {
             console.log("Se ha removido el alojamiento");
             console.log(doc);
             res.send(doc);
@@ -76,7 +76,7 @@ router.delete('/delete_reservacion', (req,res) => {
     }
 
     if(flag_updated){
-        Usuario.findByIdAndUpdate(id, object_to_update, {new: true}).then((doc) => {
+        esquemas.Usuario.findByIdAndUpdate(id, object_to_update, {new: true}).then((doc) => {
             console.log("Se ha removido la reservacion");
             console.log(doc);
             res.send(doc);
@@ -119,7 +119,7 @@ router.put('/edit_account', (req,res) => {
     }
 
     if(flag_updated){
-        Usuario.findByIdAndUpdate(id, object_to_update, {new: true}).then((doc) => {
+        esquemas.Usuario.findByIdAndUpdate(id, object_to_update, {new: true}).then((doc) => {
             console.log("Usuario actualizado");
             console.log(doc);
             res.send(doc);
@@ -143,7 +143,7 @@ router.put('/add_alojamiento', (req,res) => {
     flag_updated = true;
 
     if(flag_updated){
-        Usuario.findByIdAndUpdate(id, object_to_update, {new: true}).then((doc) => {
+        esquemas.Usuario.findByIdAndUpdate(id, object_to_update, {new: true}).then((doc) => {
             console.log("Alojamientos actualizado");
             console.log(doc);
             res.send(doc);
@@ -165,39 +165,12 @@ router.put('/add_reservacion', (req,res) => {
     flag_updated = true;
 
     if(flag_updated){
-        Usuario.findByIdAndUpdate(id, object_to_update, {new: true}).then((doc) => {
+        esquemas.Usuario.findByIdAndUpdate(id, object_to_update, {new: true}).then((doc) => {
             console.log("Alojamientos actualizado");
             console.log(doc);
             res.send(doc);
         }).catch((err) => console.log(err));
     }
 });
-
-
-function add_alojamiento_to_User(id,newAlojamientos){
-    Usuario.findByIdAndUpdate(id, { $push: { alojamientos: newAlojamientos } }, {new: true}).then((doc)=> {
-        console.log(doc);
-    }).catch((err)=>console.log(err));
-}
-
-function add_reservacion_to_User(id,newReservacion){
-    Usuario.findByIdAndUpdate(id, { $push: { reservations: newReservacion } }, {new: true}).then((doc)=> {
-        console.log(doc);
-    }).catch((err)=>console.log(err));
-}
-
-function delete_alojamiento_from_User(id,alojamiento_to_err){
-    console.log("hola");
-    Usuario.findByIdAndUpdate(id, { $pull: { alojamientos: alojamiento_to_err} }, {new: true}).then((doc)=> {
-        console.log(doc);
-    }).catch((err)=>console.log(err));
-}
-
-function delete_reservacion_from_User(id,reservacion_to_err){
-    console.log("hola");
-    Usuario.findByIdAndUpdate(id, { $pull: { reservations: reservacion_to_err} }, {new: true}).then((doc)=> {
-        console.log(doc);
-    }).catch((err)=>console.log(err));
-}
 
 module.exports = router;

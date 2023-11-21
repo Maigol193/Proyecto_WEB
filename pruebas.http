@@ -151,9 +151,9 @@ content-type: application/json
     "status": true,
     "fechaEntrada": "2023-12-05",
     "fechaSalida": "2023-12-08",
-    "alojamiento": "655bcce9e33c30f14239e2a2",
+    "alojamiento": "655bd35c02857bf9cb0f504b",
     "host": "655ab5bd76d6c8f8ab3ff606",
-    "cliente": "655b916150148095fd5cd51b",
+    "cliente": "655ab30faee7cf1a2262bde5",
     "totalPrice": 3000
 }
 
@@ -163,5 +163,6 @@ DELETE http://localhost:3000/reservaciones/delete HTTP/1.1
 Content-Type: application/json
 
 {
-    "id": "655bcce9e33c30f14239e2a2"
+    "id": "655c169e79fd5d2b0fceaf0b",
+    "cliente": "655ab30faee7cf1a2262bde5"
 }
