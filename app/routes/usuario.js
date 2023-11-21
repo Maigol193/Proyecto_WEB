@@ -215,7 +215,8 @@ function add_alojamiento_to_User(id,newAlojamientos){
 }
 
 function delete_alojamiento_from_User(id,alojamiento_to_err){
-    Usuario.findByIdAndUpdate(id, { $pull: { alojamientos: alojamiento_to_err } } , {new: true}).then((doc)=> {
+    console.log("hola");
+    Usuario.findByIdAndUpdate(id, { $pull: { alojamientos: alojamiento_to_err} }, {new: true}).then((doc)=> {
         console.log(doc);
     }).catch((err)=>console.log(err));
 }
