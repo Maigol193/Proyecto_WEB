@@ -26,22 +26,12 @@ router.get('/get_all',(req,res)=>{
 router.get('/get_filtered', (req, res) => {
     let { categories, estado, title } = req.body;
 
-    // Construir el objeto de búsqueda dinámicamente
     const filtro = {};
 
-    if (categories) {
-        filtro.categories = new RegExp(categories, 'i');
-    }
-
-    if (estado) {
-        filtro.estado = new RegExp(estado, 'i');
-    }
-
-    if (title) {
-        // Puedes ajustar los campos en los que buscas según tus necesidades
-        filtro.title = new RegExp(title,'i');
-    }
-    // Aplicar el filtro solo si hay al menos un campo definido
+    if (categories && categories.length > 0) {filtro.categories = { $all: categories };}
+    if (estado) {filtro.estado = new RegExp(estado, 'i');}
+    if (title) {filtro.title = new RegExp(title,'i');}
+    
     const query = Object.keys(filtro).length > 0 ? esquemas.Alojamiento.find(filtro) : esquemas.Alojamiento.find();
     query
         .then(docs => {
