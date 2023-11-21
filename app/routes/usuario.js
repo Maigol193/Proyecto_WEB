@@ -30,6 +30,7 @@ router.post('/create', (req,res) => {
     user.save().then((doc) => res.send(doc));
 });
 
+/*
 //DELETE alojamiento siendo host
 router.delete('/delete_alojamiento', (req,res) => {
     let id = req.body.id,
@@ -85,6 +86,7 @@ router.delete('/delete_reservacion', (req,res) => {
         res.send("No se ha actualizado na'")
     }
 });
+*/
 
 //PUT del account
 router.put('/edit_account', (req,res) => {
@@ -130,6 +132,7 @@ router.put('/edit_account', (req,res) => {
     }
 });
 
+/*
 //PUT de alojamientos (para aregar)
 router.put('/add_alojamiento', (req,res) => {
     let id = req.body.id,
@@ -172,5 +175,6 @@ router.put('/add_reservacion', (req,res) => {
         }).catch((err) => console.log(err));
     }
 });
+*/
 
 module.exports = router;

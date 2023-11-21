@@ -49,10 +49,9 @@ router.post('/reserve', (req,res) => {
 });
 
  //DELETE de reservacion por ID
- router.delete('/delete', (req, res) => {
+router.delete('/delete', (req, res) => {
     let idReservacion = req.body.id; // ID de la reservacion
     let idCliente = req.body.cliente; // ID del usuario que hizo la reservacion
-
     esquemas.Reservacion.findByIdAndDelete(idReservacion)
         .then(doc => {
             if (!doc) {

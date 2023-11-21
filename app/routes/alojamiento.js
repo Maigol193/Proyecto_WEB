@@ -17,7 +17,7 @@ function delete_alojamiento_from_User(id,alojamiento_to_err){
 
 
 router.get('/get_all',(req,res)=>{
-    Alojamiento.find().then(function (docs) {
+    esquemas.Alojamiento.find().then(function (docs) {
         res.send(docs);
         console.log(docs);
     }).catch((err) => console.log(err));
@@ -91,12 +91,20 @@ router.put('/edit_alojamiento',(req,res)=>{
 
 
 router.delete('/delete_alojamiento',(req,res)=>{
-    let id = req.body.id;
+    let idAlojamiento = req.body.id;
     let host = req.body.host;
-    delete_alojamiento_from_User(host,id);
-    esquemas.Alojamiento.findByIdAndDelete(id).then((doc)=> {
-        res.send(doc);
-    }).catch((err)=>console.log(err));
+    esquemas.Alojamiento.findByIdAndDelete(idAlojamiento)
+    .then(doc => {
+        if (!doc) {
+            res.status(404).send({ error: 'No se encontró el alojamiento con el ID proporcionado' });
+        } else {
+            delete_alojamiento_from_User(host,idAlojamiento);
+            console.log("Alojamiento eliminado de la faz de la tierra");
+            console.log(doc);
+            res.send(doc);
+        }
+    })
+    .catch((err) => console.log(err));
 });
 
 module.exports = router;

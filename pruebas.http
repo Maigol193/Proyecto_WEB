@@ -14,37 +14,15 @@ POST http://localhost:3000/usuarios/create HTTP/1.1
 content-type: application/json
 
 {
-    "name": "Pepe",
-    "email": "pepe.perez@iteso.mx",
-    "password": "contraseña",
+    "name": "Alan",
+    "email": "alan.perez@iteso.mx",
+    "password": "12345",
     "cellphone": "3333333333",
     "residencia": "M",
-    "alojamientos": ["12345"],
+    "alojamientos": [],
     "isHost": true,
     "description": "Si",
     "reservations": []
-}
-
-//PUT alojamiento en usuario
-###
-PUT http://localhost:3000/usuarios/add_alojamiento HTTP/1.1
-Content-Type: application/json
-
-{
-    "id": "655ab5bd76d6c8f8ab3ff606",
-    "alojamientos": ["67890", "27498"],
-    "newAlojamiento": "12345"
-}
-
-//PUT reservacion en usuario
-###
-PUT http://localhost:3000/usuarios/add_reservacion HTTP/1.1
-Content-Type: application/json
-
-{
-    "id": "655ab5bd76d6c8f8ab3ff606",
-    "reservations": ["abcde", "fghij"],
-    "newReservacion": "klmnñ"
 }
 
 //PUT account
@@ -53,31 +31,9 @@ PUT http://localhost:3000/usuarios/edit_account HTTP/1.1
 Content-Type: application/json
 
 {
-    "id": "655ab30faee7cf1a2262bde5",
-    "name": "Maigol",
-    "residencia": "Los Cabos"
-}
-
-//DELETE alojamiento en usuario
-###
-DELETE http://localhost:3000/usuarios/delete_alojamiento HTTP/1.1
-Content-Type: application/json
-
-{
-    "id": "655ab5bd76d6c8f8ab3ff606",
-    "alojamientos": ["67890","27498","12345"],
-    "toDelete": "27498"
-}
-
-//DELETE reservacion en usuario
-###
-DELETE http://localhost:3000/usuarios/delete_reservacion HTTP/1.1
-Content-Type: application/json
-
-{
-    "id": "655ab5bd76d6c8f8ab3ff606",
-    "reservations": ["abcde", "klmnñ"],
-    "toDelete": "fghij"
+    "id": "655c190930349fcbf6f1ce23",
+    "cellphone": "3330003330",
+    "residencia": "Los Altos"
 }
 
 //GET alojamientos
@@ -90,8 +46,8 @@ PUT http://localhost:3000/alojamientos/edit_alojamiento HTTP/1.1
 Content-Type: application/json
 
 {
-    "id":"655bd3f131b772faa40f6837",
-    "title": "playera",
+    "id":"655bcce9e33c30f14239e2a2",
+    "title": "Casa casi de Playa",
     "description": "detolles",
     "banos": 2,
     "beds": 1,
@@ -109,14 +65,14 @@ POST http://localhost:3000/alojamientos/create HTTP/1.1
 content-type: application/json
 
 {
-    "host":"655ab5bd76d6c8f8ab3ff606",
-    "title": "Casa de playa",
-    "description": "detalles",
-    "banos": 2,
-    "beds": 1,
-    "huespedes": 1,
+    "host":"655ab30faee7cf1a2262bde5",
+    "title": "Casa de Montaña",
+    "description": "detalles y precio",
+    "banos": 3,
+    "beds": 2,
+    "huespedes": 4,
     "rooms": 1,
-    "categories": ["playa","alberca"],
+    "categories": ["montaña","alberca"],
     "images": ["imagen1.png","imagen2.png"],
     "price": 1300,
     "estado": "Jalisco",
@@ -129,8 +85,8 @@ DELETE http://localhost:3000/alojamientos/delete_alojamiento HTTP/1.1
 Content-Type: application/json
 
 {
-    "id": "655be5ae71f17f6a8dd1c0e4",
-    "host": "655ab5bd76d6c8f8ab3ff606"
+    "id": "655c1ce230349fcbf6f1ce51",
+    "host": "655ab30faee7cf1a2262bde5"
 }
 
 //GET reservación
@@ -139,7 +95,7 @@ GET http://localhost:3000/reservaciones/reservation HTTP/1.1
 Content-Type: application/json
 
 {
-    "id": "655bf7fa19ed6fe266c5cd32"
+    "id": "655c1a5d30349fcbf6f1ce2f"
 }
 
 //POST reservation
@@ -163,6 +119,6 @@ DELETE http://localhost:3000/reservaciones/delete HTTP/1.1
 Content-Type: application/json
 
 {
-    "id": "655c169e79fd5d2b0fceaf0b",
+    "id": "655c1a5d30349fcbf6f1ce2f",
     "cliente": "655ab30faee7cf1a2262bde5"
 }
