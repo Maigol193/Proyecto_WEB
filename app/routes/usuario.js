@@ -1,45 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const { default: mongoose } = require('mongoose');
-
-//Esquemas
-const userSchema = mongoose.Schema({
-    name: {
-        type: String,
-        required: true
-    },
-    email: {
-        type: String,
-        required: true
-    },
-    password: {
-        type: String,
-        required: true
-    },
-    cellphone: {
-        type: String
-    },
-    residencia: {
-        type: String
-    },
-    alojamientos: {
-        type: Array,
-        default: []
-    },
-    isHost: {
-        type: Boolean,
-        default: false
-    },
-    description: {
-        type: String
-    },
-    reservations: {
-        type: Array,
-        default: []
-    }
-});
-
-let Usuario = mongoose.model('usuarios',userSchema);
+const esquemas = require("../../server");
 
 //poner status 200 o 500
 
@@ -48,7 +10,7 @@ router.get('/user', (req,res) => {
     let email = req.body.email,
         password = req.body.password
     
-    Usuario.find({
+    esquemas.Usuario.find({
         email: email,
         password: password
     }).then(function (docs) {
@@ -231,16 +193,11 @@ function delete_alojamiento_from_User(id,alojamiento_to_err){
     }).catch((err)=>console.log(err));
 }
 
-function delete_reservacion_from_User(idUsuario, idReservacion) {
-    Usuario.findByIdAndUpdate(idUsuario, { $pull: { reservations: idReservacion } }, { new: true })
-        .then((doc) => {
-            console.log(doc);
-        })
-        .catch((err) => console.log(err));
+function delete_reservacion_from_User(id,reservacion_to_err){
+    console.log("hola");
+    Usuario.findByIdAndUpdate(id, { $pull: { reservations: reservacion_to_err} }, {new: true}).then((doc)=> {
+        console.log(doc);
+    }).catch((err)=>console.log(err));
 }
 
 module.exports = router;
-module.exports = delete_alojamiento_from_User;
-module.exports = add_alojamiento_to_User;
-module.exports = delete_reservacion_from_User;
-module.exports = add_reservacion_to_User;

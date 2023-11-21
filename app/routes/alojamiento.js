@@ -1,69 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const { default: mongoose } = require('mongoose');
-const add_alojamiento_to_User = require('./usuario');
-const delete_alojamiento_from_User = require('./usuario');
-
-//Esquemas
-const alojamientoSchema = mongoose.Schema({
-    host: {
-        type: String,
-        required: true
-    },
-    title: {
-        type: String,
-        required: true
-    },
-    description: {
-        type: String,
-        required: true
-    },
-    banos: {
-        type: Number,
-        min: 1,
-        required: true
-    },
-    beds: {
-        type: Number,
-        min: 1,
-        required: true
-    },
-    huespedes: {
-        type: Number,
-        min: 1,
-        required: true
-    },
-    rooms: {
-        type: Number,
-        min: 1,
-        required: true
-    },
-    categories: {
-        type: Array,
-        default: [],
-        required: true
-    },
-    images: {
-        type: Array,
-        default: [],
-        required: true
-    },
-    price: {
-        type: Number,
-        min: 1,
-        required: true
-    },
-    estado: {
-        type: String,
-        enum: ['Jalisco', 'Nuevo León', 'Baja California Sur'],
-        required: true
-    },
-    reservaciones: {
-        type: String
-    }
-});
-
-let Alojamiento = mongoose.model('alojamientos',alojamientoSchema);
+const esquemas = require("../../server");
 
 router.get('/get_all',(req,res)=>{
     Alojamiento.find().then(function (docs) {

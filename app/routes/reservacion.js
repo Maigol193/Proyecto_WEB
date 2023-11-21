@@ -1,43 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const { default: mongoose } = require('mongoose');
-const add_reservacion_to_User = require('./usuario');
-const delete_reservacion_from_User = require('./usuario');
-
-//Esquemas
-const reservacionSchema = mongoose.Schema({
-    status: {
-        type: Boolean, //true activo, false terminado o cancelado
-        required: true
-    },
-    fechaEntrada: {
-        type: Date,
-        required: true
-    },
-    fechaSalida: {
-        type: Date,
-        required: true
-    },
-    alojamiento: {
-        type: String,
-        unique: true,
-        required: true
-    },
-    host: {
-        type: String,
-        required: true
-    },
-    cliente: {
-        type: String,
-        required: true
-    },
-    totalPrice: {
-        type: Number,
-        required: true
-    }
-});
-
-let Reservacion = mongoose.model('reservaciones',reservacionSchema);
+const esquemas = require("../../server");
 
 //GET reservacion por ID
 router.get('/reservation', (req,res) => {
