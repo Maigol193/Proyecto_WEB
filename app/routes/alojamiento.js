@@ -3,6 +3,19 @@ const router = express.Router();
 const { default: mongoose } = require('mongoose');
 const esquemas = require("../../server");
 
+function add_alojamiento_to_User(id,newAlojamiento){
+    esquemas.Usuario.findByIdAndUpdate(id, { $push: { alojamientos: newAlojamiento } }, {new: true}).then((doc)=> {
+        console.log(doc);
+    }).catch((err)=>console.log(err));
+}
+
+function delete_alojamiento_from_User(id,alojamiento_to_err){
+    esquemas.Usuario.findByIdAndUpdate(id, { $pull: { alojamientos: alojamiento_to_err} }, {new: true}).then((doc)=> {
+        console.log(doc);
+    }).catch((err)=>console.log(err));
+}
+
+
 router.get('/get_all',(req,res)=>{
     Alojamiento.find().then(function (docs) {
         res.send(docs);
@@ -15,7 +28,7 @@ router.get('/get_filter') //GET por filtros
 router.post('/create',(req,res) => {
     let newAlojamiento = req.body;
     let id_host = req.body.host;
-    let aloj = Alojamiento(newAlojamiento);
+    let aloj = esquemas.Alojamiento(newAlojamiento);
     aloj.save().then(doc => {
         aloj_id = doc._id.toString();
         add_alojamiento_to_User(id_host,aloj_id);
@@ -30,7 +43,7 @@ router.post('/create',(req,res) => {
 
 router.put('/edit_alojamiecznto',(req,res)=>{
     let UserName = req.query.name;
-   User.find({
+    User.find({
     Nombre: {$regex: UserName},
     Sexo:"H"
     }).then(function (docs) {
@@ -69,7 +82,7 @@ router.put('/edit_alojamiento',(req,res)=>{
     }
     
     if(flag_updated){
-        Alojamiento.findByIdAndUpdate(req.body.id,object_to_update,{new:true}).then((doc)=> {
+        esquemas.Alojamiento.findByIdAndUpdate(req.body.id,object_to_update,{new:true}).then((doc)=> {
             console.log(doc);
             res.send(doc);
         }).catch((err)=>console.log(err));
@@ -81,7 +94,7 @@ router.delete('/delete_alojamiento',(req,res)=>{
     let id = req.body.id;
     let host = req.body.host;
     delete_alojamiento_from_User(host,id);
-    Alojamiento.findByIdAndDelete(id).then((doc)=> {
+    esquemas.Alojamiento.findByIdAndDelete(id).then((doc)=> {
         res.send(doc);
     }).catch((err)=>console.log(err));
 });
