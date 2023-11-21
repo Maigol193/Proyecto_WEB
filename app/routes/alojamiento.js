@@ -23,6 +23,38 @@ router.get('/get_all',(req,res)=>{
     }).catch((err) => console.log(err));
 }); //GET para todos
 
+router.get('/get_filtered', (req, res) => {
+    let { categories, estado, title } = req.body;
+
+    // Construir el objeto de búsqueda dinámicamente
+    const filtro = {};
+
+    if (categories) {
+        filtro.categories = new RegExp(categories, 'i');
+    }
+
+    if (estado) {
+        filtro.estado = new RegExp(estado, 'i');
+    }
+
+    if (title) {
+        // Puedes ajustar los campos en los que buscas según tus necesidades
+        filtro.title = new RegExp(title,'i');
+    }
+    // Aplicar el filtro solo si hay al menos un campo definido
+    const query = Object.keys(filtro).length > 0 ? esquemas.Alojamiento.find(filtro) : esquemas.Alojamiento.find();
+    query
+        .then(docs => {
+            res.send(docs);
+            console.log(docs);
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).send('Error en la búsqueda');
+        });
+});
+
+
 router.get('/get_filter') //GET por filtros
 
 router.post('/create',(req,res) => {
@@ -42,7 +74,10 @@ router.post('/create',(req,res) => {
 
 
 router.put('/edit_alojamiecznto',(req,res)=>{
-    let UserName = req.query.name;
+    let UserName = req.query.name;    
+    let Estado = req.body.state;
+    let categorias = req.body.category;
+
     User.find({
     Nombre: {$regex: UserName},
     Sexo:"H"
