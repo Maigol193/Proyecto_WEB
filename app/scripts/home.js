@@ -52,9 +52,13 @@ function alojamientosToDisplay(array) {
             </button>
         </div>
         <div class="card-body">
-            <h4 class="card-title">Title</h4>
-            <p class="card-text">Text</p>
-            <button type="button" class="btn btn-primary btn-lg" id="primer-auth${i}"> Launch </button>
+            <h4 class="card-title">${alojamiento.title}</h4>
+            <p class="card-text">${alojamiento.description}</p>
+            <p class="flex items-center justify-between">
+                <b>Precio por noche</b>
+                <b>$${alojamiento.price}</b>
+            </p>
+            <button type="button" class="btn btn-primary btn-sm items-center inline-flex rounded" id="primer-auth${i}"> Reservar &nbsp; <i class="fa-solid fa-arrow-right fa-sm" style="color: #ffffff;"></i> </button>
         </div>
     </div>
             `
