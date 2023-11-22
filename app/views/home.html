@@ -11,10 +11,12 @@
     <style>
         .carta_margin {
             margin: 10px;
-            width: 290px;
-            height: 430px;
+            max-width: 317px;
+            max-height: 470px;
         }
-
+        .para_img {
+            margin-top: 10px;
+        }
         .para_nav {
             z-index: 1000;
             background-color: rgb(241 245 249);
@@ -61,36 +63,24 @@
                                         stroke-width="2" d="m1 1 4 4 4-4" />
                                 </svg></button>
                             <div id="dropdown"
-                                class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
+                                class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow">
                                 <ul class="py-2 text-sm text-gray-700 dark:text-gray-200"
                                     aria-labelledby="dropdown-button">
                                     <li>
                                         <button type="button"
-                                            class="inline-flex w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Jalisco</button>
+                                            class="inline-flex w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"  onclick="cambiarTexto('Jalisco')">Jalisco</button>
                                     </li>
                                     <li>
                                         <button type="button"
-                                            class="inline-flex w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Nayarit</button>
+                                            class="inline-flex w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" onclick="cambiarTexto('Nuevo León')">Nuevo León</button>
                                     </li>
                                     <li>
                                         <button type="button"
-                                            class="inline-flex w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">CDMX</button>
+                                            class="inline-flex w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" onclick="cambiarTexto('Baja California Sur')">Baja&nbsp;California&nbsp;Sur</button>
                                     </li>
                                     <li>
                                         <button type="button"
-                                            class="inline-flex w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Aguascalientes</button>
-                                    </li>
-                                    <li>
-                                        <button type="button"
-                                            class="inline-flex w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Puebla</button>
-                                    </li>
-                                    <li>
-                                        <button type="button"
-                                            class="inline-flex w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Oaxaca</button>
-                                    </li>
-                                    <li>
-                                        <button type="button"
-                                            class="inline-flex w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Colima</button>
+                                            class="inline-flex w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" onclick="cambiarTexto('Estados')">Estados</button>
                                     </li>
                                 </ul>
                             </div>
@@ -98,7 +88,7 @@
                                 <input type="search" id="search-dropdown" style="width: 350px"
                                     class="block p-2.5 w-full z-20 text-sm text-gray-900 bg-gray-50 rounded-e-lg border-s-gray-50 border-s-2 border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-s-gray-700  dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-blue-500"
                                     placeholder="Search" required>
-                                <button type="submit"
+                                <button type="button"  onclick="capturarSearchInput()"
                                     class="absolute top-0 end-0 p-2.5 text-sm font-medium h-full text-white bg-blue-700 rounded-e-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                                     <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                         fill="none" viewBox="0 0 20 20">
@@ -114,62 +104,62 @@
             </div>
             <div class="items-center inline-flex" style="padding-right: 20px; max-height: 55px;" role="group">
                 <button type="button"
-                    class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-900 bg-transparent hover:bg-gray-500 hover:text-black focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-white dark:border-white dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:bg-gray-700">
+                    class="inline-flex items-center px-4 py-2 text-sm font-medium" category="Playa" onclick="toggleFiltro(this)">
                     <i class="fa-solid fa-umbrella-beach fa-sm" style="color: #000000;"></i>
                     &nbsp;Playa
                 </button>
                 <button type="button"
-                    class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-900 bg-transparent hover:bg-gray-500 hover:text-white focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-white dark:border-white dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:bg-gray-700">
+                    class="inline-flex items-center px-4 py-2 text-sm font-medium" category="Ciudad" onclick="toggleFiltro(this)">
                     <i class="fa-solid fa-city fa-sm" style="color: #000000;"></i>
                     &nbsp;Ciudad
                 </button>
                 <button type="button"
-                    class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-900 bg-transparent hover:bg-gray-500 hover:text-white focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-white dark:border-white dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:bg-gray-700">
+                    class="inline-flex items-center px-4 py-2 text-sm font-medium" category="Lago" onclick="toggleFiltro(this)">
                     <i class="fa-solid fa-water fa-sm" style="color: #000000;"></i>
                     &nbsp;Lago
                 </button>
                 <button type="button"
-                    class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-900 bg-transparent hover:bg-gray-500 hover:text-white focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-white dark:border-white dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:bg-gray-700">
+                    class="inline-flex items-center px-4 py-2 text-sm font-medium" category="Tropical" onclick="toggleFiltro(this)">
                     <i class="fa-solid fa-martini-glass-citrus fa-sm" style="color: #000000;"></i>
                     &nbsp;Tropical&nbsp;&nbsp;
                 </button>
                 <button type="button"
-                    class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-900 bg-transparent hover:bg-gray-500 hover:text-white focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-white dark:border-white dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:bg-gray-700">
+                    class="inline-flex items-center px-4 py-2 text-sm font-medium" category="Casa de campo" onclick="toggleFiltro(this)">
                     <i class="fa-solid fa-tree fa-sm" style="color: #000000;"></i>
                     &nbsp;Casa&nbsp;de&nbsp;campo
                 </button>
                 <button type="button"
-                    class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-900 bg-transparent hover:bg-gray-500 hover:text-white focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-white dark:border-white dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:bg-gray-700">
+                    class="inline-flex items-center px-4 py-2 text-sm font-medium" category="Camping" onclick="toggleFiltro(this)">
                     <i class="fa-solid fa-campground fa-sm" style="color: #000000;"></i>
                     &nbsp;Camping
                 </button>
                 <button type="button"
-                    class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-900 bg-transparent hover:bg-gray-500 hover:text-white focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-white dark:border-white dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:bg-gray-700">
+                    class="inline-flex items-center px-4 py-2 text-sm font-medium" category="Barcos" onclick="toggleFiltro(this)">
                     <i class="fa-solid fa-ship fa-sm" style="color: #000000;"></i>
                     &nbsp;&nbsp;Barcos&nbsp;&nbsp;
                 </button>
                 <button type="button"
-                    class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-900 bg-transparent hover:bg-gray-500 hover:text-white focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-white dark:border-white dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:bg-gray-700">
+                    class="inline-flex items-center px-4 py-2 text-sm font-medium" category="Deluxe" onclick="toggleFiltro(this)">
                     <i class="fa-solid fa-champagne-glasses fa-sm" style="color: #000000;"></i>
                     &nbsp;Deluxe
                 </button>
                 <button type="button"
-                    class="inline-flex items-center px-3 py-2 text-sm font-medium text-gray-900 bg-transparent hover:bg-gray-500 hover:text-white focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-white dark:border-white dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:bg-gray-700">
+                    class="inline-flex items-center px-3 py-2 text-sm font-medium" category="Rancho" onclick="toggleFiltro(this)">
                     <i class="fa-solid fa-cow fa-sm" style="color: #000000;"></i>
                     &nbsp;Rancho
                 </button>
                 <button type="button"
-                    class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-900 bg-transparent hover:bg-gray-500 hover:text-white focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-white dark:border-white dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:bg-gray-700">
+                    class="inline-flex items-center px-4 py-2 text-sm font-medium" category="Alberca" onclick="toggleFiltro(this)">
                     <i class="fa-solid fa-water-ladder fa-sm" style="color: #000000;"></i>
                     &nbsp;Alberca
                 </button>
                 <button type="button"
-                    class="inline-flex items-center px-3 py-2 text-sm font-medium text-gray-900 bg-transparent hover:bg-gray-500 hover:text-white focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-white dark:border-white dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:bg-gray-700">
+                    class="inline-flex items-center px-3 py-2 text-sm font-medium" category="Montaña" onclick="toggleFiltro(this)">
                     <i class="fa-solid fa-mountain-sun fa-sm" style="color: #000000;"></i>
                     &nbsp;Montaña
                 </button>
                 <button type="button"
-                    class="inline-flex items-center px-3 py-2 text-sm font-medium text-gray-900 bg-transparent hover:bg-gray-500 hover:text-white focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-white dark:border-white dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:bg-gray-700">
+                    class="inline-flex items-center px-3 py-2 text-sm font-medium" category="Populares" onclick="toggleFiltro(this)">
                     <i class="fa-solid fa-fire fa-sm" style="color: #000000;"></i>
                     &nbsp;Populares
                 </button>
