@@ -108,10 +108,45 @@ function capturarSearchInput() {
     imprimirFiltros();
   }
   
+
+  function construirURLConParametros(url, parametros) {
+    var urlConParametros = url + "?";
+  
+    for (var clave in parametros) {
+      if (parametros.hasOwnProperty(clave)) {
+        var valor = parametros[clave];
+  
+        // Si el valor es un array, construye la cadena de consulta para un array
+        if (Array.isArray(valor)) {
+          valor.forEach(function (elemento) {
+            urlConParametros += (clave + "[]") + "=" + (elemento) + "&";
+          });
+        } else {
+          // Si no es un array, trata el valor normalmente
+          urlConParametros += (clave) + "=" + (valor) + "&";
+        }
+      }
+    }
+  
+    // Elimina el último "&" para tener una URL válida
+    urlConParametros = urlConParametros.slice(0, -1);
+  
+    return urlConParametros;
+  }
+  
+  
 function imprimirFiltros(){
     console.log("entro");
+    let url="http://localhost:3000/sinAdmin/get_filtered";
+    var parametros = {
+        categories: filtroCategorias,
+        estado: filtroEstado,
+        title: filtroBusqueda
+      };
+
+    var urlConParametros = construirURLConParametros(url, parametros);
     let xhr2 = new XMLHttpRequest();
-    xhr2.open('GET', 'http://localhost:3000/sinAdmin/get_filtered?categories=Popular&estado=&title=');
+    xhr2.open('GET', urlConParametros);
     xhr2.send();
     xhr2.onload = function () {
         if (xhr2.status == 200) {

@@ -33,9 +33,9 @@ GET http://localhost:3000/sinAdmin/get_all HTTP/1.1
 
 //GET filtered
 ###
-GET http://localhost:3000/sinAdmin/get_filtered?categories=Popular&estado=&title= HTTP/1.1
+GET http://localhost:3000/sinAdmin/get_filtered?categories[]=popular&categories[]=playa&estado=&title= HTTP/1.1
 
-//---------------------------------------RUTAS CON ADMIN----------------------------------------------------------
+//---------------------------------------RUTAS CON ADMIN--------------------------------------------------------
 
 //-------------------------------------------------USUARIO-------------------------------------------------------
 //GET user por ID account
@@ -89,17 +89,17 @@ content-type: application/json
 x-auth:admin
 
 {
-    "host":"655ab5bd76d6c8f8ab3ff606",
-    "title": "Prueba_filtro_f",
+    "host":"655ab30faee7cf1a2262bde5",
+    "title": "FFFF",
     "description": "detalles y precio",
     "banos": 3,
     "beds": 2,
     "huespedes": 4,
     "rooms": 1,
-    "categories": ["Popular","Montaña"],
+    "categories": ["Montaña","Playa"],
     "images": ["imagen1.png","imagen2.png"],
     "price": 1300,
-    "estado": "Baja California Sur",
+    "estado": "Nuevo León",
     "reservaciones": ""
 }
 
