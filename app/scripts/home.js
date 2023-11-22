@@ -2,7 +2,7 @@
 var alojamientosJSON;
 
 let xhr = new XMLHttpRequest();
-xhr.open('GET', 'http://localhost:3000/alojamientos/get_all', true);
+xhr.open('GET', 'http://localhost:3000/sinAdmin/get_all', true);
 xhr.send();
 
 xhr.onload = function () {
