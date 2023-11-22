@@ -33,11 +33,11 @@ GET http://localhost:3000/sinAdmin/get_all HTTP/1.1
 
 //GET filtered
 ###
-GET http://localhost:3000/alojamientos/get_filtered HTTP/1.1
+GET http://localhost:3000/sinAdmin/get_filtered HTTP/1.1
 content-type: application/json
 
 {
-    "categories": ["novo"],
+    "categories": ["Popular"],
     "estado" : "",
     "title" : ""
 }
@@ -97,13 +97,13 @@ x-auth:admin
 
 {
     "host":"655ab5bd76d6c8f8ab3ff606",
-    "title": "Prueba_filtro_e",
+    "title": "Prueba_filtro_f",
     "description": "detalles y precio",
     "banos": 3,
     "beds": 2,
     "huespedes": 4,
     "rooms": 1,
-    "categories": ["novo"],
+    "categories": ["Popular","Montaña"],
     "images": ["imagen1.png","imagen2.png"],
     "price": 1300,
     "estado": "Baja California Sur",

@@ -54,7 +54,6 @@ router.get('/get_filtered', (req, res) => {
     query
         .then(docs => {
             res.send(docs);
-            console.log(docs);
         })
         .catch(err => {
             console.log(err);
