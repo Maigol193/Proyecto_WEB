@@ -51,7 +51,7 @@ function alojamientosToDisplay(array) {
         </div>
         <div class="card-body">
             <h4 class="card-title">${alojamiento.title}</h4>
-            <p class="card-text">${alojamiento.categories}</p>
+            <p class="card-text">${alojamiento.categories}  ${alojamiento.estado}</p>
             <p class="flex items-center justify-between">
                 <b>Precio por noche</b>
                 <b>$${alojamiento.price}</b>
@@ -97,6 +97,9 @@ function cambiarTexto(nuevoTexto) {
     var dropdownButton = document.getElementById("dropdown-button");
     filtroEstado=nuevoTexto;
     dropdownButton.innerHTML = nuevoTexto;
+    if (nuevoTexto=="Estados"){
+        filtroEstado="";
+    }
     imprimirFiltros();
 }
 
