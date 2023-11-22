@@ -47,7 +47,7 @@ content-type: application/json
 //-------------------------------------------------USUARIO-------------------------------------------------------
 //GET user por ID account
 ###
-PUT http://localhost:3000/usuarios/user HTTP/1.1
+GET http://localhost:3000/usuarios/user HTTP/1.1
 Content-Type: application/json
 x-auth:admin
 
@@ -62,9 +62,12 @@ Content-Type: application/json
 x-auth:admin
 
 {
-    "id": "655c190930349fcbf6f1ce23",
+    "id": "655ab30faee7cf1a2262bde5",
+    "name": "Maigol1",
+    "email": "alberto.torres@iteso.mx",
     "cellphone": "3330003330",
-    "residencia": "Los Altos"
+    "residencia": "Guadalajara",
+    "description": "o get social media testimonials like these, keep your customers engaged with your social media accounts by posting regularly yourself"
 }
 
 
