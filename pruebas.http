@@ -33,14 +33,7 @@ GET http://localhost:3000/sinAdmin/get_all HTTP/1.1
 
 //GET filtered
 ###
-GET http://localhost:3000/sinAdmin/get_filtered HTTP/1.1
-content-type: application/json
-
-{
-    "categories": ["Popular"],
-    "estado" : "",
-    "title" : ""
-}
+GET http://localhost:3000/sinAdmin/get_filtered?categories=Popular&estado=&title= HTTP/1.1
 
 //---------------------------------------RUTAS CON ADMIN----------------------------------------------------------
 

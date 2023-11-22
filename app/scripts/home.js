@@ -109,21 +109,19 @@ function capturarSearchInput() {
   }
   
 function imprimirFiltros(){
+    console.log("entro");
     let xhr2 = new XMLHttpRequest();
-    xhr2.open('GET', 'http://localhost:3000/sinAdmin/get_all', true);
+    xhr2.open('GET', 'http://localhost:3000/sinAdmin/get_filtered?categories=Popular&estado=&title=');
     xhr2.send();
-
     xhr2.onload = function () {
         if (xhr2.status == 200) {
             let alojamientosJSON2 = JSON.parse(xhr2.responseText);
+            console.log(alojamientosJSON2);
             alojamientosToDisplay(alojamientosJSON2);
         }
         else {
             alert(xhr2.status + ": " + xhr2.statusText);
         }
     };
-    console.log(filtroBusqueda);
-    console.log(filtroCategorias);
-    console.log(filtroEstado);
 }
 

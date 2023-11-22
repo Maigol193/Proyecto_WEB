@@ -33,7 +33,6 @@ router.get('/get_all',(req,res)=>{
     esquemas.Alojamiento.find().then(function (docs) {
         if (docs.length > 0) {
             res.status(200).send(docs);
-            console.log(docs);
         } else {
             res.status(404).send({ error: 'No se encontró el usuario' });
         }
@@ -42,7 +41,7 @@ router.get('/get_all',(req,res)=>{
 
 //GET por filtro
 router.get('/get_filtered', (req, res) => {
-    let { categories, estado, title } = req.body;
+    let { categories, estado, title } = req.query;
 
     const filtro = {};
 
@@ -53,6 +52,7 @@ router.get('/get_filtered', (req, res) => {
     const query = Object.keys(filtro).length > 0 ? esquemas.Alojamiento.find(filtro) : esquemas.Alojamiento.find();
     query
         .then(docs => {
+            console.log(docs);
             res.send(docs);
         })
         .catch(err => {
