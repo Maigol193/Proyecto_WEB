@@ -15,39 +15,6 @@ function delete_alojamiento_from_User(id,alojamiento_to_err){
     }).catch((err)=>console.log(err));
 }
 
-
-router.get('/get_all',(req,res)=>{
-    esquemas.Alojamiento.find().then(function (docs) {
-        if (docs.length > 0) {
-            res.status(200).send(docs);
-            console.log(docs);
-        } else {
-            res.status(404).send({ error: 'No se encontró el usuario' });
-        }
-    }).catch((err) => console.log(err));
-}); //GET para todos
-
-router.get('/get_filtered', (req, res) => {
-    let { categories, estado, title } = req.body;
-
-    const filtro = {};
-
-    if (categories && categories.length > 0) {filtro.categories = { $all: categories };}
-    if (estado) {filtro.estado = new RegExp(estado, 'i');}
-    if (title) {filtro.title = new RegExp(title,'i');}
-    
-    const query = Object.keys(filtro).length > 0 ? esquemas.Alojamiento.find(filtro) : esquemas.Alojamiento.find();
-    query
-        .then(docs => {
-            res.send(docs);
-            console.log(docs);
-        })
-        .catch(err => {
-            console.log(err);
-            res.status(500).send('Error en la búsqueda');
-        });
-});
-
 router.post('/create',(req,res) => {
     let newAlojamiento = req.body;
     let id_host = req.body.host;

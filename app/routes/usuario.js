@@ -5,14 +5,12 @@ const esquemas = require("../../server");
 
 //poner status 200 o 500
 
-//GET usuario por email y contraseña
+//GET usuario por ID
 router.get('/user', (req,res) => {
-    let email = req.body.email,
-        password = req.body.password
+    let id = req.body.id;
     
     esquemas.Usuario.find({
-        email: email,
-        password: password
+        _id: id
     }).then(function (docs) {
         if (docs.length > 0) {
             res.send(docs);
@@ -23,12 +21,9 @@ router.get('/user', (req,res) => {
     }).catch((err) => console.log(err));
 });
 
+//GET usuario por email y contraseña
+
 //POST usuario
-router.post('/create', (req,res) => {
-    const newUser = req.body;
-    const user = esquemas.Usuario(newUser);
-    user.save().then((doc) => res.send(doc));
-});
 
 /*
 //DELETE alojamiento siendo host

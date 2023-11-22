@@ -2,22 +2,22 @@ const express = require('express');
 const alojamientos = require('../routes/alojamiento'); 
 const reservacion = require('../routes/reservacion');
 const usuario = require('../routes/usuario');
+const sinAdmin = require('../routes/sinAdmin');
 
 const router = express.Router();
 
-/*
 function validateAdmin(req, res, next) {
-    const adminHeader = req.headers['x-auth'];
-    if (adminHeader && adminHeader === 'admin') {
-      next();
-    } else {
-      res.status(403).json({ error: 'Acceso no autorizado' });
-    }
+  const header = req.get('x-auth');
+  if(!header || header != 'admin'){
+      res.status(403).send("Acceso no autorizado, inicie sesión o crea una cuenta");
   }
-*/
+  next();
+};
 
-router.use('/reservaciones',reservacion);
-router.use('/alojamientos',alojamientos);
-router.use('/usuarios',usuario);
+
+router.use('/sinAdmin',sinAdmin);
+router.use('/usuarios',validateAdmin,usuario);
+router.use('/alojamientos',validateAdmin,alojamientos);
+router.use('/reservaciones',validateAdmin,reservacion);
 
 module.exports = router;
