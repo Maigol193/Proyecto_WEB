@@ -51,7 +51,7 @@ function alojamientosToDisplay(array) {
         </div>
         <div class="card-body">
             <h4 class="card-title">${alojamiento.title}</h4>
-            <p class="card-text">${alojamiento.description}</p>
+            <p class="card-text">${alojamiento.categories}</p>
             <p class="flex items-center justify-between">
                 <b>Precio por noche</b>
                 <b>$${alojamiento.price}</b>
