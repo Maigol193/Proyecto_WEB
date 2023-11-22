@@ -19,7 +19,6 @@ function delete_alojamiento_from_User(id,alojamiento_to_err){
 router.get('/get_all',(req,res)=>{
     esquemas.Alojamiento.find().then(function (docs) {
         res.send(docs);
-        console.log(docs);
     }).catch((err) => console.log(err));
 }); //GET para todos
 
