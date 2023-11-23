@@ -15,8 +15,9 @@ loginButtonUser.addEventListener('click', function () {
         else{
             if (xhr.status == 200) {
                 console.log("Usuario encontrado. Iniciando sesión");
-                sessionStorage.setItem('userData', JSON.parse(xhr.responseText));
+                sessionStorage.setItem('userData', JSON.stringify(xhr.responseText));
                 window.location.href = "home_loggeado.html";
+                console.log(xhr.responseText);
             } else {
                 console.log("error");
             }
