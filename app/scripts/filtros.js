@@ -1,20 +1,40 @@
-
 var alojamientosJSON;
 
-let xhr = new XMLHttpRequest();
-xhr.open('GET', 'http://localhost:3000/sinAdmin/get_all', true);
-xhr.send();
+document.addEventListener("DOMContentLoaded", function () {
+    var htmlType = document.documentElement.getAttribute("data-html-type");
 
-xhr.onload = function () {
-    if (xhr.status == 200) {
-        alojamientosJSON = JSON.parse(xhr.responseText);
-        alojamientosToDisplay(alojamientosJSON);
-    }
-    else {
-        alert(xhr.status + ": " + xhr.statusText);
-    }
-};
+    if (htmlType === "home-sin-log") {
+        console.log("Estás en la página 1.");
+        let xhr = new XMLHttpRequest();
+        xhr.open('GET', 'http://localhost:3000/sinAdmin/get_all', true);
+        xhr.send();
 
+        xhr.onload = function () {
+            if (xhr.status == 200) {
+                alojamientosJSON = JSON.parse(xhr.responseText);
+                alojamientosToDisplay(alojamientosJSON);
+            }
+            else {
+                alert(xhr.status + ": " + xhr.statusText);
+            }
+        };
+    } else if (htmlType === "home-log") {
+        console.log("Estás en la página 2.");
+        let xhr = new XMLHttpRequest();
+        xhr.open('GET', 'http://localhost:3000/sinAdmin/get_all', true);
+        xhr.send();
+
+        xhr.onload = function () {
+            if (xhr.status == 200) {
+                alojamientosJSON = JSON.parse(xhr.responseText);
+                alojamientosToDisplay(alojamientosJSON);
+            }
+            else {
+                alert(xhr.status + ": " + xhr.statusText);
+            }
+        };
+    }
+});
 
 function alojamientosToDisplay(array) {
     const alojamientos = array;
@@ -73,79 +93,79 @@ function alojamientosToDisplay(array) {
     }
 }
 
-var filtroCategorias=[];
+var filtroCategorias = [];
 
 function toggleFiltro(boton) {
     boton.classList.toggle("active");
     boton.style.backgroundColor = boton.classList.contains("active") ? "grey" : "initial";
     var botonesActivos = document.querySelectorAll('.active');
 
-  var categoriasActivas = Array.from(botonesActivos).map(function(botonActivo) {
-    return botonActivo.getAttribute('category');
-  });
+    var categoriasActivas = Array.from(botonesActivos).map(function (botonActivo) {
+        return botonActivo.getAttribute('category');
+    });
 
-  categoriasActivas = categoriasActivas.filter(function(categoria) {
-    return categoria !== null;
-  });
-  filtroCategorias = categoriasActivas;
-  imprimirFiltros();
+    categoriasActivas = categoriasActivas.filter(function (categoria) {
+        return categoria !== null;
+    });
+    filtroCategorias = categoriasActivas;
+    imprimirFiltros();
 }
 
-var filtroEstado="";
+var filtroEstado = "";
 
 function cambiarTexto(nuevoTexto) {
     var dropdownButton = document.getElementById("dropdown-button");
-    filtroEstado=nuevoTexto;
+    filtroEstado = nuevoTexto;
     dropdownButton.innerHTML = nuevoTexto;
-    if (nuevoTexto=="Estados"){
-        filtroEstado="";
+    if (nuevoTexto == "Estados") {
+        filtroEstado = "";
     }
     imprimirFiltros();
 }
 
-var filtroBusqueda="";
+var filtroBusqueda = "";
 
 function capturarSearchInput() {
     var inputSearch = document.getElementById("search-dropdown").value;
-    filtroBusqueda=inputSearch;
+    filtroBusqueda = inputSearch;
     imprimirFiltros();
-  }
-  
+}
 
-  function construirURLConParametros(url, parametros) {
+
+function construirURLConParametros(url, parametros) {
     var urlConParametros = url + "?";
-  
+
     for (var clave in parametros) {
-      if (parametros.hasOwnProperty(clave)) {
-        var valor = parametros[clave];
-  
-        // Si el valor es un array, construye la cadena de consulta para un array
-        if (Array.isArray(valor)) {
-          valor.forEach(function (elemento) {
-            urlConParametros += (clave + "[]") + "=" + (elemento) + "&";
-          });
-        } else {
-          // Si no es un array, trata el valor normalmente
-          urlConParametros += (clave) + "=" + (valor) + "&";
+        if (parametros.hasOwnProperty(clave)) {
+            var valor = parametros[clave];
+
+            // Si el valor es un array, construye la cadena de consulta para un array
+            if (Array.isArray(valor)) {
+                valor.forEach(function (elemento) {
+                    urlConParametros += (clave + "[]") + "=" + (elemento) + "&";
+                });
+            } else {
+                // Si no es un array, trata el valor normalmente
+                urlConParametros += (clave) + "=" + (valor) + "&";
+            }
         }
-      }
     }
-  
+
     // Elimina el último "&" para tener una URL válida
     urlConParametros = urlConParametros.slice(0, -1);
-  
+
     return urlConParametros;
-  }
-  
-  
-function imprimirFiltros(){
+}
+
+
+function imprimirFiltros() {
     console.log("entro");
-    let url="http://localhost:3000/sinAdmin/get_filtered";
+    let url = "http://localhost:3000/sinAdmin/get_filtered";
     var parametros = {
         categories: filtroCategorias,
         estado: filtroEstado,
         title: filtroBusqueda
-      };
+    };
 
     var urlConParametros = construirURLConParametros(url, parametros);
     let xhr2 = new XMLHttpRequest();
