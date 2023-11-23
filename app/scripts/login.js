@@ -3,7 +3,7 @@ const loginButtonUser = document.getElementById('loginUser');
 loginButtonUser.addEventListener('click', function () {
     console.log("Intentando loggear");
     let email = getEmailUser();
-    let password = getPasswordUser(); // Corregido aquí
+    let password = getPasswordUser();
     let query = "email=" + email + "&password=" + password;
     let xhr = new XMLHttpRequest();
     xhr.open('GET', 'http://localhost:3000/sinAdmin/user?' + query);
@@ -15,6 +15,7 @@ loginButtonUser.addEventListener('click', function () {
         else{
             if (xhr.status == 200) {
                 console.log("Usuario encontrado. Iniciando sesión");
+                sessionStorage.setItem('userData', JSON.parse(xhr.responseText));
                 window.location.href = "home_loggeado.html";
             } else {
                 console.log("error");
@@ -38,7 +39,7 @@ const loginButtonHost = document.getElementById('loginHost');
 loginButtonHost.addEventListener('click', function () {
     console.log("Intentando loggear");
     let email = getEmailHost();
-    let password = getPasswordHost(); // Corregido aquí
+    let password = getPasswordHost();
     let query = "email=" + email + "&password=" + password;
     let xhr = new XMLHttpRequest();
     xhr.open('GET', 'http://localhost:3000/sinAdmin/user?' + query);
@@ -49,8 +50,8 @@ loginButtonHost.addEventListener('click', function () {
             console.log("error");
         else{
             if (xhr.status == 200) {
-                console.log(xhr.responseText.isHost);
                 console.log("Usuario encontrado. Iniciando sesión");
+                sessionStorage.setItem('userData', JSON.parse(xhr.responseText));
                 window.location.href = "home_host.html";
             } else {
                 console.log("error");

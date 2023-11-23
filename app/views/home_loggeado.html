@@ -1,102 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EarthBnb User</title>
+    <title>EarthBnb Home</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.1.1/flowbite.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <style>
         .carta_margin {
             margin: 10px;
-            width: 290px;
-            height: 420px;
+            max-width: 295px;
+            height: 445px;
         }
+
+        .para_img {
+            margin-top: 10px;
+        }
+
         .para_nav {
             z-index: 1000;
-            background-color: white;
+            background-color: rgb(241 245 249);
+            max-height: 160px;
         }
     </style>
 </head>
 
 <body>
     <header>
-        <nav style="z-index: 1200;" class="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600">
+        <nav style="z-index: 1200;"
+            class="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600">
             <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
                 <a href="home_loggeado.html" class="flex items-center space-x-3 rtl:space-x-reverse">
                     <img src="earthbnb.png" class="h-10" alt="Flowbite Logo">
                 </a>
                 <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-        <!-- Modal toggle -->
-        <button id="dropdownUserAvatarButton" data-dropdown-toggle="dropdownAvatar" class="flex text-sm bg-gray-800 rounded-full md:me-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" type="button" style="background: none;">
-            <i class="fa-solid fa-globe fa-xl" style="color: #000000;"></i>
-        </button>
-            <!-- Dropdown menu -->
-            <div id="dropdownAvatar" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
-                <div class="px-4 py-3 text-sm text-gray-900 dark:text-white">
-                  <div>Miguel Torres</div>
-                  <div class="font-medium truncate">maigol@gmail.com</div>
-                </div>
-                <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownUserAvatarButton">
-                  <li>
-                    <a href="my_reservations.html" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">My Reservations</a>
-                  </li>
-                  <li>
-                    <a href="perfil.html" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Account</a>
-                  </li>
-                  <li>
-                    <a href="home_host.html" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Change to Host</a>
-                  </li>
-                </ul>
-                <div class="py-2">
-                  <a href="home.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign out</a>
-                </div>
-            </div>
+                    <!-- Modal toggle -->
+                    <button id="dropdownUserAvatarButton" class="btn btn-transparent" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fa-solid fa-globe fa-xl" style="color: #000000;"></i>
+                    </button>
+                    
+                    
+                    <!-- Dropdown menu -->
+                    <div id="dropdownAvatar" class="dropdown-menu dropdown-menu-start" aria-labelledby="dropdownUserAvatarButton">
+                        <div class="px-4 py-3 text-sm text-gray-900 dark:text-white font-medium">
+                            <div class="mb-1">Miguel Torres</div>
+                            <div class="truncate">maigol@gmail.com</div>
+                        </div>
+                        <ul class="px-1 text-sm" aria-labelledby="dropdownUserAvatarButton">
+                            <li>
+                                <a href="my_reservations.html"
+                                class="dropdown-item text-sm hover-bg-gray-100 dark-hover-bg-gray-600 dark-text-gray-200 dark-hover-text-white">My
+                                    Reservations</a>
+                            </li>
+                            <li>
+                                <a href="perfil.html"
+                                class="dropdown-item text-sm hover-bg-gray-100 dark-hover-bg-gray-600 dark-text-gray-200 dark-hover-text-white">Account</a>
+                            </li>
+                            <li>
+                                <a href="home_host.html"
+                                class="dropdown-item text-sm hover-bg-gray-100 dark-hover-bg-gray-600 dark-text-gray-200 dark-hover-text-white">Change
+                                    to Host</a>
+                            </li>
+                        </ul>
+                        <div class="py-0 px-1">
+                            <a href="home.html"
+                                class="dropdown-item text-sm hover-bg-gray-100 dark-hover-bg-gray-600 dark-text-gray-200 dark-hover-text-white">Sign
+                                out</a>
+                        </div>
+                    </div>
+                    
+                
 
-                <a class="nav-link active text-dark" role="button" data-bs-toggle="modal" data-bs-target="#modal_Login" href="#modal_Login" aria-current="page"></a>
-                    <button data-collapse-toggle="navbar-sticky" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-sticky" aria-expanded="false">
+                    <a class="nav-link active text-dark" role="button" data-bs-toggle="modal"
+                        data-bs-target="#modal_Login" href="#modal_Login" aria-current="page"></a>
+                    <button data-collapse-toggle="navbar-sticky" type="button"
+                        class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                        aria-controls="navbar-sticky" aria-expanded="false">
                         <span class="sr-only">Open main menu</span>
-                        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+                        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 17 14">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M1 1h15M1 7h15M1 13h15" />
                         </svg>
                     </button>
                 </div>
                 <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
                     <form>
                         <div class="flex">
-                            <label for="search-dropdown" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Your Email</label>
-                            <button id="dropdown-button" data-dropdown-toggle="dropdown" class="flex-shrink-0 z-10 inline-flex items-center py-2.5 px-4 text-sm font-medium text-center text-gray-900 bg-gray-100 border border-gray-300 rounded-s-lg hover:bg-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700 dark:text-white dark:border-gray-600" type="button">Estados<svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
-                    </svg></button>
-                            <div id="dropdown" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
-                                <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdown-button">
-                                <li>
-                                    <button type="button" class="inline-flex w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Jalisco</button>
-                                </li>
-                                <li>
-                                    <button type="button" class="inline-flex w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Nayarit</button>
-                                </li>
-                                <li>
-                                    <button type="button" class="inline-flex w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">CDMX</button>
-                                </li>
-                                <li>
-                                    <button type="button" class="inline-flex w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Aguascalientes</button>
-                                </li>
-                                <li>
-                                    <button type="button" class="inline-flex w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Puebla</button>
-                                </li>
-                                <li>
-                                    <button type="button" class="inline-flex w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Oaxaca</button>
-                                </li>
-                                <li>
-                                    <button type="button" class="inline-flex w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Colima</button>
-                                </li>
+                            <button id="dropdown-button" data-dropdown-toggle="dropdown"
+                                class="flex-shrink-0 z-10 inline-flex items-center py-2.5 px-4 text-sm font-medium text-center text-gray-900 bg-gray-100 border border-gray-300 rounded-s-lg hover:bg-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700 dark:text-white dark:border-gray-600"
+                                type="button">Estados<svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2" d="m1 1 4 4 4-4" />
+                                </svg></button>
+                            <div id="dropdown" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow">
+                                <ul class="py-2 text-sm text-gray-700 dark:text-gray-200"
+                                    aria-labelledby="dropdown-button">
+                                    <li>
+                                        <button type="button"
+                                            class="inline-flex w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                                            onclick="cambiarTexto('Jalisco')">Jalisco</button>
+                                    </li>
+                                    <li>
+                                        <button type="button"
+                                            class="inline-flex w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                                            onclick="cambiarTexto('Nuevo León')">Nuevo León</button>
+                                    </li>
+                                    <li>
+                                        <button type="button"
+                                            class="inline-flex w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                                            onclick="cambiarTexto('Baja California Sur')">Baja&nbsp;California&nbsp;Sur</button>
+                                    </li>
+                                    <li>
+                                        <button type="button"
+                                            class="inline-flex w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                                            onclick="cambiarTexto('Estados')">Estados</button>
+                                    </li>
                                 </ul>
                             </div>
                             <div class="relative w-full">
-                                <input type="search" id="search-dropdown" style="width: 350px" class="block p-2.5 w-full z-20 text-sm text-gray-900 bg-gray-50 rounded-e-lg border-s-gray-50 border-s-2 border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-s-gray-700  dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-blue-500" placeholder="Search" required>
-                                <button type="submit" class="absolute top-0 end-0 p-2.5 text-sm font-medium h-full text-white bg-blue-700 rounded-e-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                                    <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
+                                <input type="search" id="search-dropdown" style="width: 350px"
+                                    class="block p-2.5 w-full z-20 text-sm text-gray-900 bg-gray-50 rounded-e-lg border-s-gray-50 border-s-2 border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
+                                    placeholder="Search">
+                                <button type="button" onclick="capturarSearchInput()"
+                                    class="absolute top-0 end-0 p-2.5 text-sm font-medium h-full text-white bg-blue-700 rounded-e-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                                    <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                        fill="none" viewBox="0 0 20 20">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
                                     </svg>
                                     <span class="sr-only">Search</span>
                                 </button>
@@ -105,643 +139,112 @@
                     </form>
                 </div>
             </div>
-            <div class="items-center inline-flex" style="padding-left: 20px;" role="group">
-                <button type="button" class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-900 bg-transparent hover:bg-gray-500 hover:text-white focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-white dark:border-white dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:bg-gray-700">
-                <i class="fa-solid fa-umbrella-beach fa-sm" style="color: #000000;"></i>
-                &nbsp;Playa
+            <div class="items-center inline-flex" style="padding-right: 20px; max-height: 55px;" role="group">
+                <button type="button" class="inline-flex items-center px-3 py-2 text-sm font-medium"
+                    style="margin-left: 20px;" category="Playa" onclick="toggleFiltro(this)">
+                    <i class="fa-solid fa-umbrella-beach fa-sm" style="color: #000000;"></i>
+                    &nbsp;Playa
                 </button>
-                <button type="button" class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-900 bg-transparent hover:bg-gray-500 hover:text-white focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-white dark:border-white dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:bg-gray-700">
-                <i class="fa-solid fa-city fa-sm" style="color: #000000;"></i>
-                &nbsp;Ciudad
+                <button type="button" class="inline-flex items-center px-3 py-2 text-sm font-medium" category="Ciudad"
+                    onclick="toggleFiltro(this)">
+                    <i class="fa-solid fa-city fa-sm" style="color: #000000;"></i>
+                    &nbsp;Ciudad
                 </button>
-                <button type="button" class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-900 bg-transparent hover:bg-gray-500 hover:text-white focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-white dark:border-white dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:bg-gray-700">
-                <i class="fa-solid fa-water fa-sm" style="color: #000000;"></i>
-                &nbsp;Lago
+                <button type="button" class="inline-flex items-center px-3 py-2 text-sm font-medium" category="Lago"
+                    onclick="toggleFiltro(this)">
+                    <i class="fa-solid fa-water fa-sm" style="color: #000000;"></i>
+                    &nbsp;Lago
                 </button>
-                <button type="button" class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-900 bg-transparent hover:bg-gray-500 hover:text-white focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-white dark:border-white dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:bg-gray-700">
-                <i class="fa-solid fa-martini-glass-citrus fa-sm" style="color: #000000;"></i>
-                &nbsp;Tropical&nbsp;&nbsp;
+                <button type="button" class="inline-flex items-center px-3 py-2 text-sm font-medium" category="Tropical"
+                    onclick="toggleFiltro(this)">
+                    <i class="fa-solid fa-martini-glass-citrus fa-sm" style="color: #000000;"></i>
+                    &nbsp;Tropical&nbsp;&nbsp;
                 </button>
-                <button type="button" class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-900 bg-transparent hover:bg-gray-500 hover:text-white focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-white dark:border-white dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:bg-gray-700">
-                <i class="fa-solid fa-tree fa-sm" style="color: #000000;"></i>
-                &nbsp;Casa de campo
+                <button type="button" class="inline-flex items-center px-3 py-2 text-sm font-medium"
+                    category="Casa de campo" onclick="toggleFiltro(this)">
+                    <i class="fa-solid fa-tree fa-sm" style="color: #000000;"></i>
+                    &nbsp;Casa&nbsp;de&nbsp;campo
                 </button>
-                <button type="button" class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-900 bg-transparent hover:bg-gray-500 hover:text-white focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-white dark:border-white dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:bg-gray-700">
-                <i class="fa-solid fa-campground fa-sm" style="color: #000000;"></i>
-                &nbsp;Camping
+                <button type="button" class="inline-flex items-center px-3 py-2 text-sm font-medium" category="Camping"
+                    onclick="toggleFiltro(this)">
+                    <i class="fa-solid fa-campground fa-sm" style="color: #000000;"></i>
+                    &nbsp;Camping
                 </button>
-                <button type="button" class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-900 bg-transparent hover:bg-gray-500 hover:text-white focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-white dark:border-white dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:bg-gray-700">
-                <i class="fa-solid fa-ship fa-sm" style="color: #000000;"></i>
-                &nbsp;&nbsp;Barcos&nbsp;&nbsp;
+                <button type="button" class="inline-flex items-center px-3 py-2 text-sm font-medium" category="Barcos"
+                    onclick="toggleFiltro(this)">
+                    <i class="fa-solid fa-ship fa-sm" style="color: #000000;"></i>
+                    &nbsp;&nbsp;Barcos&nbsp;&nbsp;
                 </button>
-                <button type="button" class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-900 bg-transparent hover:bg-gray-500 hover:text-white focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-white dark:border-white dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:bg-gray-700">
-                <i class="fa-solid fa-champagne-glasses fa-sm" style="color: #000000;"></i>
-                &nbsp;Deluxe
+                <button type="button" class="inline-flex items-center px-3 py-2 text-sm font-medium" category="Deluxe"
+                    onclick="toggleFiltro(this)">
+                    <i class="fa-solid fa-champagne-glasses fa-sm" style="color: #000000;"></i>
+                    &nbsp;Deluxe
                 </button>
-                <button type="button" class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-900 bg-transparent hover:bg-gray-500 hover:text-white focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-white dark:border-white dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:bg-gray-700">
-                <i class="fa-solid fa-cow fa-sm" style="color: #000000;"></i>
-                &nbsp;Rancho
+                <button type="button" class="inline-flex items-center px-3 py-2 text-sm font-medium" category="Rancho"
+                    onclick="toggleFiltro(this)">
+                    <i class="fa-solid fa-cow fa-sm" style="color: #000000;"></i>
+                    &nbsp;Rancho
                 </button>
-                <button type="button" class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-900 bg-transparent hover:bg-gray-500 hover:text-white focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-white dark:border-white dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:bg-gray-700">
-                <i class="fa-solid fa-water-ladder fa-sm" style="color: #000000;"></i>
-                &nbsp;Alberca
+                <button type="button" class="inline-flex items-center px-3 py-2 text-sm font-medium" category="Alberca"
+                    onclick="toggleFiltro(this)">
+                    <i class="fa-solid fa-water-ladder fa-sm" style="color: #000000;"></i>
+                    &nbsp;Alberca
                 </button>
-                <button type="button" class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-900 bg-transparent hover:bg-gray-500 hover:text-white focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-white dark:border-white dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:bg-gray-700">
-                <i class="fa-solid fa-mountain-sun fa-sm" style="color: #000000;"></i>
-                &nbsp;Montaña
+                <button type="button" class="inline-flex items-center px-3 py-2 text-sm font-medium" category="Montaña"
+                    onclick="toggleFiltro(this)">
+                    <i class="fa-solid fa-mountain-sun fa-sm" style="color: #000000;"></i>
+                    &nbsp;Montaña
                 </button>
-                <button type="button" class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-900 bg-transparent hover:bg-gray-500 hover:text-white focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-white dark:border-white dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:bg-gray-700">
-                <i class="fa-solid fa-fire fa-sm" style="color: #000000;"></i>
-                &nbsp;Populares
+                <button type="button" class="inline-flex items-center px-3 py-2 text-sm font-medium" category="Popular"
+                    onclick="toggleFiltro(this)">
+                    <i class="fa-solid fa-fire fa-sm" style="color: #000000;"></i>
+                    &nbsp;Populares
                 </button>
             </div>
         </nav>
     </header>
 
 
+
     <main style="background-color: rgb(241 245 249);">
-        <div id="inicio-body" style="margin-top: 110px; padding: 10px;">
-            <div class="row inline-flex">
-                <div class="carta_margin" style="background-color: rgb(241 245 249)">
-                    <div id="indicators-carousel" class="relative" data-carousel="static">
-                        <!-- Carousel wrapper -->
-                        <div class="relative h-80 overflow-hidden rounded-t-lg" style="margin-top: 0px; height: 300px;">
-                            <!-- Item 1 -->
-                            <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
-                                <img src="https://images.adsttc.com/media/images/5a58/a650/f197/cc1f/8600/0173/newsletter/S3_CDS--5.jpg?1515759173" class="absolute block w-full -translate-x-1/2 top-0 left-1/2" style="height: 300px;" alt="...">
-                            </div>
-                            <!-- Item 2 -->
-                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                                <img src="https://images.adsttc.com/media/images/5a58/a650/f197/cc1f/8600/0173/newsletter/S3_CDS--5.jpg?1515759173" class="absolute block w-full -translate-x-1/2 top-0 left-1/2" style="height: 300px;" alt="...">
-                            </div>
-                            <!-- Item 3 -->
-                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                                <img src="/docs/images/carousel/carousel-3.svg" class="absolute block w-full -translate-x-1/2 top-0 left-1/2" style="height: 300px;" alt="...">
-                            </div>
-                            <!-- Item 4 -->
-                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                                <img src="/docs/images/carousel/carousel-4.svg" class="absolute block w-full -translate-x-1/2 top-0 left-1/2" style="height: 300px;" alt="...">
-                            </div>
-                            <!-- Item 5 -->
-                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                                <img src="/docs/images/carousel/carousel-5.svg" class="absolute block w-full -translate-x-1/2 top-0 left-1/2" style="height: 300px;" alt="...">
-                            </div>
-                        </div>
-                        <!-- Slider indicators -->
-                        <div class="absolute z-30 flex -translate-x-1/2 space-x-3 rtl:space-x-reverse bottom-5 left-1/2">
-                            <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
-                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
-                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
-                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4" data-carousel-slide-to="3"></button>
-                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 5" data-carousel-slide-to="4"></button>
-                        </div>
-                        <!-- Slider controls -->
-                        <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
-                            <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                                <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
-                                </svg>
-                                <span class="sr-only">Previous</span>
-                            </span>
-                        </button>
-                        <button type="button" class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
-                            <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                                <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
-                                </svg>
-                                <span class="sr-only">Next</span>
-                            </span>
-                        </button>
-                    </div>
+        <div id="inicio-body" style="margin-top: 120px; padding: 10px;">
 
-                    <div>
-                        <a href="#">
-                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Ubicacion,Pais</h5>
-                        </a>
-                        <p class="font-normal text-gray-700 dark:text-gray-400">A # km de distancia</p>
-                        <p class="font-normal text-gray-700 dark:text-gray-400">De #tal_dia a #tal_dia #mes</p>
-                        <p class="text-gray-700 dark:text-gray-400" style="display: flex; justify-content: space-between; align-items: center;" ><strong>$16,000.00 MXN</strong>
-                            <a href="Pagina_reservando.html" style="margin-left: auto; margin-right: 5px; background-color: rgb(0, 0, 0); color: rgb(255, 255, 255);" class="inline-flex items-center px-2 py-1 text-sm font-medium text-center text-white rounded-lg hover:bg-yellow-500 focus:ring-4 focus:outline-none focus:ring-yellow-400">
-                                Reservar
-                                <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                                    <path style="color: rgb(255, 255, 255);" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
-                                </svg>
-                            </a>
-                        </p>
-                    </div>
-                </div>
-                <div class="carta_margin" style="background-color: rgb(241 245 249)">
-                    <div id="indicators-carousel" class="relative" data-carousel="static">
-                        <!-- Carousel wrapper -->
-                        <div class="relative h-80 overflow-hidden rounded-t-lg" style="margin-top: 0px; height: 300px;">
-                            <!-- Item 1 -->
-                            <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
-                                <img src="https://images.adsttc.com/media/images/5a58/a650/f197/cc1f/8600/0173/newsletter/S3_CDS--5.jpg?1515759173" class="absolute block w-full -translate-x-1/2 top-0 left-1/2" style="height: 300px;" alt="...">
-                            </div>
-                            <!-- Item 2 -->
-                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                                <img src="https://images.adsttc.com/media/images/5a58/a650/f197/cc1f/8600/0173/newsletter/S3_CDS--5.jpg?1515759173" class="absolute block w-full -translate-x-1/2 top-0 left-1/2" style="height: 300px;" alt="...">
-                            </div>
-                            <!-- Item 3 -->
-                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                                <img src="/docs/images/carousel/carousel-3.svg" class="absolute block w-full -translate-x-1/2 top-0 left-1/2" style="height: 300px;" alt="...">
-                            </div>
-                            <!-- Item 4 -->
-                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                                <img src="/docs/images/carousel/carousel-4.svg" class="absolute block w-full -translate-x-1/2 top-0 left-1/2" style="height: 300px;" alt="...">
-                            </div>
-                            <!-- Item 5 -->
-                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                                <img src="/docs/images/carousel/carousel-5.svg" class="absolute block w-full -translate-x-1/2 top-0 left-1/2" style="height: 300px;" alt="...">
-                            </div>
-                        </div>
-                        <!-- Slider indicators -->
-                        <div class="absolute z-30 flex -translate-x-1/2 space-x-3 rtl:space-x-reverse bottom-5 left-1/2">
-                            <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
-                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
-                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
-                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4" data-carousel-slide-to="3"></button>
-                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 5" data-carousel-slide-to="4"></button>
-                        </div>
-                        <!-- Slider controls -->
-                        <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
-                            <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                                <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
-                                </svg>
-                                <span class="sr-only">Previous</span>
-                            </span>
-                        </button>
-                        <button type="button" class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
-                            <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                                <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
-                                </svg>
-                                <span class="sr-only">Next</span>
-                            </span>
-                        </button>
-                    </div>
 
-                    <div>
-                        <a href="#">
-                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Ubicacion,Pais</h5>
-                        </a>
-                        <p class="font-normal text-gray-700 dark:text-gray-400">A # km de distancia</p>
-                        <p class="font-normal text-gray-700 dark:text-gray-400">De #tal_dia a #tal_dia #mes</p>
-                        <p class="text-gray-700 dark:text-gray-400" style="display: flex; justify-content: space-between; align-items: center;" ><strong>$16,000.00 MXN</strong>
-                            <a href="Pagina_reservando.html" style="margin-left: auto; margin-right: 5px; background-color: rgb(0, 0, 0); color: rgb(255, 255, 255);" class="inline-flex items-center px-2 py-1 text-sm font-medium text-center text-white rounded-lg focus:ring-4 focus:outline-none focus:ring-black-400">
-                                Reservar
-                                <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                                    <path style="color: rgb(255, 255, 255);" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
-                                </svg>
-                            </a>
-                        </p>
-                    </div>
-                </div>
-                <div class="carta_margin" style="background-color: rgb(241 245 249)">
-                    <div id="indicators-carousel" class="relative" data-carousel="static">
-                        <!-- Carousel wrapper -->
-                        <div class="relative h-80 overflow-hidden rounded-t-lg" style="margin-top: 0px; height: 300px;">
-                            <!-- Item 1 -->
-                            <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
-                                <img src="https://images.adsttc.com/media/images/5a58/a650/f197/cc1f/8600/0173/newsletter/S3_CDS--5.jpg?1515759173" class="absolute block w-full -translate-x-1/2 top-0 left-1/2" style="height: 300px;" alt="...">
-                            </div>
-                            <!-- Item 2 -->
-                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                                <img src="https://images.adsttc.com/media/images/5a58/a650/f197/cc1f/8600/0173/newsletter/S3_CDS--5.jpg?1515759173" class="absolute block w-full -translate-x-1/2 top-0 left-1/2" style="height: 300px;" alt="...">
-                            </div>
-                            <!-- Item 3 -->
-                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                                <img src="/docs/images/carousel/carousel-3.svg" class="absolute block w-full -translate-x-1/2 top-0 left-1/2" style="height: 300px;" alt="...">
-                            </div>
-                            <!-- Item 4 -->
-                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                                <img src="/docs/images/carousel/carousel-4.svg" class="absolute block w-full -translate-x-1/2 top-0 left-1/2" style="height: 300px;" alt="...">
-                            </div>
-                            <!-- Item 5 -->
-                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                                <img src="/docs/images/carousel/carousel-5.svg" class="absolute block w-full -translate-x-1/2 top-0 left-1/2" style="height: 300px;" alt="...">
-                            </div>
-                        </div>
-                        <!-- Slider indicators -->
-                        <div class="absolute z-30 flex -translate-x-1/2 space-x-3 rtl:space-x-reverse bottom-5 left-1/2">
-                            <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
-                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
-                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
-                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4" data-carousel-slide-to="3"></button>
-                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 5" data-carousel-slide-to="4"></button>
-                        </div>
-                        <!-- Slider controls -->
-                        <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
-                            <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                                <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
-                                </svg>
-                                <span class="sr-only">Previous</span>
-                            </span>
-                        </button>
-                        <button type="button" class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
-                            <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                                <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
-                                </svg>
-                                <span class="sr-only">Next</span>
-                            </span>
-                        </button>
-                    </div>
-
-                    <div>
-                        <a href="#">
-                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Ubicacion,Pais</h5>
-                        </a>
-                        <p class="font-normal text-gray-700 dark:text-gray-400">A # km de distancia</p>
-                        <p class="font-normal text-gray-700 dark:text-gray-400">De #tal_dia a #tal_dia #mes</p>
-                        <p class="text-gray-700 dark:text-gray-400" style="display: flex; justify-content: space-between; align-items: center;" ><strong>$16,000.00 MXN</strong>
-                            <a href="Pagina_reservando.html" style="margin-left: auto; margin-right: 5px; background-color: rgb(0, 0, 0); color: rgb(255, 255, 255);" class="inline-flex items-center px-2 py-1 text-sm font-medium text-center text-white rounded-lg hover:bg-yellow-500 focus:ring-4 focus:outline-none focus:ring-yellow-400">
-                                Reservar
-                                <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                                    <path style="color: rgb(255, 255, 255);" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
-                                </svg>
-                            </a>
-                        </p>
-                    </div>
-                </div>
-                <div class="carta_margin" style="background-color: rgb(241 245 249)">
-                    <div id="indicators-carousel" class="relative" data-carousel="static">
-                        <!-- Carousel wrapper -->
-                        <div class="relative h-80 overflow-hidden rounded-t-lg" style="margin-top: 0px; height: 300px;">
-                            <!-- Item 1 -->
-                            <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
-                                <img src="https://images.adsttc.com/media/images/5a58/a650/f197/cc1f/8600/0173/newsletter/S3_CDS--5.jpg?1515759173" class="absolute block w-full -translate-x-1/2 top-0 left-1/2" style="height: 300px;" alt="...">
-                            </div>
-                            <!-- Item 2 -->
-                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                                <img src="https://images.adsttc.com/media/images/5a58/a650/f197/cc1f/8600/0173/newsletter/S3_CDS--5.jpg?1515759173" class="absolute block w-full -translate-x-1/2 top-0 left-1/2" style="height: 300px;" alt="...">
-                            </div>
-                            <!-- Item 3 -->
-                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                                <img src="/docs/images/carousel/carousel-3.svg" class="absolute block w-full -translate-x-1/2 top-0 left-1/2" style="height: 300px;" alt="...">
-                            </div>
-                            <!-- Item 4 -->
-                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                                <img src="/docs/images/carousel/carousel-4.svg" class="absolute block w-full -translate-x-1/2 top-0 left-1/2" style="height: 300px;" alt="...">
-                            </div>
-                            <!-- Item 5 -->
-                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                                <img src="/docs/images/carousel/carousel-5.svg" class="absolute block w-full -translate-x-1/2 top-0 left-1/2" style="height: 300px;" alt="...">
-                            </div>
-                        </div>
-                        <!-- Slider indicators -->
-                        <div class="absolute z-30 flex -translate-x-1/2 space-x-3 rtl:space-x-reverse bottom-5 left-1/2">
-                            <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
-                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
-                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
-                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4" data-carousel-slide-to="3"></button>
-                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 5" data-carousel-slide-to="4"></button>
-                        </div>
-                        <!-- Slider controls -->
-                        <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
-                            <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                                <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
-                                </svg>
-                                <span class="sr-only">Previous</span>
-                            </span>
-                        </button>
-                        <button type="button" class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
-                            <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                                <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
-                                </svg>
-                                <span class="sr-only">Next</span>
-                            </span>
-                        </button>
-                    </div>
-
-                    <div>
-                        <a href="#">
-                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Ubicacion,Pais</h5>
-                        </a>
-                        <p class="font-normal text-gray-700 dark:text-gray-400">A # km de distancia</p>
-                        <p class="font-normal text-gray-700 dark:text-gray-400">De #tal_dia a #tal_dia #mes</p>
-                        <p class="text-gray-700 dark:text-gray-400" style="display: flex; justify-content: space-between; align-items: center;" ><strong>$16,000.00 MXN</strong>
-                            <a href="Pagina_reservando.html" style="margin-left: auto; margin-right: 5px; background-color: rgb(0, 0, 0); color: rgb(255, 255, 255);" class="inline-flex items-center px-2 py-1 text-sm font-medium text-center text-white rounded-lg hover:bg-yellow-500 focus:ring-4 focus:outline-none focus:ring-yellow-400">
-                                Reservar
-                                <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                                    <path style="color: rgb(255, 255, 255);" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
-                                </svg>
-                            </a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="row inline-flex">
-                <div class="carta_margin" style="background-color: rgb(241 245 249)">
-                    <div id="indicators-carousel" class="relative" data-carousel="static">
-                        <!-- Carousel wrapper -->
-                        <div class="relative h-80 overflow-hidden rounded-t-lg" style="margin-top: 0px; height: 300px;">
-                            <!-- Item 1 -->
-                            <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
-                                <img src="https://images.adsttc.com/media/images/5a58/a650/f197/cc1f/8600/0173/newsletter/S3_CDS--5.jpg?1515759173" class="absolute block w-full -translate-x-1/2 top-0 left-1/2" style="height: 300px;" alt="...">
-                            </div>
-                            <!-- Item 2 -->
-                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                                <img src="https://images.adsttc.com/media/images/5a58/a650/f197/cc1f/8600/0173/newsletter/S3_CDS--5.jpg?1515759173" class="absolute block w-full -translate-x-1/2 top-0 left-1/2" style="height: 300px;" alt="...">
-                            </div>
-                            <!-- Item 3 -->
-                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                                <img src="/docs/images/carousel/carousel-3.svg" class="absolute block w-full -translate-x-1/2 top-0 left-1/2" style="height: 300px;" alt="...">
-                            </div>
-                            <!-- Item 4 -->
-                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                                <img src="/docs/images/carousel/carousel-4.svg" class="absolute block w-full -translate-x-1/2 top-0 left-1/2" style="height: 300px;" alt="...">
-                            </div>
-                            <!-- Item 5 -->
-                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                                <img src="/docs/images/carousel/carousel-5.svg" class="absolute block w-full -translate-x-1/2 top-0 left-1/2" style="height: 300px;" alt="...">
-                            </div>
-                        </div>
-                        <!-- Slider indicators -->
-                        <div class="absolute z-30 flex -translate-x-1/2 space-x-3 rtl:space-x-reverse bottom-5 left-1/2">
-                            <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
-                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
-                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
-                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4" data-carousel-slide-to="3"></button>
-                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 5" data-carousel-slide-to="4"></button>
-                        </div>
-                        <!-- Slider controls -->
-                        <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
-                            <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                                <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
-                                </svg>
-                                <span class="sr-only">Previous</span>
-                            </span>
-                        </button>
-                        <button type="button" class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
-                            <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                                <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
-                                </svg>
-                                <span class="sr-only">Next</span>
-                            </span>
-                        </button>
-                    </div>
-
-                    <div>
-                        <a href="#">
-                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Ubicacion,Pais</h5>
-                        </a>
-                        <p class="font-normal text-gray-700 dark:text-gray-400">A # km de distancia</p>
-                        <p class="font-normal text-gray-700 dark:text-gray-400">De #tal_dia a #tal_dia #mes</p>
-                        <p class="text-gray-700 dark:text-gray-400" style="display: flex; justify-content: space-between; align-items: center;" ><strong>$16,000.00 MXN</strong>
-                            <a href="Pagina_reservando.html" style="margin-left: auto; margin-right: 5px; background-color: rgb(0, 0, 0); color: rgb(255, 255, 255);" class="inline-flex items-center px-2 py-1 text-sm font-medium text-center text-white rounded-lg hover:bg-yellow-500 focus:ring-4 focus:outline-none focus:ring-yellow-400">
-                                Reservar
-                                <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                                    <path style="color: rgb(255, 255, 255);" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
-                                </svg>
-                            </a>
-                        </p>
-                    </div>
-                </div>
-                <div class="carta_margin" style="background-color: rgb(241 245 249)">
-                    <div id="indicators-carousel" class="relative" data-carousel="static">
-                        <!-- Carousel wrapper -->
-                        <div class="relative h-80 overflow-hidden rounded-t-lg" style="margin-top: 0px; height: 300px;">
-                            <!-- Item 1 -->
-                            <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
-                                <img src="https://images.adsttc.com/media/images/5a58/a650/f197/cc1f/8600/0173/newsletter/S3_CDS--5.jpg?1515759173" class="absolute block w-full -translate-x-1/2 top-0 left-1/2" style="height: 300px;" alt="...">
-                            </div>
-                            <!-- Item 2 -->
-                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                                <img src="https://images.adsttc.com/media/images/5a58/a650/f197/cc1f/8600/0173/newsletter/S3_CDS--5.jpg?1515759173" class="absolute block w-full -translate-x-1/2 top-0 left-1/2" style="height: 300px;" alt="...">
-                            </div>
-                            <!-- Item 3 -->
-                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                                <img src="/docs/images/carousel/carousel-3.svg" class="absolute block w-full -translate-x-1/2 top-0 left-1/2" style="height: 300px;" alt="...">
-                            </div>
-                            <!-- Item 4 -->
-                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                                <img src="/docs/images/carousel/carousel-4.svg" class="absolute block w-full -translate-x-1/2 top-0 left-1/2" style="height: 300px;" alt="...">
-                            </div>
-                            <!-- Item 5 -->
-                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                                <img src="/docs/images/carousel/carousel-5.svg" class="absolute block w-full -translate-x-1/2 top-0 left-1/2" style="height: 300px;" alt="...">
-                            </div>
-                        </div>
-                        <!-- Slider indicators -->
-                        <div class="absolute z-30 flex -translate-x-1/2 space-x-3 rtl:space-x-reverse bottom-5 left-1/2">
-                            <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
-                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
-                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
-                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4" data-carousel-slide-to="3"></button>
-                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 5" data-carousel-slide-to="4"></button>
-                        </div>
-                        <!-- Slider controls -->
-                        <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
-                            <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                                <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
-                                </svg>
-                                <span class="sr-only">Previous</span>
-                            </span>
-                        </button>
-                        <button type="button" class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
-                            <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                                <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
-                                </svg>
-                                <span class="sr-only">Next</span>
-                            </span>
-                        </button>
-                    </div>
-
-                    <div>
-                        <a href="#">
-                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Ubicacion,Pais</h5>
-                        </a>
-                        <p class="font-normal text-gray-700 dark:text-gray-400">A # km de distancia</p>
-                        <p class="font-normal text-gray-700 dark:text-gray-400">De #tal_dia a #tal_dia #mes</p>
-                        <p class="text-gray-700 dark:text-gray-400" style="display: flex; justify-content: space-between; align-items: center;" ><strong>$16,000.00 MXN</strong>
-                            <a href="Pagina_reservando.html" style="margin-left: auto; margin-right: 5px; background-color: rgb(0, 0, 0); color: rgb(255, 255, 255);" class="inline-flex items-center px-2 py-1 text-sm font-medium text-center text-white rounded-lg hover:bg-yellow-500 focus:ring-4 focus:outline-none focus:ring-yellow-400">
-                                Reservar
-                                <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                                    <path style="color: rgb(255, 255, 255);" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
-                                </svg>
-                            </a>
-                        </p>
-                    </div>
-                </div>
-                <div class="carta_margin" style="background-color: rgb(241 245 249)">
-                    <div id="indicators-carousel" class="relative" data-carousel="static">
-                        <!-- Carousel wrapper -->
-                        <div class="relative h-80 overflow-hidden rounded-t-lg" style="margin-top: 0px; height: 300px;">
-                            <!-- Item 1 -->
-                            <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
-                                <img src="https://images.adsttc.com/media/images/5a58/a650/f197/cc1f/8600/0173/newsletter/S3_CDS--5.jpg?1515759173" class="absolute block w-full -translate-x-1/2 top-0 left-1/2" style="height: 300px;" alt="...">
-                            </div>
-                            <!-- Item 2 -->
-                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                                <img src="https://images.adsttc.com/media/images/5a58/a650/f197/cc1f/8600/0173/newsletter/S3_CDS--5.jpg?1515759173" class="absolute block w-full -translate-x-1/2 top-0 left-1/2" style="height: 300px;" alt="...">
-                            </div>
-                            <!-- Item 3 -->
-                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                                <img src="/docs/images/carousel/carousel-3.svg" class="absolute block w-full -translate-x-1/2 top-0 left-1/2" style="height: 300px;" alt="...">
-                            </div>
-                            <!-- Item 4 -->
-                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                                <img src="/docs/images/carousel/carousel-4.svg" class="absolute block w-full -translate-x-1/2 top-0 left-1/2" style="height: 300px;" alt="...">
-                            </div>
-                            <!-- Item 5 -->
-                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                                <img src="/docs/images/carousel/carousel-5.svg" class="absolute block w-full -translate-x-1/2 top-0 left-1/2" style="height: 300px;" alt="...">
-                            </div>
-                        </div>
-                        <!-- Slider indicators -->
-                        <div class="absolute z-30 flex -translate-x-1/2 space-x-3 rtl:space-x-reverse bottom-5 left-1/2">
-                            <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
-                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
-                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
-                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4" data-carousel-slide-to="3"></button>
-                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 5" data-carousel-slide-to="4"></button>
-                        </div>
-                        <!-- Slider controls -->
-                        <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
-                            <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                                <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
-                                </svg>
-                                <span class="sr-only">Previous</span>
-                            </span>
-                        </button>
-                        <button type="button" class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
-                            <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                                <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
-                                </svg>
-                                <span class="sr-only">Next</span>
-                            </span>
-                        </button>
-                    </div>
-                    <div>
-                        <a href="#">
-                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Ubicacion,Pais</h5>
-                        </a>
-                        <p class="font-normal text-gray-700 dark:text-gray-400">A # km de distancia</p>
-                        <p class="font-normal text-gray-700 dark:text-gray-400">De #tal_dia a #tal_dia #mes</p>
-                        <p class="text-gray-700 dark:text-gray-400" style="display: flex; justify-content: space-between; align-items: center;" ><strong>$16,000.00 MXN</strong>
-                            <a href="Pagina_reservando.html" style="margin-left: auto; margin-right: 5px; background-color: rgb(0, 0, 0); color: rgb(255, 255, 255);" class="inline-flex items-center px-2 py-1 text-sm font-medium text-center text-white rounded-lg hover:bg-yellow-500 focus:ring-4 focus:outline-none focus:ring-yellow-400">
-                                Reservar
-                                <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                                    <path style="color: rgb(255, 255, 255);" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
-                                </svg>
-                            </a>
-                        </p>
-                    </div>
-                </div>
-                <div class="carta_margin" style="background-color: rgb(241 245 249)">
-                    <div id="indicators-carousel" class="relative" data-carousel="static">
-                        <!-- Carousel wrapper -->
-                        <div class="relative h-80 overflow-hidden rounded-t-lg" style="margin-top: 0px; height: 300px;">
-                            <!-- Item 1 -->
-                            <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
-                                <img src="https://images.adsttc.com/media/images/5a58/a650/f197/cc1f/8600/0173/newsletter/S3_CDS--5.jpg?1515759173" class="absolute block w-full -translate-x-1/2 top-0 left-1/2" style="height: 300px;" alt="...">
-                            </div>
-                            <!-- Item 2 -->
-                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                                <img src="https://images.adsttc.com/media/images/5a58/a650/f197/cc1f/8600/0173/newsletter/S3_CDS--5.jpg?1515759173" class="absolute block w-full -translate-x-1/2 top-0 left-1/2" style="height: 300px;" alt="...">
-                            </div>
-                            <!-- Item 3 -->
-                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                                <img src="/docs/images/carousel/carousel-3.svg" class="absolute block w-full -translate-x-1/2 top-0 left-1/2" style="height: 300px;" alt="...">
-                            </div>
-                            <!-- Item 4 -->
-                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                                <img src="/docs/images/carousel/carousel-4.svg" class="absolute block w-full -translate-x-1/2 top-0 left-1/2" style="height: 300px;" alt="...">
-                            </div>
-                            <!-- Item 5 -->
-                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                                <img src="/docs/images/carousel/carousel-5.svg" class="absolute block w-full -translate-x-1/2 top-0 left-1/2" style="height: 300px;" alt="...">
-                            </div>
-                        </div>
-                        <!-- Slider indicators -->
-                        <div class="absolute z-30 flex -translate-x-1/2 space-x-3 rtl:space-x-reverse bottom-5 left-1/2">
-                            <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
-                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
-                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
-                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4" data-carousel-slide-to="3"></button>
-                            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 5" data-carousel-slide-to="4"></button>
-                        </div>
-                        <!-- Slider controls -->
-                        <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
-                            <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                                <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
-                                </svg>
-                                <span class="sr-only">Previous</span>
-                            </span>
-                        </button>
-                        <button type="button" class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
-                            <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                                <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
-                                </svg>
-                                <span class="sr-only">Next</span>
-                            </span>
-                        </button>
-                    </div>
-                    
-                    <div>
-                        <a href="#">
-                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Ubicacion,Pais</h5>
-                        </a>
-                        <p class="font-normal text-gray-700 dark:text-gray-400">A # km de distancia</p>
-                        <p class="font-normal text-gray-700 dark:text-gray-400">De #tal_dia a #tal_dia #mes</p>
-                        <p class="text-gray-700 dark:text-gray-400" style="display: flex; justify-content: space-between; align-items: center;" ><strong>$16,000.00 MXN</strong>
-                            <a href="Pagina_reservando.html" style="margin-left: auto; margin-right: 5px; background-color: rgb(0, 0, 0); color: rgb(255, 255, 255);" class="inline-flex items-center px-2 py-1 text-sm font-medium text-center text-white rounded-lg hover:bg-yellow-500 focus:ring-4 focus:outline-none focus:ring-yellow-400">
-                                Reservar
-                                <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                                    <path style="color: rgb(255, 255, 255);" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
-                                </svg>
-                            </a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <br>
-            <br>
-            <div style="text-align: center;">
-            <button class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-pink-500 to-orange-400 group-hover:from-pink-500 group-hover:to-orange-400 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800">
-                <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
-                Mas resultados
-                </span>
-            </button>
-            </div>
         </div>
     </main>
-    
+
     <footer class="rounded-lg shadow m-4 dark:bg-gray-800" style="background-color: rgb(241 245 249);">
         <div class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
-          <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 <a href="#" class="hover:underline">EarthBnB™</a>. All Rights Reserved.
-        </span>
-        <ul class="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0">
-            <li>
-                <a href="https://www.airbnb.mx/about/company-details" class="hover:underline me-4 md:me-6">About</a>
-            </li>
-            <li>
-                <a href="https://www.airbnb.mx/help/article/2855" class="hover:underline me-4 md:me-6">Privacy Policy</a>
-            </li>
-            <li>
-                <a href="https://www.airbnb.mx/help/article/2855" class="hover:underline me-4 md:me-6">Licensing</a>
-            </li>
-            <li>
-                <a href="https://www.airbnb.mx/help/?audience=guest" class="hover:underline">Contact</a>
-            </li>
-        </ul>
+            <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 <a href="#"
+                    class="hover:underline">EarthBnB™</a>. All Rights Reserved.
+            </span>
+            <ul class="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0">
+                <li>
+                    <a href="https://www.airbnb.mx/about/company-details" class="hover:underline me-4 md:me-6">About</a>
+                </li>
+                <li>
+                    <a href="https://www.airbnb.mx/help/article/2855" class="hover:underline me-4 md:me-6">Privacy
+                        Policy</a>
+                </li>
+                <li>
+                    <a href="https://www.airbnb.mx/help/article/2855" class="hover:underline me-4 md:me-6">Licensing</a>
+                </li>
+                <li>
+                    <a href="https://www.airbnb.mx/help/?audience=guest" class="hover:underline">Contact</a>
+                </li>
+            </ul>
         </div>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+        </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+        integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+        </script>
     <script src="https://kit.fontawesome.com/8627f7a409.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.1.1/flowbite.min.js"></script>
+    <script src="../scripts/filtros.js"></script>
+    <script src="../scripts/homeUser.js"></script>
 </body>
 
 </html>
