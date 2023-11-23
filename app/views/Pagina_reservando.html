@@ -226,8 +226,8 @@
                                 <path
                                     d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
                             </svg>
-                            <span class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3">4
-                                huespedes</span>
+                            <span class="text-base font-normal leading-tight text-gray-500 ms-3 flex inline-flex"><p id="Aloj-huespedes"></p>
+                                &nbsp;huespede/s</span>
                         </li>
                         <li class="flex">
                             <svg class="flex-shrink-0 w-4 h-4 text-blue-600 dark:text-blue-500" aria-hidden="true"
@@ -235,8 +235,8 @@
                                 <path
                                     d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
                             </svg>
-                            <span class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3">2
-                                habitaciones</span>
+                            <span class="text-base font-normal leading-tight text-gray-500 ms-3 flex inline-flex"><p id="Aloj-habitaciones"></p>
+                                &nbsp;habitaciones</span>
                         </li>
                         <li class="flex items-center">
                             <svg class="flex-shrink-0 w-4 h-4 text-blue-600 dark:text-blue-500" aria-hidden="true"
@@ -244,8 +244,8 @@
                                 <path
                                     d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
                             </svg>
-                            <span class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3">2
-                                camas</span>
+                            <span class="text-base font-normal leading-tight text-gray-500 ms-3 flex inline-flex"><p id="Aloj-camas"></p>
+                                &nbsp;camas</span>
                         </li>
                         <li class="flex">
                             <svg class="flex-shrink-0 w-4 h-4 text-blue-600 dark:text-blue-500" aria-hidden="true"
@@ -253,8 +253,8 @@
                                 <path
                                     d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
                             </svg>
-                            <span class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3">1
-                                baño</span>
+                            <span class="text-base font-normal leading-tight text-gray-500 ms-3 flex inline-flex"><p id="Aloj-banos"></p>
+                                &nbsp;baño</span>
                         </li>
                         <li class="flex items-center">
                             <svg class="flex-shrink-0 w-4 h-4 text-blue-600 dark:text-blue-500" aria-hidden="true"
@@ -311,7 +311,7 @@
                     class="w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
                     <div class="flex items-baseline text-gray-900 dark:text-white flex justify-center">
                         <span class="text-3xl font-semibold">$</span>
-                        <span class="text-4xl font-extrabold tracking-tight">1300</span>
+                        <span class="text-4xl font-extrabold tracking-tight" id="Precio-Bold"></span>
                         <span class="ms-1 text-xl font-normal text-gray-500 dark:text-gray-400">/noche</span>
                     </div>
                     <ul role="list" class="space-y-5 my-7">
@@ -328,7 +328,7 @@
                             <input type="number" value="1" min="1" class="w-16 text-center">
                         </li>
                         <li class="flex items-center justify-between">
-                            <p><u>$1,300 MXN x 3 noches</u></p>
+                            <p><u>$</u><u id="Precio-Unline"></u><u> MXN x 3 noches</u></p>
                             <p>$3,900 MXN</p>
                         </li>
                         <li class="flex items-center justify-between">
@@ -426,6 +426,7 @@
     </footer>
     <script src="https://kit.fontawesome.com/8627f7a409.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.1.1/flowbite.min.js"></script>
+    <script src="../scripts/hacer_reservacion.js"></script>
 </body>
 
 </html>

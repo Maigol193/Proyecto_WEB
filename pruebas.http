@@ -111,6 +111,11 @@ x-auth:admin
     "host": "655ab30faee7cf1a2262bde5"
 }
 
+###
+GET http://localhost:3000/alojamientos/get_by_id?_id=655e7dffc4b6d67fc525fd4e HTTP/1.1
+x-auth:admin
+
+
 
 //-------------------------------------------------------RESERVACIÓN---------------------------------------------
 

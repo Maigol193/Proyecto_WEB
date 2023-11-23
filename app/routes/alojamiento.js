@@ -30,6 +30,25 @@ router.post('/create',(req,res) => {
     });
 }); //POST alojamientos
 
+router.get('/get_by_id',(req,res)=>{
+    let { _id } = req.query
+    
+    esquemas.Alojamiento.find({ _id: _id })
+        .then(function (docs) {
+            if (docs.length > 0) {
+                res.status(200).send(docs);
+            } else {
+                res.status(404).send({ error: 'No se encontró el alojamiento con el _id proporcionado' });
+            }
+        })
+        .catch((err) => {
+            console.error(err);
+            res.status(500).send({ error: 'Error en el servidor' });
+        });
+});
+
+
+
 
 router.put('/edit_alojamiecznto',(req,res)=>{
     let UserName = req.query.name;    
