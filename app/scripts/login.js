@@ -1,6 +1,9 @@
 const loginButtonUser = document.getElementById('loginUser');
 
-loginButtonUser.addEventListener('click', function () {
+const formLogin = document.getElementById('formLogin');
+
+formLogin.addEventListener('submit', function () {
+    event.preventDefault();
     console.log("Intentando loggear");
     let email = getEmailUser();
     let password = getPasswordUser();

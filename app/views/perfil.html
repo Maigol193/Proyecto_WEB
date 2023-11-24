@@ -1,59 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-html-type="home-log">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EarthBnb Home</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.1.1/flowbite.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <style>
         .carta_margin {
             margin: 10px;
-            width: 290px;
-            height: 420px;
+            max-width: 295px;
+            height: 445px;
+        }
+
+        .para_img {
+            margin-top: 10px;
         }
 
         .para_nav {
             z-index: 1000;
-            background-color: white;
-        }
-
-        .para_gallery {
-            margin-left: 90px;
-            margin-right: 90px;
-        }
-
-        .para_titulo {
-            margin-left: 120px;
-            margin-right: 120px;
-            font-size: xx-large;
-        }
-
-        .para_carta_grande {
-            min-width: 525px;
-            max-width: 525px;
-            min-height: 310px;
-            max-height: 310px;
-            margin-bottom: 10px;
-        }
-
-        .para_carta_pequeña {
-            min-width: 260px;
-            max-width: 260px;
-            min-height: 150px;
-            max-height: 150px;
-            margin-bottom: 10px;
-        }
-
-        .grid-container {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            /* 3 columnas */
-            gap: 10px;
-            /* Espacio entre las celdas */
+            background-color: rgb(241 245 249);
+            max-height: 160px;
         }
     </style>
-    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 </head>
 
 <body>
@@ -62,44 +33,20 @@
             class="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600">
             <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
                 <a href="home_loggeado.html" class="flex items-center space-x-3 rtl:space-x-reverse">
-                    <img src="earthbnb.png" class="h-10" alt="EarthBnB™ Logo">
+                    <img src="earthbnb.png" class="h-10" alt="Flowbite Logo">
                 </a>
                 <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
                     <!-- Modal toggle -->
-                    <button id="dropdownUserAvatarButton" data-dropdown-toggle="dropdownAvatar"
-                        class="flex text-sm bg-gray-800 rounded-full md:me-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
-                        type="button" style="background: none;">
+                    <button id="dropdownUserAvatarButtonAccount" class="btn btn-transparent" data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="fa-solid fa-globe fa-xl" style="color: #000000;"></i>
                     </button>
+                    
+                    
                     <!-- Dropdown menu -->
-                    <div id="dropdownAvatar"
-                        class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
-                        <div class="px-4 py-3 text-sm text-gray-900 dark:text-white">
-                            <div>Miguel Torres</div>
-                            <div class="font-medium truncate">maigol@gmail.com</div>
-                        </div>
-                        <ul class="py-2 text-sm text-gray-700 dark:text-gray-200"
-                            aria-labelledby="dropdownUserAvatarButton">
-                            <li>
-                                <a href="my_reservations.html"
-                                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">My
-                                    Reservations</a>
-                            </li>
-                            <li>
-                                <a href="home_host.html"
-                                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Change
-                                    to Host</a>
-                            </li>
-                        </ul>
-                        <div class="py-2">
-                            <a href="home.html"
-                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign
-                                out</a>
-                        </div>
+                    <div id="dropdownAvatarAccount" class="dropdown-menu dropdown-menu-start" aria-labelledby="dropdownUserAvatarButton">
+                        
                     </div>
-
-                    <a class="nav-link active text-dark" role="button" data-bs-toggle="modal"
-                        data-bs-target="#modal_Login" href="#modal_Login" aria-current="page"></a>
+                    
                     <button data-collapse-toggle="navbar-sticky" type="button"
                         class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
                         aria-controls="navbar-sticky" aria-expanded="false">
@@ -111,7 +58,6 @@
                         </svg>
                     </button>
                 </div>
-
             </div>
         </nav>
     </header>
@@ -126,7 +72,9 @@
                             <div class="flex flex-col items-center pb-10" style="padding: 10px;">
                                 <img class="w-24 h-24 mb-3 rounded-full shadow-lg" src="userpng.png"
                                     alt="Bonnie image" />
-                                <h5 class="mb-1 text-xl font-medium text-gray-900 dark:text-white">Maigol</h5>
+                                <div id="h5Account">
+
+                                </div>
                                 <span class="text-sm text-gray-500 dark:text-gray-400">Usuario</span>
                                 <div class="items-center justify-center space-y-4 sm:flex sm:space-y-0 sm:space-x-4 rtl:space-x-reverse"
                                     style="padding: 10px;">
@@ -147,70 +95,11 @@
                 </div>
                 <div class="col-span-1">
                     <div class="items-center bg-white max-w-xl shadow overflow-hidden sm:rounded-lg">
-                        <div class="px-4 py-5 sm:px-6 flex justify-between items-center">
-                            <div>
-                                <h3 class="text-xl leading-6 font-medium text-gray-900">
-                                    Mi Perfil
-                                </h3>
-                                <p class="mt-1 max-w-2xl text-sm text-gray-500">
-                                    Detalles de Maigol
-                                </p>
-                            </div>
-                            <button id="editProfile"
-                                class="flex text-sm bg-gray-800 rounded-full md:me-0 focus:outline-none" type="button"
-                                style="background: none;">
-                                <i class="fa-solid fa-pencil fa-2xl" style="color: #000000;"></i>
-                            </button>
+                        <div class="px-4 py-3 sm:px-6 flex justify-between items-center" id="AccountInfoHeader">
+                            
                         </div>
-                        <div class="border-t border-gray-200">
-                            <dl>
-                                <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                                    <dt class="text-sm font-medium text-gray-500 flex items-center">
-                                        Nombre
-                                    </dt>
-                                    <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2 flex items-center">
-                                        <input type="text" disabled value="Miguel Torres"
-                                            class="border-0 bg-transparent w-full" maxlength="28">
-                                    </dd>
-                                </div>
-                                <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                                    <dt class="text-sm font-medium text-gray-500 flex items-center">
-                                        Correo
-                                    </dt>
-                                    <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2 flex items-center">
-                                        <input type="text" disabled value="maigol@gmail.com"
-                                            class="border-0 bg-transparent w-full" maxlength="35">
-                                    </dd>
-                                </div>
-                                <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                                    <dt class="text-sm font-medium text-gray-500 flex items-center">
-                                        Celular
-                                    </dt>
-                                    <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2 flex items-center">
-                                        <input type="text" disabled value="3333333333"
-                                            class="border-0 bg-transparent w-full" maxlength="10">
-                                    </dd>
-                                </div>
-                                <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                                    <dt class="text-sm font-medium text-gray-500 flex items-center">
-                                        Vive en
-                                    </dt>
-                                    <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2 flex items-center">
-                                        <input type="text" disabled value="Guadalajara, Jalisco"
-                                            class="border-0 bg-transparent w-full" maxlength="35">
-                                    </dd>
-                                </div>
-                                <div class="bg-gray-50 px-4 py-5 sm:px-6">
-                                    <dt class="text-sm font-medium text-gray-500">
-                                        Descripción
-                                    </dt>
-                                    <dd class="mt-1 text-sm text-gray-900">
-                                        <!-- Eliminamos col-span-2 y ajustamos el ancho a full -->
-                                        To get social media testimonials like these, keep your customers engaged with
-                                        your social media accounts by posting regularly yourself
-                                    </dd>
-                                </div>
-                            </dl>
+                        <div class="border-t border-gray-200" id="AccountInfo">
+                            
                         </div>
                     </div>
                 </div>
@@ -240,8 +129,16 @@
             </ul>
         </div>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+        </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+        integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+        </script>
     <script src="https://kit.fontawesome.com/8627f7a409.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.1.1/flowbite.min.js"></script>
-    <script src="../scripts/account.js"></script></body>
+    <script src="../scripts/account.js"></script>
+    
+</body>
 
 </html>
