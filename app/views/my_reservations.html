@@ -106,69 +106,40 @@
 
 
     <main>
-        <div id="inicio-body" style="margin-top: 85px; padding: 10px;" id="Reservations">
+        <div id="message_to_host" tabindex="-1" aria-hidden="true"
+            class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+            <div class="relative p-4 w-full max-w-md max-h-full">
+                <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+                    <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
+                        <h4 class="text-xl font-semibold text-gray-900 dark:text-white flex justify-center w-full">
+                            Escribe tu mensaje
+                        </h4>
+                    </div>
+                    <div class="p-4 md:p-5">
+                        <form class="space-y-4" action="#">
+                            <textarea id="message" rows="4"
+                                class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                placeholder="Escribe tu duda aquí..." aria-valuetext=""></textarea>
+                            <button type="reset" data-modal-hide="message_to_host"
+                                class="mx-auto block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                                type="button">
+                                Enviar
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="inicio-body" style="margin-top: 85px; padding: 10px;">
             <diV class="border border-gray-200 shadow para_gallery rounded-lg">
                 <div id="InProcess">
-                    
+
                 </div>
-                <br>
                 <div id="Past">
-                    
-                    <!--
-                    <div>
-                        <div style="border-bottom: 1px solid gray; border-top: 1px solid gray;">
-                            <p style="margin-left: 35px; margin-top: 5px; margin-bottom: 5px; font-size: large;"><b>13
-                                    de noviembre</b></p>
-                        </div>
-                        <div class="flex para_imagen justify-between">
-                            <div class="flex">
-                                <img class="rounded-lg"
-                                    src="https://images.adsttc.com/media/images/5a58/a650/f197/cc1f/8600/0173/newsletter/S3_CDS--5.jpg?1515759173"
-                                    style="height: 150px; width: 200px;">
-                                <div style="margin-left: 30px; color: gray;">
-                                    <p style="color: red;"><b>Terminado</b></p>
-                                    <br>
-                                    <p style="color: #000000;"><b>Alojamiento en la playa para una familia, en Puerto
-                                            Vallarta</b></p>
-                                    <p>3 noches</p>
-                                    <p>1 huesped</p>
-                                    <p>Total: $5,650 MXN</p>
-                                </div>
-                            </div>
-                            <div style="margin-right: 30px; margin-top: 50px;">
-                                <a href="reservacion.html"
-                                    class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Detalles&nbsp;</a><br>
-                            </div>
-                        </div>
-                    </div>
-                    -->
+
                 </div>
             </div>
-            <div id="message_to_host" tabindex="-1" aria-hidden="true"
-                class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
-                <div class="relative p-4 w-full max-w-md max-h-full">
-                    <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
-                        <div
-                            class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
-                            <h4 class="text-xl font-semibold text-gray-900 dark:text-white flex justify-center w-full">
-                                Escribe tu mensaje
-                            </h4>
-                        </div>
-                        <div class="p-4 md:p-5">
-                            <form class="space-y-4" action="#">
-                                <textarea id="message" rows="4"
-                                    class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                    placeholder="Escribe tu duda aquí..." aria-valuetext=""></textarea>
-                                <button type="reset" data-modal-hide="message_to_host"
-                                    class="mx-auto block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-                                    type="button">
-                                    Enviar
-                                </button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        </div>
     </main>
 
     <footer class="rounded-lg shadow m-4 dark:bg-gray-800" style="background-color: rgb(241 245 249);">
@@ -193,6 +164,7 @@
             </ul>
         </div>
     </footer>
+
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
         integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
         </script>
@@ -202,7 +174,7 @@
     <script src="https://kit.fontawesome.com/8627f7a409.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.1.1/flowbite.min.js"></script>
     <script src="../scripts/myreservations.js"></script>
-
+        
 </body>
 
 </html>

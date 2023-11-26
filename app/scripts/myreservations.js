@@ -41,78 +41,82 @@ async function displayReservations() {
             await getReservacion(reservation);
             const actualReservation = sessionStorage.getItem("reservation");
             const objectReservations = JSON.parse(actualReservation);
-            console.log(objectReservations);
-
-            //Fechas
-        const fechaEntrada = objectReservations[0].fechaEntrada;
-        const fechaEntradaOriginal = new Date(fechaEntrada);
-        const fechaEntradaSumada = new Date(fechaEntradaOriginal);
-        fechaEntradaSumada.setDate(fechaEntradaOriginal.getDate() + 1);
-        const fechaEntradaFormateada = new Date(fechaEntradaSumada).toLocaleDateString("es-ES");
-        const fechaSalida = objectReservations[0].fechaSalida;
-        const fechaSalidaOriginal = new Date(fechaSalida);
-        const fechaSalidaSumada = new Date(fechaSalidaOriginal);
-        fechaSalidaSumada.setDate(fechaSalidaOriginal.getDate() + 1);
-        // Calcular la diferencia en días
-        const diferenciaEnMilisegundos = fechaSalidaSumada - fechaEntradaSumada;
-        const diferenciaEnDias = Math.floor(diferenciaEnMilisegundos / (1000 * 60 * 60 * 24));
-        if(objectReservations[0].status){
-            html += `
+            const alojamiento = objectReservations[0].alojamiento;
+            try {
+                await getAlojamiento(alojamiento);
+                const actualAlojamiento = sessionStorage.getItem("alojamiento");
+                const objectAlojamiento = JSON.parse(actualAlojamiento);
+                //Fechas
+                const fechaEntrada = objectReservations[0].fechaEntrada;
+                const fechaEntradaOriginal = new Date(fechaEntrada);
+                const fechaEntradaSumada = new Date(fechaEntradaOriginal);
+                fechaEntradaSumada.setDate(fechaEntradaOriginal.getDate() + 1);
+                const fechaEntradaFormateada = new Date(fechaEntradaSumada).toLocaleDateString("es-ES");
+                const fechaSalida = objectReservations[0].fechaSalida;
+                const fechaSalidaOriginal = new Date(fechaSalida);
+                const fechaSalidaSumada = new Date(fechaSalidaOriginal);
+                fechaSalidaSumada.setDate(fechaSalidaOriginal.getDate() + 1);
+                // Calcular la diferencia en días
+                const diferenciaEnMilisegundos = fechaSalidaSumada - fechaEntradaSumada;
+                const diferenciaEnDias = Math.floor(diferenciaEnMilisegundos / (1000 * 60 * 60 * 24));
+                let images = objectAlojamiento[0].images;
+                if (objectReservations[0].status) {
+                    html += `
+            <div>
+                <div style="border-bottom: 1px solid gray;">
+                    <p style="margin-left: 35px; margin-top: 5px; margin-bottom: 5px; font-size: large;"><b>${fechaEntradaFormateada}</b></p>
+                </div>
+                <div class="flex para_imagen justify-between">
+                    <div class="flex">
+                        <img class="rounded-lg" src="${images[0]}" style="height: 150px; width: 200px;">
+                        <div style="margin-left: 30px; color: gray;">
+                            <p style="color: green; margin: 5;"><b>En curso</b></p>
+                            <p style="color: #000000; margin: 0;"><b>${objectAlojamiento[0].title}</b></p>
+                            <p style="margin: 0;">${diferenciaEnDias} noches</p>
+                            <p style="margin: 0;">${objectReservations[0].huespedes} huéspedes</p>
+                            <p style="margin: 0;">Total: $${objectReservations[0].totalPrice} MXN</p>
+                        </div>
+                    </div>
+                    <div style="margin-right: 30px; margin-top: 15px;">
+                        <a href="reservacion.html" class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Detalles&nbsp;</a><br>
+                        <button type="button" data-modal-target="message_to_host" data-modal-toggle="message_to_host" class="block text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Cancelar</button>
+                    </div>
+                </div>
+                <div class="flex justify-center">
+                    <button type="button" style="margin-top: 15px; width: 210px;" data-modal-target="message_to_host" data-modal-toggle="message_to_host"
+                    class="text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-200 dark:focus:ring-blue-900 font-medium rounded-lg text-sm px-5 py-2.5 inline-flex justify-center w-full text-center">Contacta al Host</button>
+                </div>
+            </div>
+            <br>
+            `
+                } else {
+                    html1 += `
+            <div>
                 <div style="border-bottom: 1px solid gray;">
                     <p style="margin-left: 35px; margin-top: 5px; margin-bottom: 5px; font-size: large;"><b>${fechaEntradaFormateada}</b></p>
                 </div>
                 <div class="flex para_imagen justify-between">
                     <div class="flex">
                         <img class="rounded-lg" src="https://images.adsttc.com/media/images/5a58/a650/f197/cc1f/8600/0173/newsletter/S3_CDS--5.jpg?1515759173" style="height: 150px; width: 200px;">
-                            <div style="margin-left: 30px; color: gray;">
-                                <p style="color: green;"><b>En curso</b></p>
-                                <br>
-                                <p style="color: #000000;"><b>ABC</b></p>
-                                <p>${diferenciaEnDias} noches</p>
-                                <p>HUESPED</p>
-                                <p>Total: ${objectReservations[0].totalPrice} MXN</p>
-                            </div>
+                        <div style="margin-left: 30px; color: gray;">
+                            <p style="color: red; margin: 5;"><b>Terminado</b></p>
+                            <p style="color: #000000; margin: 0;"><b>Alojamiento en la playa para una familia, en Puerto Vallarta</b></p>
+                            <p style="margin: 0;">${diferenciaEnDias} noches</p>
+                            <p style="margin: 0;">${objectReservations[0].huespedes} huéspedes</p>
+                            <p style="margin: 0;">Total: $${objectReservations[0].totalPrice} MXN</p>
+                        </div>
                     </div>
                     <div style="margin-right: 30px; margin-top: 15px;">
                         <a href="reservacion.html" class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Detalles&nbsp;</a><br>
-                            <button data-modal-target="modal-cancelar" data-modal-toggle="modal-cancelar" class="block text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Cancelar</button>
                     </div>
                 </div>
-                <div class="flex justify-center">
-                    <button type="button" style="margin-top: 15px; width: 200px;" data-modal-target="message_to_host" data-modal-toggle="message_to_host"
-                    class="text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-200 dark:focus:ring-blue-900 font-medium rounded-lg text-sm px-5 py-2.5 inline-flex justify-center w-full text-center">Contacta al Host</button>
-                </div>
+            </div>
             <br>
             `
-        } else {
-            html1 += `
-                <div style="border-bottom: 1px solid gray;">
-                    <p style="margin-left: 35px; margin-top: 5px; margin-bottom: 5px; font-size: large;"><b>${fechaEntradaFormateada}</b></p>
-                </div>
-                <div class="flex para_imagen justify-between">
-                    <div class="flex">
-                        <img class="rounded-lg" src="https://images.adsttc.com/media/images/5a58/a650/f197/cc1f/8600/0173/newsletter/S3_CDS--5.jpg?1515759173" style="height: 150px; width: 200px;">
-                            <div style="margin-left: 30px; color: gray;">
-                                <p style="color: red;"><b>Terminado</b></p>
-                                <br>
-                                <p style="color: #000000;"><b>ABC</b></p>
-                                <p>${diferenciaEnDias} noches</p>
-                                <p>HUESPED</p>
-                                <p>Total: ${objectReservations[0].totalPrice} MXN</p>
-                            </div>
-                    </div>
-                    <div style="margin-right: 30px; margin-top: 15px;">
-                        <a href="reservacion.html" class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Detalles&nbsp;</a><br>
-                            <button data-modal-target="modal-cancelar" data-modal-toggle="modal-cancelar" class="block text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Cancelar</button>
-                    </div>
-                </div>
-                <div class="flex justify-center">
-                    <button type="button" style="margin-top: 15px; width: 200px;" data-modal-target="message_to_host" data-modal-toggle="message_to_host"
-                    class="text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-200 dark:focus:ring-blue-900 font-medium rounded-lg text-sm px-5 py-2.5 inline-flex justify-center w-full text-center">Contacta al Host</button>
-                </div>
-            <br>
-            `
-        }
+                }
+            } catch (error) {
+                console.error("Error al obtener el alojamiento:", error);
+            }
         } catch (error) {
             console.error("Error al obtener la reservación:", error);
         }
@@ -141,20 +145,24 @@ function getReservacion(id) {
     });
 }
 
-/*
 function getAlojamiento(id) {
-    let xhr = new XMLHttpRequest();
-    xhr.open('GET', 'http://localhost:3000/alojamientos/get_by_id?_id='+id);
-    xhr.send();
-    xhr.onload = function () {
-        if (xhr.status == 200) {
-            console.log("Reservación encontrada");
-            sessionStorage.setItem('reservation', xhr.responseText);
-        } else {
-            console.log("No se encontró el alojamiento");
-        }
-    };
+    return new Promise((resolve, reject) => {
+        let xhr = new XMLHttpRequest();
+        xhr.open('GET', 'http://localhost:3000/alojamientos/get_by_id?_id=' + id);
+        xhr.setRequestHeader('x-auth', 'admin');
+        xhr.send();
+        xhr.onload = function () {
+            if (xhr.status == 200) {
+                console.log("Alojamiento encontrado");
+                console.log(xhr.responseText);
+                sessionStorage.setItem('alojamiento', xhr.responseText);
+                resolve();  // Resuelve la promesa cuando la solicitud está completa
+            } else {
+                console.log("No se encontró la reservacion");
+                reject();  // Rechaza la promesa en caso de error
+            }
+        };
+    });
 }
-*/
 
 displayReservations();
