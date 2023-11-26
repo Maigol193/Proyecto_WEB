@@ -25,7 +25,7 @@ router.get('/reservation', (req,res) => {
             if (docs.length > 0) {
                 res.status(200).send(docs);
             } else {
-                res.status(404).send({ error: 'No se encontró el alojamiento con el _id proporcionado' });
+                res.status(404).send({ error: 'No se encontró el reservacion con el _id proporcionado' });
             }
         })
         .catch((err) => {
