@@ -1,3 +1,5 @@
+sessionStorage.clear();
+
 const loginButtonUser = document.getElementById('loginUser');
 
 const formLogin = document.getElementById('formLogin');

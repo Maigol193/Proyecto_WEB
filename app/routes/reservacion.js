@@ -18,18 +18,20 @@ function delete_reservacion_from_User(id,reservacion_to_err){
 
 //GET reservacion por ID
 router.get('/reservation', (req,res) => {
-    let id = req.body.id;
+    let { _id } = req.query
     
-    esquemas.Reservacion.find({
-        _id: id,
-    }).then(function (docs) {
-        if (docs.length > 0) {
-            res.send(docs);
-            console.log(docs);
-        } else {
-            res.status(404).send({ error: 'No se encontró la reservación con el ID proporcionado' });
-        }
-    }).catch((err) => console.log(err));
+    esquemas.Reservacion.find({ _id: _id })
+        .then(function (docs) {
+            if (docs.length > 0) {
+                res.status(200).send(docs);
+            } else {
+                res.status(404).send({ error: 'No se encontró el alojamiento con el _id proporcionado' });
+            }
+        })
+        .catch((err) => {
+            console.error(err);
+            res.status(500).send({ error: 'Error en el servidor' });
+        });
 });
 
  //POST de reservacion

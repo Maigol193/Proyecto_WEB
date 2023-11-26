@@ -121,13 +121,8 @@ x-auth:admin
 
 //GET reservación
 ###
-GET http://localhost:3000/reservaciones/reservation HTTP/1.1
-Content-Type: application/json
+GET http://localhost:3000/reservaciones/reservation?_id=6562d49aa1161634798eac3d HTTP/1.1
 x-auth:admin
-
-{
-    "id": "655c1a5d30349fcbf6f1ce2f"
-}
 
 //POST reservation
 ###
@@ -136,10 +131,10 @@ content-type: application/json
 x-auth:admin
 
 {
-    "status": true,
-    "fechaEntrada": "2023-12-05",
-    "fechaSalida": "2023-12-08",
-    "alojamiento": "655bd35c02857bf9cb0f504b",
+    "status": false,
+    "fechaEntrada": "2023-11-20",
+    "fechaSalida": "2023-11-23",
+    "alojamiento": "655d11305880faf62bb0a308",
     "host": "655ab5bd76d6c8f8ab3ff606",
     "cliente": "655ab30faee7cf1a2262bde5",
     "totalPrice": 3000
