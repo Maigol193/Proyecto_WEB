@@ -14,7 +14,6 @@ function validateAdmin(req, res, next) {
   next();
 };
 
-
 router.use('/sinAdmin',sinAdmin);
 router.use('/usuarios',validateAdmin,usuario);
 router.use('/alojamientos',validateAdmin,alojamientos);

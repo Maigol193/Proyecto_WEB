@@ -28,6 +28,8 @@ function displayDropdown() {
     document.getElementById("dropdownAvatarAccount").innerHTML = html;
 }
 
+displayDropdown();
+
 function displayUserCard() {
     let html = "";
     if (user[0].name == "") {
@@ -132,7 +134,6 @@ function displayAccountInfoHeader() {
     document.getElementById("AccountInfoHeader").innerHTML = html;
 }
 
-displayDropdown();
 displayUserCard();
 displayAccountInfoHeader();
 displayAccountInfo();
@@ -141,13 +142,12 @@ const editBtn = document.getElementById('editProfile');
 const inputs = document.querySelectorAll('input[disabled]');
 
 let isEditMode = false;
+let isDataModified = false; // Bandera para verificar si se ha modificado algún dato
 
 editBtn.addEventListener('click', function() {
     isEditMode = !isEditMode;
-
-    // Cambiar el color del icono a rojo si estamos en modo de edición, de lo contrario, quitar el color
     const icon = editBtn.querySelector('i');
-    icon.style.color = isEditMode ? 'red' : '#000000';
+    icon.style.color = isEditMode ? 'green' : '#000000';
 
     // Habilitar/deshabilitar los inputs
     inputs.forEach((input) => {
@@ -157,11 +157,55 @@ editBtn.addEventListener('click', function() {
     // Si estamos en modo de edición, guardar los valores actuales de los inputs
     if (!isEditMode) {
         inputs.forEach((input) => {
-            // Solo actualizar el valor si el input no está vacío
-            if (input.value.trim() !== '') {
-                input.setAttribute('data-original-value', input.value);
+            input.setAttribute('data-original-value', input.value);
+
+            // Actualizar el campo correspondiente en el usuario sin el 'ipt' al inicio
+            const field = input.id.replace('ipt', '').toLowerCase();
+            const originalValue = input.getAttribute('data-original-value');
+            
+            if (user[0][field] !== originalValue) {
+                isDataModified = true;
             }
+
+            user[0][field] = input.value;
         });
+
+        // Actualizar sessionStorage con los datos actualizados
+        sessionStorage.setItem('userData', JSON.stringify(user));
+
+        // Si no se ha modificado ningún dato, evita recargar la página
+        if (!isDataModified) {
+            return;
+        }
+
+        let id = user[0]._id;
+        let name = user[0].name;
+        let email = user[0].email;
+        let cellphone = user[0].cellphone;
+        let residencia = user[0].residencia;
+
+        let userData = {
+            id: id,
+            name: name,
+            email: email,
+            cellphone: cellphone,
+            residencia: residencia
+        };
+
+        let userDataJSON = JSON.stringify(userData);
+
+        let xhr = new XMLHttpRequest();
+        xhr.open('PUT', 'http://localhost:3000/usuarios/edit_account');
+        xhr.setRequestHeader('Content-Type', 'application/json');
+        xhr.send(userDataJSON);
+        xhr.onload = function () {
+            if (xhr.status === 200) {
+                console.log("Usuario actualizado con éxito");
+            } else {
+                console.error("Error al actualizar el usuario");
+            }
+        };
+        window.location.reload();
     } else {
         // Si estamos saliendo del modo de edición, restaurar los valores originales de los inputs
         inputs.forEach((input) => {
@@ -172,5 +216,3 @@ editBtn.addEventListener('click', function() {
         });
     }
 });
-
-
