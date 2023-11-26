@@ -50,6 +50,7 @@ async function displayReservations() {
                 const fechaEntrada = objectReservations[0].fechaEntrada;
                 const fechaEntradaOriginal = new Date(fechaEntrada);
                 const fechaEntradaSumada = new Date(fechaEntradaOriginal);
+                const fechaCard = new Date(fechaEntradaSumada).toLocaleDateString("es-ES");
                 fechaEntradaSumada.setDate(fechaEntradaOriginal.getDate() + 1);
                 const fechaEntradaFormateada = new Date(fechaEntradaSumada).toLocaleDateString("es-ES");
                 const fechaSalida = objectReservations[0].fechaSalida;
@@ -64,7 +65,7 @@ async function displayReservations() {
                     html += `
             <div>
                 <div style="border-bottom: 1px solid gray;">
-                    <p style="margin-left: 35px; margin-top: 5px; margin-bottom: 5px; font-size: large;"><b>${fechaEntradaFormateada}</b></p>
+                    <p style="margin-left: 35px; margin-top: 5px; margin-bottom: 5px; font-size: large;"><b>${fechaCard}</b></p>
                 </div>
                 <div class="flex para_imagen justify-between">
                     <div class="flex">

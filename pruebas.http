@@ -153,6 +153,6 @@ Content-Type: application/json
 x-auth:admin
 
 {
-    "id": "655c1a5d30349fcbf6f1ce2f",
+    "id": "6562d474a1161634798eac3a",
     "cliente": "655ab30faee7cf1a2262bde5"
 }
