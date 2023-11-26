@@ -1,5 +1,7 @@
 var alojamientosJSON;
 
+sessionStorage.removeItem('id_aloj_res');
+
 function alojamientosToDisplay(array) {
     const alojamientos = array;
     let i = 1;
@@ -8,22 +10,30 @@ function alojamientosToDisplay(array) {
         html += `
         <div class="card carta_margin flex flex-inline">
         <div id="carouselId${i}" class="carousel slide" data-bs-ride="carousel">
-            <ol class="carousel-indicators">
-                <li data-bs-target="#carouselId${i}" data-bs-slide-to="0" class="active" aria-current="true" aria-label="First slide"></li>
-                <li data-bs-target="#carouselId${i}" data-bs-slide-to="1" aria-label="Second slide"></li>
-                <li data-bs-target="#carouselId${i}" data-bs-slide-to="2" aria-label="Third slide"></li>
-            </ol>
-            <div class="carousel-inner para_img" role="listbox">
-                <div class="carousel-item active">
-                    <img src="https://images.adsttc.com/media/images/5a58/a650/f197/cc1f/8600/0173/newsletter/S3_CDS--5.jpg?1515759173" class="w-100 d-block" alt="First slide">
-                </div>
-                <div class="carousel-item">
-                    <img src="https://images.adsttc.com/media/images/5a58/a650/f197/cc1f/8600/0173/newsletter/S3_CDS--5.jpg?1515759173" class="w-100 d-block" alt="Second slide">
-                </div>
-                <div class="carousel-item">
-                    <img src="https://images.adsttc.com/media/images/5a58/a650/f197/cc1f/8600/0173/newsletter/S3_CDS--5.jpg?1515759173" class="w-100 d-block" alt="Third slide">
-                </div>
-            </div>
+        <ol class="carousel-indicators">
+        <li data-bs-target="#carouselId${i}" data-bs-slide-to="0" class="active" aria-current="true" aria-label="First slide"></li>
+        <li data-bs-target="#carouselId${i}" data-bs-slide-to="1" aria-label="Second slide"></li>
+        <li data-bs-target="#carouselId${i}" data-bs-slide-to="2" aria-label="Third slide"></li>
+        <li data-bs-target="#carouselId${i}" data-bs-slide-to="3" aria-label="Forth slide"></li>
+        <li data-bs-target="#carouselId${i}" data-bs-slide-to="4" aria-label="Fifth slide"></li>
+    </ol>
+    <div class="carousel-inner para_img" role="listbox">
+        <div class="carousel-item active">
+            <img src="${alojamiento.images[0]}" class="w-100 d-block" alt="First slide">
+        </div>
+        <div class="carousel-item">
+            <img src="${alojamiento.images[0]}" class="w-100 d-block" alt="Second slide">
+        </div>
+        <div class="carousel-item">
+            <img src="${alojamiento.images[0]}" class="w-100 d-block" alt="Third slide">
+        </div>
+        <div class="carousel-item">
+            <img src="${alojamiento.images[0]}" class="w-100 d-block" alt="Forth slide">
+        </div>
+        <div class="carousel-item">
+            <img src=${alojamiento.images[0]}" class="w-100 d-block" alt="Fifth slide">
+        </div>
+    </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselId${i}" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Previous</span>
@@ -128,6 +138,7 @@ document.addEventListener("DOMContentLoaded", function () {
             var elemento = document.getElementById("carouselId"+c);
             var valorAtributo = elemento.getAttribute('atribute_id_alojamiento');   
             window.location.href = 'Pagina_reservando.html';
+            sessionStorage.setItem('id_aloj_res', valorAtributo);
         });
     }
         }

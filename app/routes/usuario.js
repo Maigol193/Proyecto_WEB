@@ -6,6 +6,25 @@ const esquemas = require("../../server");
 //poner status 200 o 500
 
 //GET usuario por ID
+
+router.get('/get_by_id',(req,res)=>{
+    let { _id } = req.query
+    
+    esquemas.Usuario.find({ _id: _id })
+        .then(function (docs) {
+            if (docs.length > 0) {
+                res.status(200).send(docs);
+            } else {
+                res.status(404).send({ error: 'No se encontró el usuario con el _id proporcionado' });
+            }
+        })
+        .catch((err) => {
+            console.error(err);
+            res.status(500).send({ error: 'Error en el servidor' });
+        });
+});
+
+
 router.get('/user', (req,res) => {
     let id = req.body.id;
     

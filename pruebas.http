@@ -42,6 +42,11 @@ x-auth:admin
     "id": "655c190930349fcbf6f1ce23"
 }
 
+###
+GET http://localhost:3000/usuarios/get_by_id?_id=655ab30faee7cf1a2262bde5
+x-auth:admin
+
+
 //PUT account
 ###
 PUT http://localhost:3000/usuarios/edit_account HTTP/1.1

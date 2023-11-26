@@ -170,7 +170,7 @@
                                     d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
                             </svg>
                             <span
-                                class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3">Patricio</span>
+                                class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3" id="host_name"></span>
                         </li>
                         <li class="flex">
                             <svg class="flex-shrink-0 w-4 h-4 text-blue-600 dark:text-blue-500" aria-hidden="true"
@@ -206,7 +206,7 @@
                                     d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
                             </svg>
                             <span class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3">Vive
-                                en: Guadalajara, Jalisco</span>
+                                en: <a id="host_residence"></a></span>
                         </li>
                     </ul>
                 </div>
@@ -313,36 +313,35 @@
                     <ul role="list" class="space-y-5 my-7">
                         <li class="flex items-center justify-between">
                             <label>Llegada</label>
-                            <input type="date" value="2023-11-12">
+                            <input type="date" id="fecha_de_llegada">
                         </li>
                         <li class="flex items-center justify-between">
                             <label>Salida</label>
-                            <input type="date" value="2023-11-15">
+                            <input type="date" id="fecha_de_salida">
                         </li>
                         <li class="flex items-center justify-between">
                             <label>Huéspedes</label>
-                            <input type="number" value="1" min="1" class="w-16 text-center">
+                            <input id="min_Husepedes" type="number" value="1" min="1" class="w-16 text-center">
                         </li>
                         <li class="flex items-center justify-between">
-                            <p><u>$</u><u id="Precio-Unline"></u><u> MXN x 3 noches</u></p>
-                            <p>$3,900 MXN</p>
+                            <p><u>$<u id="Precio-Unline"></u> MXN x <u id="Dias_res"></u> noche/s</u></p>
+                            <p><u>$<u id="Precio_multi"></u> MXN</u></p>
                         </li>
                         <li class="flex items-center justify-between">
                             <p><u>Tarifa de limpieza</u></p>
-                            <p>$150 MXN</p>
+                            <p><u>$150 MXN</u></p>
                         </li>
                         <li class="flex items-center justify-between">
                             <p><u>Tarifa por servicio</u></p>
-                            <p>$1,600 MXN</p>
+                            <p><u>$1600 MXN</u></p>
                         </li>
                         <li class="flex items-center justify-between">
                             <p><b>Total</b></p>
-                            <p><b>$5,650 MXN</b></p>
+                            <p><b>$<b id="Precio_total"></b> MXN</b></p>
                         </li>
                     </ul>
                     <button type="button" data-modal-target="reservation_confirmed"
-                        data-modal-toggle="reservation_confirmed"
-                        class="text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-200 dark:focus:ring-blue-900 font-medium rounded-lg text-sm px-5 py-2.5 inline-flex justify-center w-full text-center">Reservar</button>
+                        data-modal-toggle="reservation_confirmed" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-200 dark:focus:ring-blue-900 font-medium rounded-lg text-sm px-5 py-2.5 inline-flex justify-center w-full text-center">Reservar</button>
                 </div>
             </div>
         </div>
