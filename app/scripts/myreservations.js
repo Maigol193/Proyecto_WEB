@@ -29,27 +29,37 @@ function displayDropdown() {
 
 displayDropdown();
 
-function displayReservations() {
+async function displayReservations() {
     console.log("debug -1");
     const reservations = user[0].reservations;
     console.log(reservations);
+    let html = "";
+    let html1 = "";
+
     for (const reservation of reservations) {
-        console.log("debug 0");
-        console.log(reservation);
-        const actualReservation = JSON.parse(getReservacion(reservation));
-        console.log(actualReservation);
-        if (reservation.status) {
-            let html = "";
-            console.log("debug 1");
-            //const alojamiento = JSON.parse(getAlojamiento(reservation.alojamiento))
-            console.log("debug 2");
-            //console.log(alojamiento);
-            const fecha = reservation.fechaEntrada;
-            const fechaFormateada = new Date(fecha).toLocaleDateString("es-ES");
+        try {
+            await getReservacion(reservation);
+            const actualReservation = sessionStorage.getItem("reservation");
+            const objectReservations = JSON.parse(actualReservation);
+            console.log(objectReservations);
+
+            //Fechas
+        const fechaEntrada = objectReservations[0].fechaEntrada;
+        const fechaEntradaOriginal = new Date(fechaEntrada);
+        const fechaEntradaSumada = new Date(fechaEntradaOriginal);
+        fechaEntradaSumada.setDate(fechaEntradaOriginal.getDate() + 1);
+        const fechaEntradaFormateada = new Date(fechaEntradaSumada).toLocaleDateString("es-ES");
+        const fechaSalida = objectReservations[0].fechaSalida;
+        const fechaSalidaOriginal = new Date(fechaSalida);
+        const fechaSalidaSumada = new Date(fechaSalidaOriginal);
+        fechaSalidaSumada.setDate(fechaSalidaOriginal.getDate() + 1);
+        // Calcular la diferencia en días
+        const diferenciaEnMilisegundos = fechaSalidaSumada - fechaEntradaSumada;
+        const diferenciaEnDias = Math.floor(diferenciaEnMilisegundos / (1000 * 60 * 60 * 24));
+        if(objectReservations[0].status){
             html += `
-            <div>
                 <div style="border-bottom: 1px solid gray;">
-                    <p style="margin-left: 35px; margin-top: 5px; margin-bottom: 5px; font-size: large;"><b>${fechaFormateada}</b></p>
+                    <p style="margin-left: 35px; margin-top: 5px; margin-bottom: 5px; font-size: large;"><b>${fechaEntradaFormateada}</b></p>
                 </div>
                 <div class="flex para_imagen justify-between">
                     <div class="flex">
@@ -58,9 +68,9 @@ function displayReservations() {
                                 <p style="color: green;"><b>En curso</b></p>
                                 <br>
                                 <p style="color: #000000;"><b>ABC</b></p>
-                                <p>3 noches</p>
+                                <p>${diferenciaEnDias} noches</p>
                                 <p>HUESPED</p>
-                                <p>Total: 100 MXN</p>
+                                <p>Total: ${objectReservations[0].totalPrice} MXN</p>
                             </div>
                     </div>
                     <div style="margin-right: 30px; margin-top: 15px;">
@@ -72,23 +82,12 @@ function displayReservations() {
                     <button type="button" style="margin-top: 15px; width: 200px;" data-modal-target="message_to_host" data-modal-toggle="message_to_host"
                     class="text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-200 dark:focus:ring-blue-900 font-medium rounded-lg text-sm px-5 py-2.5 inline-flex justify-center w-full text-center">Contacta al Host</button>
                 </div>
-            </div>
+            <br>
             `
-            document.getElementById("InProcess").innerHTML = html;
         } else {
-            let html1 = "";
-            //const alojamiento = JSON.parse(getAlojamiento(reservation.alojamiento));
-            //console.log(alojamiento);
-            const fecha = reservation.fechaEntrada;
-            let idToString = reservation.alojamiento;
-            let alojamiento = idToString.toString();
-            const fechaFormateada = new Date(fecha).toLocaleDateString("es-ES");
-            let alojamientoToUse = getAlojamiento(alojamiento);
-            console.log(alojamientoToUse);
             html1 += `
-            <div>
                 <div style="border-bottom: 1px solid gray;">
-                    <p style="margin-left: 35px; margin-top: 5px; margin-bottom: 5px; font-size: large;"><b>${fechaFormateada}</b></p>
+                    <p style="margin-left: 35px; margin-top: 5px; margin-bottom: 5px; font-size: large;"><b>${fechaEntradaFormateada}</b></p>
                 </div>
                 <div class="flex para_imagen justify-between">
                     <div class="flex">
@@ -97,9 +96,9 @@ function displayReservations() {
                                 <p style="color: red;"><b>Terminado</b></p>
                                 <br>
                                 <p style="color: #000000;"><b>ABC</b></p>
-                                <p>3 noches</p>
+                                <p>${diferenciaEnDias} noches</p>
                                 <p>HUESPED</p>
-                                <p>Total: 100 MXN</p>
+                                <p>Total: ${objectReservations[0].totalPrice} MXN</p>
                             </div>
                     </div>
                     <div style="margin-right: 30px; margin-top: 15px;">
@@ -107,42 +106,55 @@ function displayReservations() {
                             <button data-modal-target="modal-cancelar" data-modal-toggle="modal-cancelar" class="block text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Cancelar</button>
                     </div>
                 </div>
-            </div>
+                <div class="flex justify-center">
+                    <button type="button" style="margin-top: 15px; width: 200px;" data-modal-target="message_to_host" data-modal-toggle="message_to_host"
+                    class="text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-200 dark:focus:ring-blue-900 font-medium rounded-lg text-sm px-5 py-2.5 inline-flex justify-center w-full text-center">Contacta al Host</button>
+                </div>
+            <br>
             `
-            document.getElementById("Past").innerHTML = html1;
+        }
+        } catch (error) {
+            console.error("Error al obtener la reservación:", error);
         }
     }
+    document.getElementById("InProcess").innerHTML = html;
+    document.getElementById("Past").innerHTML = html1;
 }
 
 function getReservacion(id) {
-    let xhr = new XMLHttpRequest();
-    xhr.open('GET', 'http://localhost:3000/reservaciones/reservation?_id='+id);
-    xhr.send();
-    xhr.onload = function () {
-        if (xhr.status == 200) {
-            let reservacion = xhr.responseText;
-            console.log(reservacion);
-            return reservacion;
-        } else {
-            console.log("No se encontró el alojamiento");
-        }
-    };
+    return new Promise((resolve, reject) => {
+        let xhr = new XMLHttpRequest();
+        xhr.open('GET', 'http://localhost:3000/reservaciones/reservation?_id=' + id);
+        xhr.setRequestHeader('x-auth', 'admin');
+        xhr.send();
+        xhr.onload = function () {
+            if (xhr.status == 200) {
+                console.log("Reservación encontrada");
+                console.log(xhr.responseText);
+                sessionStorage.setItem('reservation', xhr.responseText);
+                resolve();  // Resuelve la promesa cuando la solicitud está completa
+            } else {
+                console.log("No se encontró la reservacion");
+                reject();  // Rechaza la promesa en caso de error
+            }
+        };
+    });
 }
 
+/*
 function getAlojamiento(id) {
-    let query = "";
-    query = id;
     let xhr = new XMLHttpRequest();
-    xhr.open('GET', 'http://localhost:3000/alojamientos/get_by_id?_id='+query);
+    xhr.open('GET', 'http://localhost:3000/alojamientos/get_by_id?_id='+id);
     xhr.send();
     xhr.onload = function () {
         if (xhr.status == 200) {
-            let alojamiento = xhr.responseText;
-            return alojamiento
+            console.log("Reservación encontrada");
+            sessionStorage.setItem('reservation', xhr.responseText);
         } else {
             console.log("No se encontró el alojamiento");
         }
     };
 }
+*/
 
 displayReservations();

@@ -121,7 +121,7 @@ x-auth:admin
 
 //GET reservación
 ###
-GET http://localhost:3000/reservaciones/reservation?_id=6562d49aa1161634798eac3d HTTP/1.1
+GET http://localhost:3000/reservaciones/reservation?_id=6562d474a1161634798eac3a HTTP/1.1
 x-auth:admin
 
 //POST reservation
