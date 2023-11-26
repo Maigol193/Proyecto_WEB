@@ -9,6 +9,12 @@ function add_reservacion_to_User(id,newReservacion){
     }).catch((err)=>console.log(err));
 }
 
+function add_reservacion_to_Aloj(id,newAloj){
+    esquemas.Alojamiento.findByIdAndUpdate(id, { $push: { reservaciones: newAloj } }, {new: true}).then((doc)=> {
+        console.log(doc);
+    }).catch((err)=>console.log(err));
+}
+
 function delete_reservacion_from_User(id,reservacion_to_err){
     console.log("hola");
     esquemas.Usuario.findByIdAndUpdate(id, { $pull: { reservations: reservacion_to_err} }, {new: true}).then((doc)=> {
@@ -38,10 +44,12 @@ router.get('/reservation', (req,res) => {
 router.post('/reserve', (req,res) => {
     let newReservacion = req.body;
     let id_cliente = req.body.cliente;
+    let id_aloj = req.body.alojamiento;
     let rsv = esquemas.Reservacion(newReservacion);
     rsv.save().then(doc => {
         rsv_id = doc._id.toString();
         add_reservacion_to_User(id_cliente,rsv_id);
+        add_reservacion_to_Aloj(id_aloj,rsv_id);
         res.status(200).send(doc);
         })
     .catch(err => {

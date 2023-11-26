@@ -91,18 +91,18 @@ content-type: application/json
 x-auth:admin
 
 {
-    "host":"655ab30faee7cf1a2262bde5",
-    "title": "FFFF",
+    "host":"655c190930349fcbf6f1ce23",
+    "title": "Apartamento",
     "description": "detalles y precio",
-    "banos": 3,
+    "banos": 4,
     "beds": 2,
     "huespedes": 4,
-    "rooms": 1,
-    "categories": ["Montaña","Playa"],
-    "images": ["imagen1.png","imagen2.png"],
-    "price": 1300,
-    "estado": "Nuevo León",
-    "reservaciones": ""
+    "rooms": 6,
+    "categories": ["Ciudad","Popular"],
+    "images": ["imagen1.png","imagen1.png","imagen1.png","imagen1.png","imagen1.png"],
+    "price": 1140,
+    "estado": "Jalisco",
+    "reservaciones": []
 }
 
 //Delete alojamiento
@@ -153,6 +153,6 @@ Content-Type: application/json
 x-auth:admin
 
 {
-    "id": "6562d474a1161634798eac3a",
+    "id": "655c1a5d30349fcbf6f1ce2f",
     "cliente": "655ab30faee7cf1a2262bde5"
 }

@@ -120,7 +120,8 @@ const alojamientoSchema = mongoose.Schema({
         required: true
     },
     reservaciones: {
-        type: String
+        type: Array,
+        default: []
     }
 });
 

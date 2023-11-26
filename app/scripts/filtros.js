@@ -22,16 +22,16 @@ function alojamientosToDisplay(array) {
             <img src="${alojamiento.images[0]}" class="w-100 d-block" alt="First slide">
         </div>
         <div class="carousel-item">
-            <img src="${alojamiento.images[0]}" class="w-100 d-block" alt="Second slide">
+            <img src="${alojamiento.images[1]}" class="w-100 d-block" alt="Second slide">
         </div>
         <div class="carousel-item">
-            <img src="${alojamiento.images[0]}" class="w-100 d-block" alt="Third slide">
+            <img src="${alojamiento.images[2]}" class="w-100 d-block" alt="Third slide">
         </div>
         <div class="carousel-item">
-            <img src="${alojamiento.images[0]}" class="w-100 d-block" alt="Forth slide">
+            <img src="${alojamiento.images[3]}" class="w-100 d-block" alt="Forth slide">
         </div>
         <div class="carousel-item">
-            <img src=${alojamiento.images[0]}" class="w-100 d-block" alt="Fifth slide">
+            <img src="${alojamiento.images[4]}" class="w-100 d-block" alt="Fifth slide">
         </div>
     </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselId${i}" data-bs-slide="prev">
@@ -95,16 +95,16 @@ document.addEventListener("DOMContentLoaded", function () {
                     <img src="${alojamiento.images[0]}" class="w-100 d-block" alt="First slide">
                 </div>
                 <div class="carousel-item">
-                    <img src="${alojamiento.images[0]}" class="w-100 d-block" alt="Second slide">
+                    <img src="${alojamiento.images[1]}" class="w-100 d-block" alt="Second slide">
                 </div>
                 <div class="carousel-item">
-                    <img src="${alojamiento.images[0]}" class="w-100 d-block" alt="Third slide">
+                    <img src="${alojamiento.images[2]}" class="w-100 d-block" alt="Third slide">
                 </div>
                 <div class="carousel-item">
-                    <img src="${alojamiento.images[0]}" class="w-100 d-block" alt="Forth slide">
+                    <img src="${alojamiento.images[3]}" class="w-100 d-block" alt="Forth slide">
                 </div>
                 <div class="carousel-item">
-                    <img src=${alojamiento.images[0]}" class="w-100 d-block" alt="Fifth slide">
+                    <img src="${alojamiento.images[4]}" class="w-100 d-block" alt="Fifth slide">
                 </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselId${i}" data-bs-slide="prev">

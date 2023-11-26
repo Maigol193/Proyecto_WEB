@@ -1,6 +1,7 @@
 var alojamientoJSON;
 
-var idAlojRes = sessionStorage.getItem('id_aloj_res');
+const idAlojRes = sessionStorage.getItem('id_aloj_res');
+const user = JSON.parse(sessionStorage.getItem("userData"));
 console.log('Valor de id_aloj_res:', idAlojRes);
 
 let xhr = new XMLHttpRequest();
@@ -19,12 +20,17 @@ xhr.onload = function () {
 };
 
 var Precio_por_noche;
+var ID_host;
+var ID_cliente = user[0]._id
+var total;
 
 function loadDom(array) {
     const alojamientos = array;
     console.table(array);
     for (const alojamiento of alojamientos) {
+        total = (alojamiento.price)+150+1600;
         Precio_por_noche = alojamiento.price;
+        ID_host = alojamiento.host;
         var parrafo = document.getElementById("Aloj-huespedes");
         var parrafo2 = document.getElementById("Aloj-habitaciones");
         var parrafo3 = document.getElementById("Aloj-camas");
@@ -92,8 +98,8 @@ function calcularDiferenciaDias() {
     Precio_multi.textContent = diferenciaDias * Precio_por_noche;
     var Precio_total = document.getElementById("Precio_total");
     Precio_total.textContent = (diferenciaDias * Precio_por_noche) + 150 + 1600;
+    total = (diferenciaDias * Precio_por_noche) + 150 + 1600;
 }
-
 
 function Obtain_Host_Name(id){
     let xhr2 = new XMLHttpRequest();
@@ -114,7 +120,6 @@ function Obtain_Host_Name(id){
 
 function Pass_host_name_to_html(array){
     var usuarios = array;
-    console.table(usuarios);
     for (const usuario of usuarios) {
         var host_name = document.getElementById("host_name");
         host_name.textContent = usuario.name;
@@ -124,27 +129,62 @@ function Pass_host_name_to_html(array){
 }
 
 
+
+function see(){
+    console.log(ID_host, ID_cliente,total);
+}
+
 function hacer_reservacion(){
-    let userData = {
-        id: id,
-        name: name,
-        email: email,
-        cellphone: cellphone,
-        residencia: residencia
+
+    var huspedes_act = document.getElementById("min_Husepedes");
+    var fechaLlegada_act = document.getElementById('fecha_de_llegada');
+    var fechaSalida_act = document.getElementById('fecha_de_salida');
+    var huspedesValue = huspedes_act.value;
+    var fechaLlegadaValue = fechaLlegada_act.value;
+    var fechaSalidaValue = fechaSalida_act.value;
+
+
+    let ResData = {
+        status: true,
+        fechaEntrada: fechaLlegadaValue,
+        fechaSalida: fechaSalidaValue,
+        alojamiento: idAlojRes,
+        host: ID_host,
+        cliente: ID_cliente,
+        huespedes: huspedesValue,
+        totalPrice: total
     };
 
-    let userDataJSON = JSON.stringify(userData);
-
+    let ResDataJSON = JSON.stringify(ResData);
     let xhr = new XMLHttpRequest();
-    xhr.open('POST', 'http://localhost:3000/usuarios/edit_account');
+    xhr.open('POST', 'http://localhost:3000/reservaciones/reserve');
     xhr.setRequestHeader('Content-Type', 'application/json');
     xhr.setRequestHeader("x-auth", "admin");
-    xhr.send(userDataJSON);
+    xhr.send(ResDataJSON);
     xhr.onload = function () {
         if (xhr.status === 200) {
-            console.log("Usuario actualizado con éxito");
+            updateUserDataInStorage();
+            console.log("Reservacion creada con éxito");
+            window.location.href = 'home_loggeado.html';
         } else {
-            console.error("Error al actualizar el usuario");
+            console.error("Error al crear la reservacion");
+        }
+    };
+}
+
+function updateUserDataInStorage(){
+    let xhr2 = new XMLHttpRequest();
+    xhr2.open('GET', 'http://localhost:3000/usuarios/get_by_id?_id=' + ID_cliente, true);
+    xhr2.setRequestHeader("x-auth", "admin");
+    xhr2.send();
+
+    xhr2.onload = function () {
+        if (xhr2.status == 200) {
+            sessionStorage.removeItem('userData');
+            sessionStorage.setItem('userData', xhr2.responseText);
+        }
+        else {
+            alert(xhr2.status + ": " + xhr2.statusText);
         }
     };
 }
