@@ -132,11 +132,12 @@ x-auth:admin
 
 {
     "status": false,
-    "fechaEntrada": "2023-11-20",
-    "fechaSalida": "2023-11-23",
-    "alojamiento": "655d11305880faf62bb0a308",
+    "fechaEntrada": "2023-12-5",
+    "fechaSalida": "2023-12-8",
+    "alojamiento": "655e7dffc4b6d67fc525fd4e",
     "host": "655ab5bd76d6c8f8ab3ff606",
     "cliente": "655ab30faee7cf1a2262bde5",
+    "huespedes": 2,
     "totalPrice": 3000
 }
 
