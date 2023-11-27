@@ -45,9 +45,7 @@ function displayUserCard() {
 }
 
 function displayAccountInfo() {
-    let name = user.name,
-        email = user.email,
-        cellphone = user.cellphone,
+    let cellphone = user.cellphone,
         residencia = user.residencia;
 
     if(cellphone === undefined)
