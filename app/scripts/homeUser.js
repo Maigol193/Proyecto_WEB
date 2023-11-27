@@ -18,7 +18,7 @@ function displayDropdown() {
                                 class="dropdown-item text-sm hover-bg-gray-100 dark-hover-bg-gray-600 dark-text-gray-200 dark-hover-text-white">Account</a>
                             </li>
                             <li>
-                                <a href="home_host.html"
+                                <a id="ChangeHost" type="button""
                                 class="dropdown-item text-sm hover-bg-gray-100 dark-hover-bg-gray-600 dark-text-gray-200 dark-hover-text-white">Change
                                     to Host</a>
                             </li>
@@ -33,3 +33,16 @@ function displayDropdown() {
 }
 
 displayDropdown();
+
+const changeToHostBtn = document.getElementById('ChangeHost');
+
+changeToHostBtn.addEventListener('click', function () {
+    event.preventDefault();
+    console.log("Intentando cambiar a host");
+    if(user.isHost){
+        window.location.href = "home_host.html";
+    }
+    else{
+        window.location.reload();
+    }
+});

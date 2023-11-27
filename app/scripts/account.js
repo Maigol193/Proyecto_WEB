@@ -14,7 +14,7 @@ function displayDropdown() {
                                     Reservations</a>
                             </li>
                             <li>
-                                <a href="home_host.html"
+                                <a id="ChangeHost" type="button" "
                                 class="dropdown-item text-sm hover-bg-gray-100 dark-hover-bg-gray-600 dark-text-gray-200 dark-hover-text-white">Change
                                     to Host</a>
                             </li>
@@ -45,6 +45,17 @@ function displayUserCard() {
 }
 
 function displayAccountInfo() {
+    let name = user.name,
+        email = user.email,
+        cellphone = user.cellphone,
+        residencia = user.residencia;
+
+    if(cellphone === undefined)
+        cellphone = "";
+
+    if(residencia === undefined)
+        residencia = "";
+
     let html = `
     <dl>
         <div class="bg-gray-50 px-4 py-3 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
@@ -70,7 +81,7 @@ function displayAccountInfo() {
                 Celular
             </dt>
             <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2 flex items-center">
-                <input id="iptCellphone" type="text" disabled value="${user.cellphone}"
+                <input id="iptCellphone" type="text" disabled value="${cellphone}"
                     class="border-0 bg-transparent w-full" maxlength="10">
             </dd>
         </div>
@@ -79,7 +90,7 @@ function displayAccountInfo() {
                 Vive en
             </dt>
             <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2 flex items-center">
-                <input id="iptResidencia" type="text" disabled value="${user.residencia}"
+                <input id="iptResidencia" type="text" disabled value="${residencia}"
                     class="border-0 bg-transparent w-full" maxlength="35">
             </dd>
         </div>
@@ -88,7 +99,8 @@ function displayAccountInfo() {
                 Descripción
             </dt>
             <dd class="mt-1 text-sm text-gray-900">
-                ${user.description}
+                Tatuajes de tus besos llevo, en todo mi cuerpo,
+                Tatuados sobre el tiempo, el tiempo que te conocí
             </dd>
         </div>
     </dl>
@@ -214,5 +226,19 @@ editBtn.addEventListener('click', function() {
                 input.value = originalValue;
             }
         });
+    }
+});
+
+
+const changeToHostBtn = document.getElementById('ChangeHost');
+
+changeToHostBtn.addEventListener('click', function () {
+    event.preventDefault();
+    console.log("Intentando cambiar a host");
+    if(user.isHost){
+        window.location.href = "home_host.html";
+    }
+    else{
+        window.location.reload();
     }
 });

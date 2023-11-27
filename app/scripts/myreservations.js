@@ -13,7 +13,7 @@ function displayDropdown() {
                                 class="dropdown-item text-sm hover-bg-gray-100 dark-hover-bg-gray-600 dark-text-gray-200 dark-hover-text-white">Account</a>
                             </li>
                             <li>
-                                <a href="home_host.html"
+                                <a id="ChangeHost" type="button""
                                 class="dropdown-item text-sm hover-bg-gray-100 dark-hover-bg-gray-600 dark-text-gray-200 dark-hover-text-white">Change
                                     to Host</a>
                             </li>
@@ -36,33 +36,35 @@ async function displayReservations() {
     console.log(reservations);
     let html = "";
     let html1 = "";
-
+    let i = 0;
     for (const reservation of reservations) {
         try {
             await getReservacion(reservation);
-            const actualReservation = sessionStorage.getItem("reservation");
-            const objectReservations = JSON.parse(actualReservation);
-            const alojamiento = objectReservations.alojamiento;
+            const objectReservations = JSON.parse(sessionStorage.getItem("reservation"));
+            const alojamiento = objectReservations[0].alojamiento;
+            console.log(objectReservations);
             try {
                 await getAlojamiento(alojamiento);
                 const actualAlojamiento = sessionStorage.getItem("alojamiento");
                 const objectAlojamiento = JSON.parse(actualAlojamiento);
                 //Fechas
-                const fechaEntrada = objectReservations.fechaEntrada;
+                const fechaEntrada = objectReservations[0].fechaEntrada;
                 const fechaEntradaOriginal = new Date(fechaEntrada);
                 const fechaEntradaSumada = new Date(fechaEntradaOriginal);
-                const fechaCard = new Date(fechaEntradaSumada).toLocaleDateString("es-ES");
                 fechaEntradaSumada.setDate(fechaEntradaOriginal.getDate() + 1);
-                const fechaEntradaFormateada = new Date(fechaEntradaSumada).toLocaleDateString("es-ES");
-                const fechaSalida = objectReservations.fechaSalida;
+                const fechaCard = new Date(fechaEntradaSumada).toLocaleDateString("es-ES");
+                const fechaSalida = objectReservations[0].fechaSalida;
                 const fechaSalidaOriginal = new Date(fechaSalida);
                 const fechaSalidaSumada = new Date(fechaSalidaOriginal);
                 fechaSalidaSumada.setDate(fechaSalidaOriginal.getDate() + 1);
                 // Calcular la diferencia en días
                 const diferenciaEnMilisegundos = fechaSalidaSumada - fechaEntradaSumada;
                 const diferenciaEnDias = Math.floor(diferenciaEnMilisegundos / (1000 * 60 * 60 * 24));
-                let images = objectAlojamiento.images;
-                if (objectReservations.status) {
+                let images = objectAlojamiento[0].images;
+                console.log(images);
+                console.log("Fecha: "+objectReservations[0].fechaEntrada);
+                console.log("Status: "+objectReservations[0].status);
+                if (objectReservations[0].status) {
                     html += `
             <div>
                 <div style="border-bottom: 1px solid gray;">
@@ -73,10 +75,10 @@ async function displayReservations() {
                         <img class="rounded-lg" src="${images[0]}" style="height: 150px; width: 200px;">
                         <div style="margin-left: 30px; color: gray;">
                             <p style="color: green; margin: 5;"><b>En curso</b></p>
-                            <p style="color: #000000; margin: 0;"><b>${objectAlojamiento.title}</b></p>
+                            <p style="color: #000000; margin: 0;"><b>${objectAlojamiento[0].title}</b></p>
                             <p style="margin: 0;">${diferenciaEnDias} noches</p>
-                            <p style="margin: 0;">${objectReservations.huespedes} huéspedes</p>
-                            <p style="margin: 0;">Total: $${objectReservations.totalPrice} MXN</p>
+                            <p style="margin: 0;">${objectReservations[0].huespedes} huéspedes</p>
+                            <p style="margin: 0;">Total: $${objectReservations[0].totalPrice} MXN</p>
                         </div>
                     </div>
                     <div style="margin-right: 30px; margin-top: 15px;">
@@ -95,11 +97,11 @@ async function displayReservations() {
                     html1 += `
             <div>
                 <div style="border-bottom: 1px solid gray;">
-                    <p style="margin-left: 35px; margin-top: 5px; margin-bottom: 5px; font-size: large;"><b>${fechaEntradaFormateada}</b></p>
+                    <p style="margin-left: 35px; margin-top: 5px; margin-bottom: 5px; font-size: large;"><b>${fechaCard}</b></p>
                 </div>
                 <div class="flex para_imagen justify-between">
                     <div class="flex">
-                        <img class="rounded-lg" src="https://images.adsttc.com/media/images/5a58/a650/f197/cc1f/8600/0173/newsletter/S3_CDS--5.jpg?1515759173" style="height: 150px; width: 200px;">
+                        <img class="rounded-lg" src="${images[0]}" style="height: 150px; width: 200px;">
                         <div style="margin-left: 30px; color: gray;">
                             <p style="color: red; margin: 5;"><b>Terminado</b></p>
                             <p style="color: #000000; margin: 0;"><b>Alojamiento en la playa para una familia, en Puerto Vallarta</b></p>
@@ -136,7 +138,7 @@ function getReservacion(id) {
         xhr.onload = function () {
             if (xhr.status == 200) {
                 console.log("Reservación encontrada");
-                console.log(xhr.responseText);
+                console.log(JSON.parse(xhr.responseText));
                 sessionStorage.setItem('reservation', xhr.responseText);
                 resolve();  // Resuelve la promesa cuando la solicitud está completa
             } else {
@@ -168,3 +170,16 @@ function getAlojamiento(id) {
 }
 
 displayReservations();
+
+const changeToHostBtn = document.getElementById('ChangeHost');
+
+changeToHostBtn.addEventListener('click', function () {
+    event.preventDefault();
+    console.log("Intentando cambiar a host");
+    if(user.isHost){
+        window.location.href = "home_host.html";
+    }
+    else{
+        window.location.reload();
+    }
+});
