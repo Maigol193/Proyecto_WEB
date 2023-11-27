@@ -165,7 +165,6 @@ function hacer_reservacion(){
         if (xhr.status === 200) {
             updateUserDataInStorage();
             console.log("Reservacion creada con éxito");
-            window.location.href = 'home_loggeado.html';
         } else {
             console.error("Error al crear la reservacion");
         }
@@ -182,6 +181,7 @@ function updateUserDataInStorage(){
         if (xhr2.status == 200) {
             sessionStorage.removeItem('userData');
             sessionStorage.setItem('userData', xhr2.responseText);
+            window.location.href = 'home_loggeado.html';
         }
         else {
             alert(xhr2.status + ": " + xhr2.statusText);
