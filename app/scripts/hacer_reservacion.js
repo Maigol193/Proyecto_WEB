@@ -21,7 +21,7 @@ xhr.onload = function () {
 
 var Precio_por_noche;
 var ID_host;
-var ID_cliente = user[0]._id
+var ID_cliente = user._id
 var total;
 
 function loadDom(array) {

@@ -2,40 +2,36 @@ const express = require('express');
 const router = express.Router();
 const { default: mongoose } = require('mongoose');
 const esquemas = require("../../server");
+const bcrypt = require("bcrypt");
 
-//GET usuario por email y contraseña
-router.get('/user', (req, res) => {
-    let { email, password } = req.query;
+// ...
 
-    const filtro = {};
+router.get('/user', async (req, res) => {
+    try {
+        let { email, password } = req.query;
 
-    if (email) {
-        filtro.email = email;
+        const user = await esquemas.Usuario.findOne({ email });
+
+        if (!user) {
+            return res.status(404).send('No se encontraron resultados');
+        }
+
+        // Compara la contraseña proporcionada con el hash almacenado
+        const passwordMatch = await bcrypt.compare(password, user.password);
+
+        if (passwordMatch) {
+            // Si la contraseña coincide, devuelve el usuario
+            res.status(200).send(user);
+        } else {
+            // Si la contraseña no coincide, devuelve un error
+            res.status(401).send('Credenciales incorrectas');
+        }
+    } catch (error) {
+        console.error('Error en la búsqueda:', error);
+        res.status(500).send('Error interno del servidor');
     }
-
-    if (password) {
-        filtro.password = password;
-    }
-
-    const query = Object.keys(filtro).length > 0 ? esquemas.Usuario.find(filtro) : esquemas.Usuario.find();
-
-    query
-        .then(docs => {
-            console.log(docs);
-            
-            if (docs && (Array.isArray(docs) ? docs.length === 0 : Object.keys(docs).length === 0)) {
-                // Si la respuesta es un objeto o array vacío, devuelve 404
-                res.status(404).send('No se encontraron resultados');
-            } else {
-                // Si hay resultados, devuelve 200
-                res.status(200).send(docs);
-            }
-        })
-        .catch(err => {
-            console.log(err);
-            res.status(500).send('Error en la búsqueda');
-        });
 });
+
 
 
     /*
@@ -56,10 +52,26 @@ router.get('/user', (req, res) => {
     */
 
 //POST usuario
-router.post('/create', (req,res) => {
-    const newUser = req.body;
-    const user = esquemas.Usuario(newUser);
-    user.save().then((doc) => res.send(doc));
+router.post('/create', async (req, res) => {
+    try {
+        const newUser = req.body;
+        
+        // Genera un hash de la contraseña antes de almacenarla
+        const hashedPassword = await bcrypt.hash(newUser.password, 10);
+
+        // Reemplaza la contraseña en texto plano con el hash
+        newUser.password = hashedPassword;
+
+        const user = esquemas.Usuario(newUser);
+
+        // Guarda el usuario en la base de datos
+        const savedUser = await user.save();
+
+        res.status(200).send(savedUser);
+    } catch (error) {
+        console.error('Error al crear el usuario:', error);
+        res.status(500).send('Error interno del servidor');
+    }
 });
 
 //GET para todos

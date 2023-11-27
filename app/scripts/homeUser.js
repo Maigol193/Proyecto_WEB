@@ -4,8 +4,8 @@ function displayDropdown() {
     console.log(user);
     let html = `
         <div class="px-4 py-3 text-sm text-gray-900 dark:text-white font-medium">
-            <div class="mb-1">${user[0].name}</div>
-            <div class="truncate">${user[0].email}</div>
+            <div class="mb-1">${user.name}</div>
+            <div class="truncate">${user.email}</div>
         </div>
         <ul class="px-1 text-sm" aria-labelledby="dropdownUserAvatarButton">
                             <li>
