@@ -44,8 +44,8 @@ function alojamientosToDisplay(array) {
             </button>
         </div>
         <div class="card-body">
-            <h4 class="card-title">${alojamiento.title}</h4>
-            <p class="card-text">${alojamiento.categories}  ${alojamiento.estado}</p>
+            <b class="card-title" style="font-size: larger;">${alojamiento.title}</b>
+            <p class="card-text" style="font-size: medium;">${alojamiento.categories}</p>
             <p class="flex items-center justify-between">
                 <b>Precio por noche</b>
                 <b>$${alojamiento.price}</b>
@@ -117,8 +117,8 @@ document.addEventListener("DOMContentLoaded", function () {
             </button>
         </div>
         <div class="card-body">
-            <h4 class="card-title">${alojamiento.title}</h4>
-            <p class="card-text">${alojamiento.categories}  ${alojamiento.estado}</p>
+            <b class="card-title" style="font-size: larger;">${alojamiento.title}</b>
+            <p class="card-text" style="font-size: medium;">${alojamiento.categories}</p>
             <p class="flex items-center justify-between">
                 <b>Precio por noche</b>
                 <b>$${alojamiento.price}</b>
