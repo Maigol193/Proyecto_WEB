@@ -2,7 +2,7 @@
 
 //GET usuario
 ###
-GET http://localhost:3000/sinAdmin/user?email=alberto.torres@iteso.mx&password=contraseña HTTP/1.1
+GET http://localhost:3000/sinAdmin/user?email=pepito@iteso.mx&password=abcde HTTP/1.1
 
 //POST USUARIO
 ###
@@ -10,15 +10,10 @@ POST http://localhost:3000/sinAdmin/create HTTP/1.1
 content-type: application/json
 
 {
-    "name": "Alan",
-    "email": "alan.perez@iteso.mx",
-    "password": "12345",
-    "cellphone": "3333333333",
-    "residencia": "M",
-    "alojamientos": [],
-    "isHost": true,
-    "description": "Si",
-    "reservations": []
+    "name": "Alberto2",
+    "email": "albertooo@gmail.com",
+    "password": "abcdefgh",
+    "isHost": false
 }
 
 //GET alojamientos
@@ -91,9 +86,9 @@ content-type: application/json
 x-auth:admin
 
 {
-    "host":"655c190930349fcbf6f1ce23",
-    "title": "Apartamento",
-    "description": "detalles y precio",
+    "host":"655ab30faee7cf1a2262bde5",
+    "title": "Casa en Los Cabos",
+    "description": "Bonita vista al mar y grandes experiencias!",
     "banos": 4,
     "beds": 2,
     "huespedes": 4,

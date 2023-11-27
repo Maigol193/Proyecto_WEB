@@ -4,8 +4,8 @@ function displayDropdown() {
     console.log(user);
     let html = `
         <div class="px-4 py-3 text-sm text-gray-900 dark:text-white font-medium">
-            <div class="mb-1">${user[0].name}</div>
-            <div class="truncate">${user[0].email}</div>
+            <div class="mb-1">${user.name}</div>
+            <div class="truncate">${user.email}</div>
         </div>
         <ul class="px-1 text-sm" aria-labelledby="dropdownUserAvatarButtonAccount">
                             <li>
@@ -32,13 +32,13 @@ displayDropdown();
 
 function displayUserCard() {
     let html = "";
-    if (user[0].name == "") {
+    if (user.name == "") {
         html += `
-    <h5 class="mb-1 text-xl font-medium text-gray-900 dark:text-white">${user[0].email}</h5>
+    <h5 class="mb-1 text-xl font-medium text-gray-900 dark:text-white">${user.email}</h5>
     `
     } else {
         html += `
-    <h5 class="mb-1 text-xl font-medium text-gray-900 dark:text-white">${user[0].name}</h5>
+    <h5 class="mb-1 text-xl font-medium text-gray-900 dark:text-white">${user.name}</h5>
     `
     }
     document.getElementById("h5Account").innerHTML = html;
@@ -52,7 +52,7 @@ function displayAccountInfo() {
                 Nombre
             </dt>
             <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2 flex items-center">
-                <input id="iptName" type="text" disabled value="${user[0].name}"
+                <input id="iptName" type="text" disabled value="${user.name}"
                     class="border-0 bg-transparent w-full" maxlength="28">
             </dd>
         </div>
@@ -61,7 +61,7 @@ function displayAccountInfo() {
                 Correo
             </dt>
             <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2 flex items-center">
-                <input id="iptEmail" type="text" disabled value="${user[0].email}"
+                <input id="iptEmail" type="text" disabled value="${user.email}"
                     class="border-0 bg-transparent w-full" maxlength="35">
             </dd>
         </div>
@@ -70,7 +70,7 @@ function displayAccountInfo() {
                 Celular
             </dt>
             <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2 flex items-center">
-                <input id="iptCellphone" type="text" disabled value="${user[0].cellphone}"
+                <input id="iptCellphone" type="text" disabled value="${user.cellphone}"
                     class="border-0 bg-transparent w-full" maxlength="10">
             </dd>
         </div>
@@ -79,7 +79,7 @@ function displayAccountInfo() {
                 Vive en
             </dt>
             <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2 flex items-center">
-                <input id="iptResidencia" type="text" disabled value="${user[0].residencia}"
+                <input id="iptResidencia" type="text" disabled value="${user.residencia}"
                     class="border-0 bg-transparent w-full" maxlength="35">
             </dd>
         </div>
@@ -88,7 +88,7 @@ function displayAccountInfo() {
                 Descripción
             </dt>
             <dd class="mt-1 text-sm text-gray-900">
-                ${user[0].description}
+                ${user.description}
             </dd>
         </div>
     </dl>
@@ -98,14 +98,14 @@ function displayAccountInfo() {
 
 function displayAccountInfoHeader() {
     let html = "";
-    if (user[0].name == "") {
+    if (user.name == "") {
         html += `
         <div>
             <h3 class="text-xl leading-6 font-medium text-gray-900">
                 Mi Perfil
             </h3>
             <p class="mt-1 max-w-2xl text-sm text-gray-500">
-                Detalles de ${user[0].email}
+                Detalles de ${user.email}
             </p>
         </div>
         <button id="editProfile"
@@ -121,7 +121,7 @@ function displayAccountInfoHeader() {
                 Mi Perfil
             </h3>
             <p class="mt-1 max-w-2xl text-sm text-gray-500">
-                Detalles de ${user[0].name}
+                Detalles de ${user.name}
             </p>
         </div>
         <button id="editProfile"
@@ -163,11 +163,11 @@ editBtn.addEventListener('click', function() {
             const field = input.id.replace('ipt', '').toLowerCase();
             const originalValue = input.getAttribute('data-original-value');
             
-            if (user[0][field] !== originalValue) {
+            if (user[field] !== originalValue) {
                 isDataModified = true;
             }
 
-            user[0][field] = input.value;
+            user[field] = input.value;
         });
 
         // Actualizar sessionStorage con los datos actualizados
@@ -178,11 +178,11 @@ editBtn.addEventListener('click', function() {
             return;
         }
 
-        let id = user[0]._id;
-        let name = user[0].name;
-        let email = user[0].email;
-        let cellphone = user[0].cellphone;
-        let residencia = user[0].residencia;
+        let id = user._id;
+        let name = user.name;
+        let email = user.email;
+        let cellphone = user.cellphone;
+        let residencia = user.residencia;
 
         let userData = {
             id: id,

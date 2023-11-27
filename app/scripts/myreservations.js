@@ -4,8 +4,8 @@ function displayDropdown() {
     console.log(user);
     let html = `
         <div class="px-4 py-3 text-sm text-gray-900 dark:text-white font-medium">
-            <div class="mb-1">${user[0].name}</div>
-            <div class="truncate">${user[0].email}</div>
+            <div class="mb-1">${user.name}</div>
+            <div class="truncate">${user.email}</div>
         </div>
         <ul class="px-1 text-sm" aria-labelledby="dropdownUserAvatarButton">
                             <li>
@@ -31,7 +31,8 @@ displayDropdown();
 
 async function displayReservations() {
     console.log("debug -1");
-    const reservations = user[0].reservations;
+    console.log(user);
+    const reservations = user.reservations;
     console.log(reservations);
     let html = "";
     let html1 = "";
@@ -41,27 +42,27 @@ async function displayReservations() {
             await getReservacion(reservation);
             const actualReservation = sessionStorage.getItem("reservation");
             const objectReservations = JSON.parse(actualReservation);
-            const alojamiento = objectReservations[0].alojamiento;
+            const alojamiento = objectReservations.alojamiento;
             try {
                 await getAlojamiento(alojamiento);
                 const actualAlojamiento = sessionStorage.getItem("alojamiento");
                 const objectAlojamiento = JSON.parse(actualAlojamiento);
                 //Fechas
-                const fechaEntrada = objectReservations[0].fechaEntrada;
+                const fechaEntrada = objectReservations.fechaEntrada;
                 const fechaEntradaOriginal = new Date(fechaEntrada);
                 const fechaEntradaSumada = new Date(fechaEntradaOriginal);
                 const fechaCard = new Date(fechaEntradaSumada).toLocaleDateString("es-ES");
                 fechaEntradaSumada.setDate(fechaEntradaOriginal.getDate() + 1);
                 const fechaEntradaFormateada = new Date(fechaEntradaSumada).toLocaleDateString("es-ES");
-                const fechaSalida = objectReservations[0].fechaSalida;
+                const fechaSalida = objectReservations.fechaSalida;
                 const fechaSalidaOriginal = new Date(fechaSalida);
                 const fechaSalidaSumada = new Date(fechaSalidaOriginal);
                 fechaSalidaSumada.setDate(fechaSalidaOriginal.getDate() + 1);
                 // Calcular la diferencia en días
                 const diferenciaEnMilisegundos = fechaSalidaSumada - fechaEntradaSumada;
                 const diferenciaEnDias = Math.floor(diferenciaEnMilisegundos / (1000 * 60 * 60 * 24));
-                let images = objectAlojamiento[0].images;
-                if (objectReservations[0].status) {
+                let images = objectAlojamiento.images;
+                if (objectReservations.status) {
                     html += `
             <div>
                 <div style="border-bottom: 1px solid gray;">
@@ -72,10 +73,10 @@ async function displayReservations() {
                         <img class="rounded-lg" src="${images[0]}" style="height: 150px; width: 200px;">
                         <div style="margin-left: 30px; color: gray;">
                             <p style="color: green; margin: 5;"><b>En curso</b></p>
-                            <p style="color: #000000; margin: 0;"><b>${objectAlojamiento[0].title}</b></p>
+                            <p style="color: #000000; margin: 0;"><b>${objectAlojamiento.title}</b></p>
                             <p style="margin: 0;">${diferenciaEnDias} noches</p>
-                            <p style="margin: 0;">${objectReservations[0].huespedes} huéspedes</p>
-                            <p style="margin: 0;">Total: $${objectReservations[0].totalPrice} MXN</p>
+                            <p style="margin: 0;">${objectReservations.huespedes} huéspedes</p>
+                            <p style="margin: 0;">Total: $${objectReservations.totalPrice} MXN</p>
                         </div>
                     </div>
                     <div style="margin-right: 30px; margin-top: 15px;">

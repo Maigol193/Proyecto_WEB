@@ -42,7 +42,9 @@ function getPasswordUser() {
 
 const loginButtonHost = document.getElementById('loginHost');
 
-loginButtonHost.addEventListener('click', function () {
+const formHost = document.getElementById('formHost');
+
+formHost.addEventListener('submit', function () {
     console.log("Intentando loggear");
     let email = getEmailHost();
     let password = getPasswordHost();
@@ -56,9 +58,17 @@ loginButtonHost.addEventListener('click', function () {
             console.log("error");
         else{
             if (xhr.status == 200) {
-                console.log("Usuario encontrado. Iniciando sesión");
-                sessionStorage.setItem('userData', xhr.responseText);
-                window.location.href = "home_host.html";
+                const user =  JSON.parse(xhr.responseText);
+                console.log(user);
+                console.log(user.isHost);
+                if(user.isHost){
+                    console.log("Usuario encontrado. Iniciando sesión");
+                    sessionStorage.setItem('userData', xhr.responseText);
+                    window.location.href = "home_host.html";
+                }
+                else{
+                    console.log("no eres host");
+                }
             } else {
                 console.log("error");
             }
@@ -74,4 +84,63 @@ function getEmailHost() {
 function getPasswordHost() {
     const password = document.getElementById('passwordHost').value;
     return password;
+}
+
+const createButton = document.getElementById('createBtn');
+
+const formCreate = document.getElementById('formCreate');
+
+formCreate.addEventListener('submit', function () {
+    console.log("Intentando loggear");
+    let name = getNameCreate();
+    let email = getEmailCreate();
+    let password = getPasswordCreate();
+    let isHost = getType();
+    console.log(isHost);
+    const newUser = 
+        {
+            name: name,
+            email: email,
+            password: password,
+            isHost: isHost
+        };
+    let xhr = new XMLHttpRequest();
+    xhr.open('POST', 'http://localhost:3000/sinAdmin/create');
+    xhr.setRequestHeader('Content-Type', 'application/json');
+    xhr.send(JSON.stringify(newUser));
+    xhr.onload = function () {
+        if (xhr.status == 200) {
+            console.log("Usuario creado. Iniciando sesión");
+            sessionStorage.setItem('userData', xhr.responseText);
+            window.location.href = "home_loggeado.html";
+            console.log(xhr.responseText);
+        } else {
+            console.log("error");
+        }
+    };
+});
+
+function getNameCreate() {
+    const name = document.getElementById('name').value;
+    return name;
+}
+
+function getEmailCreate() {
+    const email = document.getElementById('email').value;
+    return email;
+}
+
+function getPasswordCreate() {
+    const password = document.getElementById('password').value;
+    return password;
+}
+
+function getType() {
+    const type = document.getElementById('countries').value;
+    if(type == "user"){
+        return false;
+    }
+    else{
+        return true;
+    }
 }
