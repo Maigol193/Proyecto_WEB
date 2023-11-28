@@ -67,6 +67,7 @@ router.put('/edit_alojamiecznto',(req,res)=>{
 router.put('/edit_alojamiento',(req,res)=>{
     let title = req.body.title,
         description = req.body.description,
+        ubicacion = req.body.ubicacion,
         banos = req.body.banos,
         beds = req.body.beds,
         huespedes = req.body.huespedes,
@@ -81,6 +82,7 @@ router.put('/edit_alojamiento',(req,res)=>{
 
     if(title != undefined){
         object_to_update.title=title;
+        object_to_update.ubicacion=ubicacion;
         object_to_update.description=description;
         object_to_update.banos=banos;
         object_to_update.beds=beds;

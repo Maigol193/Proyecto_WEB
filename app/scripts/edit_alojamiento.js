@@ -1,6 +1,7 @@
-
-const user = JSON.parse(sessionStorage.getItem("userData"));
-var ID_cliente = user._id;
+//const user = JSON.parse(sessionStorage.getItem("userData"));
+//var ID_cliente = user._id;
+var ID_alojamiento = "6564fada347911add6c3c062";
+var ID_cliente = "6564fada347911add6c3c062";
 console.log(ID_cliente);
 
 
@@ -115,7 +116,7 @@ function printTodo() {
         huespedes: HuespedesValue,
         rooms: HabitacionesValue,
         categories: idsSeleccionados,
-        images: images_array,
+        images: ["imagen1.png","imagen1.png","imagen1.png","imagen1.png","imagen1.png"],
         price: PriceValue,
         estado: filtroEstado,
         reservaciones: []
@@ -123,6 +124,7 @@ function printTodo() {
 
     console.log(AloData);
 
+    /*
     let AloDataJSON = JSON.stringify(AloData);
     let xhr = new XMLHttpRequest();
     xhr.open('POST', 'http://localhost:3000/alojamientos/create');
@@ -136,7 +138,7 @@ function printTodo() {
         } else {
             console.error("Error al crear el alojamiento");
         }
-    };
+    };*/
 }
 
 
