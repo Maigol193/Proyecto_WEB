@@ -66,8 +66,8 @@ Content-Type: application/json
 x-auth:admin
 
 {
-    "id":"655e7dffc4b6d67fc525fd4e",
-    "title": "Casa casi de Playa",
+    "id":"656533ff3688b2aeea93b24b",
+    "title": "Nior de Playa",
     "ubicacion": "Ubi",
     "description": "detalles y precio",
     "banos": 3,
