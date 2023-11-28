@@ -3,6 +3,29 @@ const user = JSON.parse(sessionStorage.getItem("userData"));
 var ID_cliente = user._id;
 console.log(ID_cliente);
 
+function displayDropdown() {
+    let html = `
+        <div class="px-4 py-3 text-sm text-gray-900 dark:text-white font-medium">
+            <div class="mb-1">${user.name}</div>
+            <div class="truncate">${user.email}</div>
+        </div>
+        <ul class="px-1 text-sm" aria-labelledby="dropdownUserAvatarButton">
+                            <li>
+                                <a href="home_loggeado.html"
+                                class="dropdown-item text-sm hover-bg-gray-100 dark-hover-bg-gray-600 dark-text-gray-200 dark-hover-text-white">Change
+                                    to User</a>
+                            </li>
+                        </ul>
+                        <div class="py-0 px-1">
+                            <a href="home.html"
+                                class="dropdown-item text-sm hover-bg-gray-100 dark-hover-bg-gray-600 dark-text-gray-200 dark-hover-text-white">Sign
+                                out</a>
+                        </div>
+    `
+    document.getElementById("dropdownAvatar").innerHTML = html;
+}
+
+displayDropdown();
 
 let xhr2 = new XMLHttpRequest();
 xhr2.open('GET', 'http://localhost:3000/usuarios/get_by_id?_id=' + ID_cliente, true);
@@ -129,8 +152,9 @@ function printTodo() {
     xhr.send(AloDataJSON);
     xhr.onload = function () {
         if (xhr.status === 200) {
-            console.log("Alojamiento creado con éxito");
             updateUserDataInStorage();
+            console.log("Alojamiento creado con éxito");
+            
         } else {
             console.error("Error al crear el alojamiento");
         }

@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EarthBnb Add</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.1.1/flowbite.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <style>
         .carta_margin {
             margin: 10px;
@@ -65,50 +67,19 @@
         <nav style="z-index: 1200;"
             class="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600">
             <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-                <a href="home_host.html" class="flex items-center space-x-3 rtl:space-x-reverse">
+                <a href="home_loggeado.html" class="flex items-center space-x-3 rtl:space-x-reverse">
                     <img src="earthbnb.png" class="h-10" alt="Flowbite Logo">
                 </a>
                 <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
                     <!-- Modal toggle -->
-                    <button id="dropdownUserAvatarButton" data-dropdown-toggle="dropdownAvatar"
-                        class="flex text-sm bg-gray-800 rounded-full md:me-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
-                        type="button" style="background: none;">
+                    <button id="dropdownUserAvatarButton" class="btn btn-transparent" data-bs-toggle="dropdown"
+                        aria-expanded="false">
                         <i class="fa-solid fa-globe fa-xl" style="color: #000000;"></i>
                     </button>
                     <!-- Dropdown menu -->
-                    <div id="dropdownAvatar"
-                        class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
-                        <div class="px-4 py-3 text-sm text-gray-900 dark:text-white">
-                            <div>Miguel Torres</div>
-                            <div class="font-medium truncate">maigol@gmail.com</div>
-                        </div>
-                        <ul class="py-2 text-sm text-gray-700 dark:text-gray-200"
-                            aria-labelledby="dropdownUserAvatarButton">
-                            <li>
-                                <a href="home_loggeado.html"
-                                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Change
-                                    to User</a>
-                            </li>
-                        </ul>
-                        <div class="py-2">
-                            <a href="home.html"
-                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign
-                                out</a>
-                        </div>
+                    <div id="dropdownAvatar" class="dropdown-menu dropdown-menu-start"
+                        aria-labelledby="dropdownUserAvatarButton">
                     </div>
-
-                    <a class="nav-link active text-dark" role="button" data-bs-toggle="modal"
-                        data-bs-target="#modal_Login" href="#modal_Login" aria-current="page"></a>
-                    <button data-collapse-toggle="navbar-sticky" type="button"
-                        class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-                        aria-controls="navbar-sticky" aria-expanded="false">
-                        <span class="sr-only">Open main menu</span>
-                        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-                            viewBox="0 0 17 14">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M1 1h15M1 7h15M1 13h15" />
-                        </svg>
-                    </button>
                 </div>
             </div>
         </nav>
@@ -406,17 +377,16 @@
                                         </h4>
                                     </div>
                                     <div class="p-4 md:p-5">
-                                        <form class="space-y-4" action="#">
+                                        <div class="space-y-4">
                                             <img src="check.png" alt="Check" class="center"
                                                 style="width:125px;height:125px;margin-left:auto;margin-right: auto;">
                                             <h5 style="margin-left: 70px;">Usted será redireccionado al inicio</h5>
-                                            <button onclick="window.location.href='home_host.html'" type="reset"
-                                                data-modal-hide="reservation_confirmed"
+                                            <button onclick="window.location.href='home_host.html'" 
                                                 class="mx-auto block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                                                 type="button">
                                                 Aceptar
                                             </button>
-                                        </form>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -449,10 +419,16 @@
             </ul>
         </div>
     </footer>
-    <script src="./../scripts/add_alojamientos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+        </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+        integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+        </script>
     <script src="https://kit.fontawesome.com/8627f7a409.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.1.1/flowbite.min.js"></script>
-
+    <script src="./../scripts/add_alojamientos.js"></script>
+    
 </body>
 
 </html>

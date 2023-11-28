@@ -1,7 +1,34 @@
-//const user = JSON.parse(sessionStorage.getItem("userData"));
-//var ID_cliente = user._id;
-var ID_alojamiento = "656533ff3688b2aeea93b24b";
-var ID_cliente = "6564fada347911add6c3c062";
+
+const user = JSON.parse(sessionStorage.getItem("userData"));
+var ID_cliente = user._id;
+console.log(ID_cliente);
+var ID_alojamiento = "65652aa58d75bd7bfe6d61e6";
+
+
+function displayDropdown() {
+    let html = `
+        <div class="px-4 py-3 text-sm text-gray-900 dark:text-white font-medium">
+            <div class="mb-1">${user.name}</div>
+            <div class="truncate">${user.email}</div>
+        </div>
+        <ul class="px-1 text-sm" aria-labelledby="dropdownUserAvatarButton">
+                            <li>
+                                <a href="home_loggeado.html"
+                                class="dropdown-item text-sm hover-bg-gray-100 dark-hover-bg-gray-600 dark-text-gray-200 dark-hover-text-white">Change
+                                    to User</a>
+                            </li>
+                        </ul>
+                        <div class="py-0 px-1">
+                            <a href="home.html"
+                                class="dropdown-item text-sm hover-bg-gray-100 dark-hover-bg-gray-600 dark-text-gray-200 dark-hover-text-white">Sign
+                                out</a>
+                        </div>
+    `
+    document.getElementById("dropdownAvatar").innerHTML = html;
+}
+
+displayDropdown();
+
 
 let xhr = new XMLHttpRequest();
 xhr.open('GET', 'http://localhost:3000/alojamientos/get_by_id?_id=' + ID_alojamiento, true);
@@ -27,7 +54,6 @@ xhr2.send();
 xhr2.onload = function () {
     if (xhr2.status == 200) {
         var NovoUsuario = JSON.parse(xhr2.responseText);
-        console.log(NovoUsuario[0]._id);
         Pass_host_name_to_html(NovoUsuario);
     }
     else {
@@ -35,14 +61,12 @@ xhr2.onload = function () {
     }
 };
 
-function Pass_host_name_to_html(array){
+function Pass_host_name_to_html(array) {
     var usuarios = array;
-    for (const usuario of usuarios) {
-        var host_name = document.getElementById("Usuario_name");
-        host_name.textContent = usuario.name;
-        var host_residence = document.getElementById("Usuario_ubi");
-        host_residence.textContent = "Vive en: " + usuario.residencia;
-    }
+    var host_name = document.getElementById("Usuario_name");
+    host_name.textContent = usuarios.name;
+    var host_residence = document.getElementById("Usuario_ubi");
+    host_residence.textContent = "Vive en: " + usuarios.residencia;
 }
 
 var filtroEstado = "Jalisco";
@@ -53,7 +77,7 @@ function cambiarTexto(nuevoTexto) {
     dropdownButton.innerHTML = nuevoTexto;
 }
 
-function passTodo(array){
+function passTodo(array) {
     const alojamientos = array;
     console.table(array);
     for (const alojamiento of alojamientos) {
@@ -89,12 +113,12 @@ function passTodo(array){
         var ids = alojamiento.categories;
 
         ids.forEach(function (id) {
-        var checkbox = document.getElementById(id);
+            var checkbox = document.getElementById(id);
 
-        if (checkbox) {
-            checkbox.checked = true;
-        }
-    });
+            if (checkbox) {
+                checkbox.checked = true;
+            }
+        });
     }
 
 }
@@ -184,7 +208,7 @@ function printTodo() {
 
 
 
-document.getElementById('miFormulario').addEventListener('submit', function(event) {
+document.getElementById('miFormulario').addEventListener('submit', function (event) {
     // Evitar la recarga de la página
     event.preventDefault();
     printTodo();
