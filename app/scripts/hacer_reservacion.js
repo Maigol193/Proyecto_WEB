@@ -39,6 +39,7 @@ function loadDom(array) {
         var parrafo6 = document.getElementById("Precio-Unline");
         var parrafo7 = document.getElementById("Aloj-title");
         var parrafo8 = document.getElementById("Aloj-Description");
+        var parrafo15 = document.getElementById("Aloj-Ubi");
         var parrafo9 = document.getElementById("Img1");
         var parrafo10 = document.getElementById("Img2");
         var parrafo11 = document.getElementById("Img3");
@@ -53,6 +54,7 @@ function loadDom(array) {
         parrafo6.textContent = alojamiento.price;
         parrafo7.textContent = alojamiento.title;
         parrafo8.textContent = alojamiento.description;
+        parrafo15.textContent = alojamiento.ubicacion;
         parrafo9.src = alojamiento.images[0];
         parrafo10.src = alojamiento.images[1];
         parrafo11.src = alojamiento.images[2];
