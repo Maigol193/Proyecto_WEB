@@ -34,38 +34,46 @@ async function displayReservations() {
     console.log(user);
     const reservations = user.reservations;
     console.log(reservations);
-    let html = "";
-    let html1 = "";
-    let i = 1;
-    for (const reservation of reservations) {
-        try {
-            await getReservacion(reservation);
-            const objectReservations = JSON.parse(sessionStorage.getItem("reservation"));
-            const alojamiento = objectReservations[0].alojamiento;
-            console.log(objectReservations);
+    if (reservations == "") {
+        let html3 = `
+        <h7 class="flex items-center justify-center" style="font-size:x-large; margin-top: 100px;"><b>No tienes reservaciones</b></h7>
+        `
+        document.getElementById("inicio-body").innerHTML = html3;
+    }
+    else {
+        let html = "";
+        let html1 = "";
+        let i = 1;
+        for (const reservation of reservations) {
             try {
-                await getAlojamiento(alojamiento);
-                const actualAlojamiento = sessionStorage.getItem("alojamiento");
-                const objectAlojamiento = JSON.parse(actualAlojamiento);
-                //Fechas
-                const fechaEntrada = objectReservations[0].fechaEntrada;
-                const fechaEntradaOriginal = new Date(fechaEntrada);
-                const fechaEntradaSumada = new Date(fechaEntradaOriginal);
-                fechaEntradaSumada.setDate(fechaEntradaOriginal.getDate() + 1);
-                const fechaCard = new Date(fechaEntradaSumada).toLocaleDateString("es-ES");
-                const fechaSalida = objectReservations[0].fechaSalida;
-                const fechaSalidaOriginal = new Date(fechaSalida);
-                const fechaSalidaSumada = new Date(fechaSalidaOriginal);
-                fechaSalidaSumada.setDate(fechaSalidaOriginal.getDate() + 1);
-                // Calcular la diferencia en días
-                const diferenciaEnMilisegundos = fechaSalidaSumada - fechaEntradaSumada;
-                const diferenciaEnDias = Math.floor(diferenciaEnMilisegundos / (1000 * 60 * 60 * 24));
-                let images = objectAlojamiento[0].images;
-                console.log(images);
-                console.log("Fecha: "+objectReservations[0].fechaEntrada);
-                console.log("Status: "+objectReservations[0].status);
-                if (objectReservations[0].status) {
-                    html += `
+                await getReservacion(reservation);
+                const objectReservations = JSON.parse(sessionStorage.getItem("reservation"));
+                const alojamiento = objectReservations[0].alojamiento;
+                console.log("Alojamiento: " + alojamiento);
+                try {
+                    await getAlojamiento(alojamiento);
+                    const actualAlojamiento = sessionStorage.getItem("alojamiento");
+                    const objectAlojamiento = JSON.parse(actualAlojamiento);
+                    console.log("Object Alojamiento: " + objectAlojamiento);
+                    //Fechas
+                    const fechaEntrada = objectReservations[0].fechaEntrada;
+                    const fechaEntradaOriginal = new Date(fechaEntrada);
+                    const fechaEntradaSumada = new Date(fechaEntradaOriginal);
+                    fechaEntradaSumada.setDate(fechaEntradaOriginal.getDate() + 1);
+                    const fechaCard = new Date(fechaEntradaSumada).toLocaleDateString("es-ES");
+                    const fechaSalida = objectReservations[0].fechaSalida;
+                    const fechaSalidaOriginal = new Date(fechaSalida);
+                    const fechaSalidaSumada = new Date(fechaSalidaOriginal);
+                    fechaSalidaSumada.setDate(fechaSalidaOriginal.getDate() + 1);
+                    // Calcular la diferencia en días
+                    const diferenciaEnMilisegundos = fechaSalidaSumada - fechaEntradaSumada;
+                    const diferenciaEnDias = Math.floor(diferenciaEnMilisegundos / (1000 * 60 * 60 * 24));
+                    let images = objectAlojamiento[0].images;
+                    console.log(images);
+                    console.log("Fecha: " + objectReservations[0].fechaEntrada);
+                    console.log("Status: " + objectReservations[0].status);
+                    if (objectReservations[0].status) {
+                        html += `
                     <div id="modal-cancelar${i}" style="z-index: 10050;" tabindex="-1" aria-hidden="true"
      class="hidden overflow-y-auto overflow-x-hidden absolute inset-0 flex items-center justify-center">
     <div class="relative p-4 w-full max-w-lg h-[80vh]">
@@ -103,16 +111,12 @@ async function displayReservations() {
                         <button type="button" id="btnCancelar${i}" class="block text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Cancelar</button>
                     </div>
                 </div>
-                <div class="flex justify-center">
-                    <button type="button" style="margin-top: 15px; width: 210px;" data-modal-target="message_to_host" data-modal-toggle="message_to_host"
-                    class="text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-200 dark:focus:ring-blue-900 font-medium rounded-lg text-sm px-5 py-2.5 inline-flex justify-center w-full text-center">Contacta al Host</button>
-                </div>
             </div>
             <br>
             `
-            i++;
-                } else {
-                    html1 += `
+                        i++;
+                    } else {
+                        html1 += `
             <div id="reservationCard${i}" atribute_id="${objectReservations[0]._id}">
                 <div style="border-bottom: 1px solid gray;">
                     <p style="margin-left: 35px; margin-top: 5px; margin-bottom: 5px; font-size: large;"><b>${fechaCard}</b></p>
@@ -135,31 +139,32 @@ async function displayReservations() {
             </div>
             <br>
             `
-            i++;
+                        i++;
+                    }
+                } catch (error) {
+                    console.error("Error al obtener el alojamiento:", error);
                 }
             } catch (error) {
-                console.error("Error al obtener el alojamiento:", error);
+                console.error("Error al obtener la reservación:", error);
             }
-        } catch (error) {
-            console.error("Error al obtener la reservación:", error);
         }
-    }
-    document.getElementById("InProcess").innerHTML = html;
-    document.getElementById("Past").innerHTML = html1;
-    for (let c = 1; c < i; c++) {
-        document.getElementById("btnCancelar"+c).addEventListener("click", function () {
-            console.log("si hubo click de " + c);
-            var modal = document.getElementById("modal-cancelar" + c);
+        document.getElementById("InProcess").innerHTML = html;
+        document.getElementById("Past").innerHTML = html1;
+        for (let c = 1; c < i; c++) {
+            document.getElementById("btnCancelar" + c).addEventListener("click", function () {
+                console.log("si hubo click de " + c);
+                var modal = document.getElementById("modal-cancelar" + c);
 
-            // Cambia la clase 'hidden' para mostrar el modal
-            modal.classList.remove('hidden');
-            /*
-            var elemento = document.getElementById("reservationCard"+c);
-            var valorAtributo = elemento.getAttribute('atribute_id');   
-            window.location.href = 'Pagina_reservando.html';
-            console.log(valorAtributo);
-            */
-        });
+                // Cambia la clase 'hidden' para mostrar el modal
+                modal.classList.remove('hidden');
+                /*
+                var elemento = document.getElementById("reservationCard"+c);
+                var valorAtributo = elemento.getAttribute('atribute_id');   
+                window.location.href = 'Pagina_reservando.html';
+                console.log(valorAtributo);
+                */
+            });
+        }
     }
 }
 
@@ -210,10 +215,10 @@ const changeToHostBtn = document.getElementById('ChangeHost');
 changeToHostBtn.addEventListener('click', function () {
     event.preventDefault();
     console.log("Intentando cambiar a host");
-    if(user.isHost){
+    if (user.isHost) {
         window.location.href = "home_host.html";
     }
-    else{
+    else {
         window.location.reload();
     }
 });

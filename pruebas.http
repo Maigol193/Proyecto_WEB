@@ -2,7 +2,7 @@
 
 //GET usuario
 ###
-GET http://localhost:3000/sinAdmin/user?email=pepito@iteso.mx&password=abcde HTTP/1.1
+GET http://localhost:3000/sinAdmin/user?email=miguelito@gmail.com&password=abcde HTTP/1.1
 
 //POST USUARIO
 ###
@@ -10,9 +10,9 @@ POST http://localhost:3000/sinAdmin/create HTTP/1.1
 content-type: application/json
 
 {
-    "name": "Alberto2",
-    "email": "albertooo@gmail.com",
-    "password": "abcdefgh",
+    "name": "albertito",
+    "email": "albertito@gmail.com",
+    "password": "abc",
     "isHost": false
 }
 
@@ -38,7 +38,7 @@ x-auth:admin
 }
 
 ###
-GET http://localhost:3000/usuarios/get_by_id?_id=655ab30faee7cf1a2262bde5
+GET http://localhost:3000/usuarios/get_by_id?_id=65660ff813a37e494c2a9c2e
 x-auth:admin
 
 
@@ -133,12 +133,12 @@ content-type: application/json
 x-auth:admin
 
 {
-    "status": false,
+    "status": true,
     "fechaEntrada": "2023-12-5",
     "fechaSalida": "2023-12-8",
-    "alojamiento": "655e7dffc4b6d67fc525fd4e",
-    "host": "655ab5bd76d6c8f8ab3ff606",
-    "cliente": "655ab30faee7cf1a2262bde5",
+    "alojamiento": "65652aa58d75bd7bfe6d61e6",
+    "host": "6564fada347911add6c3c062",
+    "cliente": "65660ff813a37e494c2a9c2e",
     "huespedes": 2,
     "totalPrice": 3000
 }

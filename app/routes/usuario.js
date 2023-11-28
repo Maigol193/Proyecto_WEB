@@ -7,22 +7,23 @@ const esquemas = require("../../server");
 
 //GET usuario por ID
 
-router.get('/get_by_id',(req,res)=>{
-    let { _id } = req.query
-    
-    esquemas.Usuario.find({ _id: _id })
-        .then(function (docs) {
-            if (docs.length > 0) {
-                res.status(200).send(docs);
+router.get('/get_by_id', (req, res) => {
+    let { _id } = req.query;
+
+    esquemas.Usuario.findOne({ _id: _id })
+        .then(function (doc) {
+            if (doc) {
+                res.status(200).json(doc);
             } else {
-                res.status(404).send({ error: 'No se encontró el usuario con el _id proporcionado' });
+                res.status(404).json({ error: 'No se encontró el usuario con el _id proporcionado' });
             }
         })
         .catch((err) => {
             console.error(err);
-            res.status(500).send({ error: 'Error en el servidor' });
+            res.status(500).json({ error: 'Error en el servidor' });
         });
 });
+
 
 
 router.get('/user', (req,res) => {

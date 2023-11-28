@@ -91,7 +91,7 @@ const createButton = document.getElementById('createBtn');
 const formCreate = document.getElementById('formCreate');
 
 formCreate.addEventListener('submit', function () {
-    console.log("Intentando loggear");
+    event.preventDefault();
     let name = getNameCreate();
     let email = getEmailCreate();
     let password = getPasswordCreate();
@@ -109,14 +109,9 @@ formCreate.addEventListener('submit', function () {
     xhr.setRequestHeader('Content-Type', 'application/json');
     xhr.send(JSON.stringify(newUser));
     xhr.onload = function () {
-        if (xhr.status == 200) {
-            console.log("Usuario creado. Iniciando sesión");
-            sessionStorage.setItem('userData', xhr.responseText);
-            window.location.href = "home_loggeado.html";
-            console.log(xhr.responseText);
-        } else {
-            console.log("error");
-        }
+        console.log("Usuario creado. Iniciando sesión");
+        sessionStorage.setItem('userData', xhr.responseText);
+        window.location.href = "home_loggeado.html";
     };
 });
 
