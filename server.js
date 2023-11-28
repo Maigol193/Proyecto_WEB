@@ -75,6 +75,10 @@ const alojamientoSchema = mongoose.Schema({
         type: String,
         required: true
     },
+    ubicacion: {
+        type: String,
+        required: true
+    },
     description: {
         type: String,
         required: true

@@ -117,7 +117,7 @@
     <main>
         <div id="inicio-body" style="margin-top: 75px; padding: 10px;">
             <div>
-                <form>
+                <form id="miFormulario">
                     <div style="margin-top: 20px; margin-left: 70px; margin-right: 70px; padding: 30px;"
                         class="border rounded-lg border-gray-300">
                         <h10 style="font-size: larger;"><b>Detalles sobre el alojamiento</b></h10>
@@ -156,9 +156,9 @@
                             <div>
                                 <label for="website"
                                     class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Baños</label>
-                                <input type="number" min="0" id="Banos"
+                                <input type="number" min="1" id="Banos"
                                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                    placeholder="1" required>
+                                    value="1" required>
                             </div>
                             <div>
                                 <label for="visitors"
@@ -171,9 +171,9 @@
                             <div>
                                 <label for="website"
                                     class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Habitaciones</label>
-                                <input type="number" min="0" id="Habitaciones"
+                                <input type="number" min="1" id="Habitaciones"
                                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                    placeholder="1" required>
+                                    value="1" required>
                             </div>
                             <div>
                                 <label for="visitors"
@@ -186,9 +186,9 @@
                             <div>
                                 <label for="website"
                                     class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Huespedes</label>
-                                <input type="number" min="0" id="Huespedes"
+                                <input type="number" min="1" id="Huespedes"
                                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                    placeholder="1" required>
+                                    value="1" required>
                             </div>
                             <div>
                                 <label for="visitors"
@@ -201,9 +201,9 @@
                             <div>
                                 <label for="website"
                                     class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Camas</label>
-                                <input type="number" min="0" id="Camas"
+                                <input type="number" min="1" id="Camas"
                                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                    placeholder="1" required>
+                                    value="1" required>
                             </div>
                             <div>
                                 <label for="visitors"
@@ -221,7 +221,7 @@
                                     class="w-48 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white">
                                     <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
                                         <div class="flex items-center ps-3">
-                                            <input id="Playa" type="checkbox" value=""
+                                            <input id="Playa" type="checkbox" value="" checked
                                                 class="pl w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
                                             <label for="vue-checkbox"
                                                 class="w-full py-3 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Playa</label>
@@ -326,7 +326,7 @@
                                     Email</label>
                                 <button id="dropdown-button" data-dropdown-toggle="dropdown"
                                     class="flex-shrink-0 z-10 inline-flex items-center py-2.5 px-5 text-sm font-medium text-center text-gray-900 bg-gray-100 border border-gray-300 rounded-lg hover:bg-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100"
-                                    type="button">Estado<svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true"
+                                    type="button">Jalisco<svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true"
                                         xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
                                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
                                             stroke-width="2" d="m1 1 4 4 4-4" />
@@ -337,31 +337,15 @@
                                         aria-labelledby="dropdown-button">
                                         <li>
                                             <button type="button"
-                                                class="inline-flex w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Jalisco</button>
+                                                class="inline-flex w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" onclick="cambiarTexto('Jalisco')">Jalisco</button>
                                         </li>
                                         <li>
                                             <button type="button"
-                                                class="inline-flex w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Nayarit</button>
+                                                class="inline-flex w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" onclick="cambiarTexto('Nuevo León')">Nuevo León</button>
                                         </li>
                                         <li>
                                             <button type="button"
-                                                class="inline-flex w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">CDMX</button>
-                                        </li>
-                                        <li>
-                                            <button type="button"
-                                                class="inline-flex w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Aguascalientes</button>
-                                        </li>
-                                        <li>
-                                            <button type="button"
-                                                class="inline-flex w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Puebla</button>
-                                        </li>
-                                        <li>
-                                            <button type="button"
-                                                class="inline-flex w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Oaxaca</button>
-                                        </li>
-                                        <li>
-                                            <button type="button"
-                                                class="inline-flex w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Colima</button>
+                                                class="inline-flex w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" onclick="cambiarTexto('Baja California Sur')">Baja California Sur</button>
                                         </li>
                                     </ul>
                                 </div>
@@ -383,7 +367,7 @@
                                                     d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
                                             </svg>
                                             <span
-                                                class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3">Patricio</span>
+                                                class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3" id="Usuario_name">Patricio</span>
                                         </li>
                                         <li class="flex">
                                             <svg class="flex-shrink-0 w-4 h-4 text-blue-600 dark:text-blue-500"
@@ -393,40 +377,7 @@
                                                     d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
                                             </svg>
                                             <span
-                                                class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3">2
-                                                años de experiencia</span>
-                                        </li>
-                                        <li class="flex">
-                                            <svg class="flex-shrink-0 w-4 h-4 text-blue-600 dark:text-blue-500"
-                                                aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                                fill="currentColor" viewBox="0 0 20 20">
-                                                <path
-                                                    d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
-                                            </svg>
-                                            <span
-                                                class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3">100
-                                                Evaluaciones</span>
-                                        </li>
-                                        <li class="flex">
-                                            <svg class="flex-shrink-0 w-4 h-4 text-blue-600 dark:text-blue-500"
-                                                aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                                fill="currentColor" viewBox="0 0 20 20">
-                                                <path
-                                                    d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
-                                            </svg>
-                                            <span
-                                                class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3">4.85
-                                                de Calificación</span>
-                                        </li>
-                                        <li class="flex">
-                                            <svg class="flex-shrink-0 w-4 h-4 text-blue-600 dark:text-blue-500"
-                                                aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                                fill="currentColor" viewBox="0 0 20 20">
-                                                <path
-                                                    d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
-                                            </svg>
-                                            <span
-                                                class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3">Vive
+                                                class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3" id="Usuario_ubi">Vive
                                                 en: Guadalajara, Jalisco</span>
                                         </li>
                                     </ul>
@@ -436,11 +387,11 @@
                         <div class="mb-6">
                             <label for="large-input"
                                 class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Descripcion</label>
-                            <input type="text" id="large-input"
+                            <input type="text" id="Descripcion"
                                 class="block w-full p-4 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-md focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                 placeholder="Cuentanos sobre tu alojamiento" required>
                         </div>
-                        <button type="button" onclick="printTodo()"
+                        <button type="submit" data-modal-target="add_alojamiento" data-modal-toggle="add_alojamiento"
                             class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Agregar</button>
                         <div id="add_alojamiento" tabindex="-1" aria-hidden="true"
                             class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full"
