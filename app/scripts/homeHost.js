@@ -4,8 +4,8 @@ function displayDropdown() {
     console.log(user);
     let html = `
         <div class="px-4 py-3 text-sm text-gray-900 dark:text-white font-medium">
-            <div class="mb-1">${user[0].name}</div>
-            <div class="truncate">${user[0].email}</div>
+            <div class="mb-1">${user.name}</div>
+            <div class="truncate">${user.email}</div>
         </div>
         <ul class="px-1 text-sm" aria-labelledby="dropdownUserAvatarButton">
                             <li>
@@ -27,42 +27,26 @@ displayDropdown();
 
 function displayUserCard() {
     let html = "";
-    if (user[0].name == "") {
-        html += `
+    
+    html += `
         <div id="h5Host">
-            <h5 class="mb-1 text-xl font-medium text-gray-900 dark:text-white">${user[0].email}</h5>
-        </div>
-        <span class="text-sm text-gray-500 dark:text-gray-400">Host</span>
-        <div class="items-center justify-center space-y-4 sm:flex sm:space-y-0 sm:space-x-4 rtl:space-x-reverse"
-            style="padding: 10px;">
-            <div class="flex items-baseline text-gray-900 dark:text-white flex justify-center">
-                <span class="text-2xl font-extrabold tracking-tight">${user[0].alojamientos.length}</span>
-                <span
-                    class="ms-1 text-sm font-normal text-gray-500 dark:text-gray-400">Alojamientos</span>
-            </div>
-        </div>
-    `
-    } else {
-        html += `
-        <div id="h5Host">
-        <h5 class="mb-1 text-xl font-medium text-gray-900 dark:text-white">${user[0].name}</h5>
+        <h5 class="mb-1 text-xl font-medium text-gray-900 dark:text-white">${user.name}</h5>
     </div>
     <span class="text-sm text-gray-500 dark:text-gray-400">Host</span>
     <div class="items-center justify-center space-y-4 sm:flex sm:space-y-0 sm:space-x-4 rtl:space-x-reverse"
         style="padding: 10px;">
         <div class="flex items-baseline text-gray-900 dark:text-white flex justify-center">
-            <span class="text-2xl font-extrabold tracking-tight">${user[0].alojamientos.length}</span>
+            <span class="text-2xl font-extrabold tracking-tight">${user.alojamientos.length}</span>
             <span
                 class="ms-1 text-sm font-normal text-gray-500 dark:text-gray-400">Alojamientos</span>
         </div>
     </div>
     `
-    }
     document.getElementById("DisplayCard").innerHTML = html;
 }
 
 async function displayAlojamientoCards() {
-    const alojamientos = user[0].alojamientos;
+    const alojamientos = user.alojamientos;
     let i = 0;
     let html = "";
     for (const alojamiento of alojamientos) {

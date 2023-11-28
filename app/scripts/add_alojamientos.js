@@ -13,7 +13,6 @@ xhr2.onload = function () {
     if (xhr2.status == 200) {
         var NovoUsuario = JSON.parse(xhr2.responseText);
         console.log(NovoUsuario);
-        console.log(NovoUsuario[0]._id);
         Pass_host_name_to_html(NovoUsuario);
     }
     else {
@@ -21,14 +20,13 @@ xhr2.onload = function () {
     }
 };
 
-function Pass_host_name_to_html(array){
+function Pass_host_name_to_html(array) {
     var usuarios = array;
-    for (const usuario of usuarios) {
-        var host_name = document.getElementById("Usuario_name");
-        host_name.textContent = usuario.name;
-        var host_residence = document.getElementById("Usuario_ubi");
-        host_residence.textContent = "Vive en: " + usuario.residencia;
-    }
+    var host_name = document.getElementById("Usuario_name");
+    host_name.textContent = usuarios.name;
+    var host_residence = document.getElementById("Usuario_ubi");
+    host_residence.textContent = "Vive en: " + usuarios.residencia;
+
 }
 
 var filtroEstado = "Jalisco";
@@ -39,7 +37,7 @@ function cambiarTexto(nuevoTexto) {
     dropdownButton.innerHTML = nuevoTexto;
 }
 
-function updateUserDataInStorage(){
+function updateUserDataInStorage() {
     let xhr2 = new XMLHttpRequest();
     xhr2.open('GET', 'http://localhost:3000/usuarios/get_by_id?_id=' + ID_cliente, true);
     xhr2.setRequestHeader("x-auth", "admin");
@@ -106,7 +104,7 @@ function printTodo() {
     images_array.push(Img5Value);
 
     let AloData = {
-        host:ID_cliente,
+        host: ID_cliente,
         title: TituloValue,
         ubicacion: UbicacionValue,
         description: DescripcionValues,
@@ -141,7 +139,7 @@ function printTodo() {
 
 
 
-document.getElementById('miFormulario').addEventListener('submit', function(event) {
+document.getElementById('miFormulario').addEventListener('submit', function (event) {
     // Evitar la recarga de la página
     event.preventDefault();
     printTodo();
