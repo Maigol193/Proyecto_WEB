@@ -9,7 +9,7 @@ function displayDropdown() {
         </div>
         <ul class="px-1 text-sm" aria-labelledby="dropdownUserAvatarButton">
                             <li>
-                                <a href="homeUser.html"
+                                <a href="home_loggeado.html"
                                 class="dropdown-item text-sm hover-bg-gray-100 dark-hover-bg-gray-600 dark-text-gray-200 dark-hover-text-white">Change
                                     to User</a>
                             </li>
