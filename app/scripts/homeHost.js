@@ -27,7 +27,7 @@ displayDropdown();
 
 function displayUserCard() {
     let html = "";
-    
+
     html += `
         <div id="h5Host">
         <h5 class="mb-1 text-xl font-medium text-gray-900 dark:text-white">${user.name}</h5>
@@ -98,77 +98,69 @@ async function displayAlojamientoCards() {
                             <button id="primer-auth${i}" type="button"
                                 class="text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-200 dark:focus:ring-blue-900 font-medium rounded-lg text-sm px-5 py-2.5 inline-flex justify-center w-full text-center">Editar</button>
 
-                            <button id="botonEliminar${i}" type="button" data-modal-target="modal-eliminar" data-modal-toggle="modal-eliminar"
+                            <button id="botonEliminar${i}" type="button"
                                 class="text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-200 dark:focus:ring-blue-900 font-medium rounded-lg text-sm px-5 py-2.5 inline-flex justify-center w-full text-center">Eliminar</button>
                         </div>
         </div>
     </div>
             `
-        i++;
+            i++;
         } catch (error) {
             console.error("Error al obtener el alojamiento:", error);
-        }
-    }
-    for (let j = 0; j < i; j++) {
-        const botonEliminar = document.getElementById(`botonEliminar${j}`);
-        if (botonEliminar) {
-            botonEliminar.addEventListener('click', () => {
-                const modal = new bootstrap.Modal(document.getElementById('modal-eliminar'));
-                modal.show();
-                sessionStorage.setItem('alojamientoToDelete', alojamientos[j]);
-            });
         }
     }
     document.getElementById("gridCards").innerHTML = html;
     for (let c = 1; c < i; c++) {
         document.getElementById("primer-auth" + c).addEventListener("click", function () {
-            var elemento = document.getElementById("carouselId"+c);
-            var valorAtributo = elemento.getAttribute('atribute_id_alojamiento');   
+            var elemento = document.getElementById("carouselId" + c);
+            var valorAtributo = elemento.getAttribute('atribute_id_alojamiento');
             window.location.href = 'edit_alojamiento.html';
             sessionStorage.setItem('id_aloj_edit', valorAtributo);
         });
     }
+    for (let j = 0; j < i; j++) {
+        document.getElementById("botonEliminar" + j).addEventListener("click", function () {
+            const idHost = user._id;
+            var elemento = document.getElementById("carouselId" + j);
+            var idAlojamiento = elemento.getAttribute('atribute_id_alojamiento');
+            let xhr = new XMLHttpRequest();
+            xhr.open('DELETE', 'http://localhost:3000/alojamientos/delete_alojamiento');
+            xhr.setRequestHeader('Content-Type', 'application/json');
+            xhr.setRequestHeader("x-auth", "admin");
+            const dataToDelete = {
+                id: idAlojamiento,
+                host: idHost
+            };
+            xhr.send(JSON.stringify(dataToDelete));
+            xhr.onload = function () {
+                if (xhr.status === 200) {
+                    console.log("Alojamiento borrado con éxito");
+                    updateUserDataInStorage();
+                } else {
+                    console.error("Error al borrar el alojamiento");
+                }
+            };
+        });
+    }
 }
 
-function deleteAlojamiento() {
+function deleteAlojamiento(idAloj, idHost) {
     // Obtener el ID del alojamiento a eliminar
-    const alojamientoToDelete = sessionStorage.getItem('alojamientoToDelete');
-    xhr.open('DELETE', 'http://localhost:3000/alojamientos/delete_alojamiento');
-    xhr.setRequestHeader('Content-Type', 'application/json');
-    xhr.setRequestHeader("x-auth", "admin");
-    let hostID = user[0]._id;
-    const dataToDelete = {
-        alojamientoToDelete: alojamientoToDelete,
-        hostID: hostID
-    };
-    xhr.send(dataToDelete);
-    xhr.onload = function () {
-        if (xhr.status === 200) {
-            updateUserDataInStorage();
-            console.log("Alojamiento borrado con éxito");
-        } else {
-            console.error("Error al crear la reservacion");
-        }
-    };
-    window.location.reload();
-    // Lógica para eliminar el alojamiento (puedes usar tu función deleteReservacion aquí)
-    // ...
 
-    // Cerrar el modal
-    const modal = new bootstrap.Modal(document.getElementById('modal-eliminar'));
-    modal.hide();
 }
 
 function updateUserDataInStorage() {
-    let ID_cliente = user[0]._id;
+    let ID_cliente = user._id;
     let xhr2 = new XMLHttpRequest();
     xhr2.open('GET', 'http://localhost:3000/usuarios/get_by_id?_id=' + ID_cliente, true);
     xhr2.setRequestHeader("x-auth", "admin");
     xhr2.send();
+
     xhr2.onload = function () {
         if (xhr2.status == 200) {
             sessionStorage.removeItem('userData');
             sessionStorage.setItem('userData', xhr2.responseText);
+            window.location.reload();
         }
         else {
             alert(xhr2.status + ": " + xhr2.statusText);
