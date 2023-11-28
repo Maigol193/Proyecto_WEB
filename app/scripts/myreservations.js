@@ -43,7 +43,7 @@ async function displayReservations() {
     else {
         let html = "";
         let html1 = "";
-        let i = 1;
+        let i = 0;
         for (const reservation of reservations) {
             try {
                 await getReservacion(reservation);
@@ -74,23 +74,6 @@ async function displayReservations() {
                     console.log("Status: " + objectReservations[0].status);
                     if (objectReservations[0].status) {
                         html += `
-                    <div id="modal-cancelar${i}" style="z-index: 10050;" tabindex="-1" aria-hidden="true"
-     class="hidden overflow-y-auto overflow-x-hidden absolute inset-0 flex items-center justify-center">
-    <div class="relative p-4 w-full max-w-lg h-[80vh]">
-        <div class="relative rounded-lg shadow dark:bg-gray-700" style="background-color: rgb(241 245 249);">
-            <div class="modal-content">
-                <p>¿Estás seguro de que deseas cancelar?</p>
-                <div class="modal-buttons">
-                    <button onclick="closeModal()">No</button>
-                    <button id="deleteRes${i}">Eliminar</button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
             <div id="reservationCard${i}" atribute_id="${objectReservations[0]._id}">
                 <div style="border-bottom: 1px solid gray;">
                     <p style="margin-left: 35px; margin-top: 5px; margin-bottom: 5px; font-size: large;"><b>${fechaCard}</b></p>
@@ -107,7 +90,7 @@ async function displayReservations() {
                         </div>
                     </div>
                     <div style="margin-right: 30px; margin-top: 15px;">
-                        <a href="reservacion.html" class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Detalles&nbsp;</a><br>
+                        <a id="detalles${i}" class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Detalles&nbsp;</a><br>
                         <button type="button" id="btnCancelar${i}" class="block text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Cancelar</button>
                     </div>
                 </div>
@@ -150,22 +133,68 @@ async function displayReservations() {
         }
         document.getElementById("InProcess").innerHTML = html;
         document.getElementById("Past").innerHTML = html1;
-        for (let c = 1; c < i; c++) {
-            document.getElementById("btnCancelar" + c).addEventListener("click", function () {
-                console.log("si hubo click de " + c);
-                var modal = document.getElementById("modal-cancelar" + c);
-
-                // Cambia la clase 'hidden' para mostrar el modal
-                modal.classList.remove('hidden');
-                /*
-                var elemento = document.getElementById("reservationCard"+c);
-                var valorAtributo = elemento.getAttribute('atribute_id');   
-                window.location.href = 'Pagina_reservando.html';
-                console.log(valorAtributo);
-                */
+        for (let c = 0; c < i; c++) {
+            document.getElementById("detalles" + c).addEventListener("click", function () {
+                const reservaciones = user.reservations;
+                let idRes = reservaciones[c];
+                getReservacion(idRes);
+                const objectReservation = JSON.parse(sessionStorage.getItem("reservation"));
+                console.log(objectReservation[0].alojamiento);
+                getAlojamiento(objectReservation[0].alojamiento);
+                window.location.href = 'reservacion.html';
+            });
+        }
+        for (let d = 0; d < i; d++) {
+            document.getElementById("btnCancelar" + d).addEventListener("click", function () {
+                console.log("quiero cancelar " + d);
+                const reservaciones = user.reservations;
+                let idRes = reservaciones[d];
+                console.log("id res: " + idRes);
+                getReservacion(idRes);
+                const objectReservation = JSON.parse(sessionStorage.getItem("reservation"));
+                console.log("Cliente: " + objectReservation[0].cliente);
+                let idCli = objectReservation[0].cliente;
+                const newDelete =
+                {
+                    id: idRes,
+                    cliente: idCli
+                };
+                let xhr = new XMLHttpRequest();
+                xhr.open('DELETE', 'http://localhost:3000/reservaciones/delete');
+                xhr.setRequestHeader('Content-Type', 'application/json');
+                xhr.setRequestHeader("x-auth", "admin");
+                xhr.send(JSON.stringify(newDelete));
+                xhr.onload = function () {
+                    if (xhr.status == 200){
+                        console.log("Reservacion borrada");
+                        updateUserDataInStorage();
+                    }else{
+                        console.log("no se borro nada")
+                    }
+                };
+                //
             });
         }
     }
+}
+
+function updateUserDataInStorage(){
+    let ID_cliente = user._id;
+    let xhr2 = new XMLHttpRequest();
+    xhr2.open('GET', 'http://localhost:3000/usuarios/get_by_id?_id=' + ID_cliente, true);
+    xhr2.setRequestHeader("x-auth", "admin");
+    xhr2.send();
+    
+    xhr2.onload = function () {
+        if (xhr2.status == 200) {
+            sessionStorage.removeItem('userData');
+            sessionStorage.setItem('userData', xhr2.responseText);
+            window.location.reload();
+        }
+        else {
+            alert(xhr2.status + ": " + xhr2.statusText);
+        }
+    };
 }
 
 function getReservacion(id) {

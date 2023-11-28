@@ -45,7 +45,7 @@ const loginButtonHost = document.getElementById('loginHost');
 const formHost = document.getElementById('formHost');
 
 formHost.addEventListener('submit', function () {
-    console.log("Intentando loggear");
+    event.preventDefault();
     let email = getEmailHost();
     let password = getPasswordHost();
     let query = "email=" + email + "&password=" + password;
