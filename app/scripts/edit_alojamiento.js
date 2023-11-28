@@ -1,8 +1,9 @@
 
 const user = JSON.parse(sessionStorage.getItem("userData"));
+
 var ID_cliente = user._id;
-console.log(ID_cliente);
-var ID_alojamiento = "65652aa58d75bd7bfe6d61e6";
+var ID_alojamiento = sessionStorage.getItem("id_aloj_edit");
+console.log("alojamiento es:", ID_alojamiento);
 
 
 function displayDropdown() {

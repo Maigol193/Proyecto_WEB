@@ -58,7 +58,7 @@ async function displayAlojamientoCards() {
             html += `
             <div class="card carta_margin flex flex-inline">
             <h5 class="flex justify-center mb-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">${objectAlojamiento[0].title}</h5>
-        <div id="carouselId${i}" class="carousel slide" data-bs-ride="carousel">
+        <div id="carouselId${i}" class="carousel slide" data-bs-ride="carousel" atribute_id_alojamiento="${objectAlojamiento[0]._id}">
         <ol class="carousel-indicators">
         <li data-bs-target="#carouselId${i}" data-bs-slide-to="0" class="active" aria-current="true" aria-label="First slide"></li>
         <li data-bs-target="#carouselId${i}" data-bs-slide-to="1" aria-label="Second slide"></li>
@@ -95,7 +95,7 @@ async function displayAlojamientoCards() {
         <div class="card-body" style="text-align: center">
             <p class="card-text" style="font-size: medium;">${objectAlojamiento[0].description}</p>
             <div class="flex space-x-4 mt-4">
-                            <button onclick="window.location.href='edit_alojamiento.html'"
+                            <button id="primer-auth${i}" type="button"
                                 class="text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-200 dark:focus:ring-blue-900 font-medium rounded-lg text-sm px-5 py-2.5 inline-flex justify-center w-full text-center">Editar</button>
 
                             <button id="botonEliminar${i}" type="button" data-modal-target="modal-eliminar" data-modal-toggle="modal-eliminar"
@@ -120,6 +120,14 @@ async function displayAlojamientoCards() {
         }
     }
     document.getElementById("gridCards").innerHTML = html;
+    for (let c = 1; c < i; c++) {
+        document.getElementById("primer-auth" + c).addEventListener("click", function () {
+            var elemento = document.getElementById("carouselId"+c);
+            var valorAtributo = elemento.getAttribute('atribute_id_alojamiento');   
+            window.location.href = 'edit_alojamiento.html';
+            sessionStorage.setItem('id_aloj_edit', valorAtributo);
+        });
+    }
 }
 
 function deleteAlojamiento() {

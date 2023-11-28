@@ -122,12 +122,11 @@ function Obtain_Host_Name(id){
 
 function Pass_host_name_to_html(array){
     var usuarios = array;
-    for (const usuario of usuarios) {
         var host_name = document.getElementById("host_name");
-        host_name.textContent = usuario.name;
+        host_name.textContent = usuarios.name;
         var host_residence = document.getElementById("host_residence");
-        host_residence.textContent = usuario.residencia;
-    }
+        host_residence.textContent = usuarios.residencia;
+    
 }
 
 
