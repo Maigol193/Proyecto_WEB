@@ -198,3 +198,17 @@ function updateUserDataInStorage(){
         }
     };
 }
+
+const changeToHostBtn = document.getElementById('ChangeHost');
+
+changeToHostBtn.addEventListener('click', function () {
+    event.preventDefault();
+    console.log("Intentando cambiar a host");
+    if(user.isHost){
+        window.location.href = "home_host.html";
+    }
+    else{
+        alert("jaja no ere jos");
+        window.location.reload();
+    }
+});

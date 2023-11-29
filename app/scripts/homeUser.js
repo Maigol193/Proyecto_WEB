@@ -43,6 +43,7 @@ changeToHostBtn.addEventListener('click', function () {
         window.location.href = "home_host.html";
     }
     else{
+        alert("jaja no ere jos");
         window.location.reload();
     }
 });
