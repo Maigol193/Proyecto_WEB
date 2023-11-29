@@ -134,6 +134,10 @@ async function displayAlojamientoCards() {
             xhr.send(JSON.stringify(dataToDelete));
             xhr.onload = function () {
                 if (xhr.status === 200) {
+                    function mostrarAlerta() {
+                        alert("Se ha borrado el alojamiento!!!");
+                    }
+                    mostrarAlerta();
                     console.log("Alojamiento borrado con éxito");
                     updateUserDataInStorage();
                 } else {
@@ -142,11 +146,6 @@ async function displayAlojamientoCards() {
             };
         });
     }
-}
-
-function deleteAlojamiento(idAloj, idHost) {
-    // Obtener el ID del alojamiento a eliminar
-
 }
 
 function updateUserDataInStorage() {

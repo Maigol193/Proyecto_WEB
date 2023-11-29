@@ -166,7 +166,10 @@ async function displayReservations() {
                 xhr.send(JSON.stringify(newDelete));
                 xhr.onload = function () {
                     if (xhr.status == 200){
-                        console.log("Reservacion borrada");
+                        function mostrarAlerta() {
+                            alert("Se ha borrado la reservación!!!");
+                        }
+                        mostrarAlerta();
                         updateUserDataInStorage();
                     }else{
                         console.log("no se borro nada")

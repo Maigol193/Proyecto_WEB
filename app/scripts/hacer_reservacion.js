@@ -165,6 +165,16 @@ function hacer_reservacion(){
     xhr.onload = function () {
         if (xhr.status === 200) {
             updateUserDataInStorage();
+            let body = document.getElementById("inicio-body");
+            body.style.display = "none";
+            let loading_animation = document.getElementById("loading");
+            loading_animation.style.display = "block";
+            setTimeout(() => {
+                loading_animation.style.display = "none";
+                alert("Reservacion creada con éxito");
+                body.style.display = "block";
+                window.location.href = 'home_loggeado.html';
+            }, 4000);
             console.log("Reservacion creada con éxito");
         } else {
             console.error("Error al crear la reservacion");
@@ -182,7 +192,6 @@ function updateUserDataInStorage(){
         if (xhr2.status == 200) {
             sessionStorage.removeItem('userData');
             sessionStorage.setItem('userData', xhr2.responseText);
-            window.location.href = 'home_loggeado.html';
         }
         else {
             alert(xhr2.status + ": " + xhr2.statusText);

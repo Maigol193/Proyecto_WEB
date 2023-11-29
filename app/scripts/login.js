@@ -67,7 +67,11 @@ formHost.addEventListener('submit', function () {
                     window.location.href = "home_host.html";
                 }
                 else{
-                    console.log("no eres host");
+                    function mostrarAlerta() {
+                        alert("No eres host!!!");
+                    }
+                    mostrarAlerta();
+                    window.location.reload();
                 }
             } else {
                 console.log("error");
